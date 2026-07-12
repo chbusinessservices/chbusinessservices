@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<!--
+  PRE-LAUNCH CHECKLIST — search for each of these and replace before going live:
+  1. FORMSPREE_ENDPOINT (in <script> near the bottom) — real Formspree form ID so the contact form emails you
+  2. FALLBACK_EMAIL (in <script>) — your real business email
+  3. gum.co/... links (3x, in Digital Resource Library) — your real Gumroad product URLs
+  4. yourdomain.com (meta tags + JSON-LD schema in <head>) — your real domain
+  5. [business email] / [business address] / [Month Day, Year] — in privacy.html and terms.html
+  6. tel:+10000000000 (mobile sticky bar) — your real phone number
+  7. GA_MEASUREMENT_ID (Google Analytics snippet below) — your real GA4 ID, or delete the snippet if not using analytics
+  8. Testimonials/case studies — add real ones to the "Our Commitment" section when available; do not fabricate
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='6' fill='%230D1F1A'/%3E%3Cpath d='M4 19L10 12L14 15L22 6' stroke='%231B7A5A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='22' cy='6' r='2.2' fill='%23C99A3B'/%3E%3C/svg%3E">
+<!-- Google Analytics (GA4) — replace GA_MEASUREMENT_ID with your real ID, or remove this block if not using analytics -->
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+-->
+
+<title>Modern Websites Built for Growth, Leads & Local Visibility | CH Business Services</title>
+<meta name="description" content="CH Business Services designs conversion-focused, SEO-smart websites for small businesses and growing brands. Starter, Growth, and Premium website packages built to turn visitors into customers.">
+<link rel="canonical" href="https://www.yourdomain.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Modern Websites Built for Growth, Leads & Local Visibility | CH Business Services">
+<meta property="og:description" content="Conversion-focused, SEO-smart websites and AI business automation for small businesses. See pricing, packages, and a live demo.">
+<meta property="og:url" content="https://www.yourdomain.com/">
+<meta property="og:image" content="https://www.yourdomain.com/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CH Business Services — Websites Built for Growth">
+<meta name="twitter:description" content="Conversion-focused websites and AI business automation for small businesses.">
+<meta name="twitter:image" content="https://www.yourdomain.com/og-image.jpg">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "CH Business Services",
+  "description": "Website design, AI business automation, and digital growth services for small businesses.",
+  "url": "https://www.yourdomain.com/",
+  "priceRange": "$$",
+  "areaServed": "US",
+  "sameAs": []
+}
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0D1F1A;
+    --ink-2:#132D25;
+    --ink-3:#1B3A30;
+    --paper:#F1F3EC;
+    --paper-2:#E8EBDF;
+    --line:rgba(13,31,26,0.12);
+    --line-dark:rgba(241,243,236,0.14);
+    --emerald:#1B7A5A;
+    --emerald-dark:#125440;
+    --gold:#C99A3B;
+    --gold-light:#E4C77E;
+    --text:#132018;
+    --text-muted:#4B5C55;
+    --text-on-dark:#EAF0EA;
+    --text-on-dark-muted:#9FB3AA;
+    --radius:14px;
+    --max:1180px;
+    --ease:cubic-bezier(.16,.8,.28,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    line-height:1.08;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  section{position:relative;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--emerald);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:20px;height:1px;background:var(--emerald);
+    display:inline-block;
+  }
+  .on-dark .eyebrow{color:var(--gold-light);}
+  .on-dark .eyebrow::before{background:var(--gold-light);}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 26px;
+    border-radius:999px;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:15px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .3s ease, color .3s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--emerald);
+    color:#F4F8F4;
+    box-shadow:0 1px 0 rgba(0,0,0,0.08), 0 10px 24px -12px rgba(27,122,90,0.55);
+  }
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 30px -10px rgba(27,122,90,0.6);}
+  .btn-ghost{
+    background:transparent;
+    color:var(--text);
+    border-color:var(--line);
+  }
+  .btn-ghost:hover{border-color:var(--emerald); color:var(--emerald); transform:translateY(-2px);}
+  .on-dark .btn-ghost{color:var(--text-on-dark); border-color:var(--line-dark);}
+  .on-dark .btn-ghost:hover{border-color:var(--gold-light); color:var(--gold-light);}
+  .btn-gold{
+    background:var(--gold);
+    color:#1E1503;
+    box-shadow:0 10px 24px -12px rgba(201,154,59,0.6);
+  }
+  .btn-gold:hover{transform:translateY(-2px);}
+  .btn-sm{padding:11px 20px;font-size:13.5px;}
+  .btn-block{width:100%;}
+
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+    outline:2px solid var(--gold); outline-offset:2px;
+  }
+  .skip-link{
+    position:absolute;left:-9999px;top:0;background:var(--emerald);color:#fff;padding:12px 20px;
+    z-index:200;border-radius:0 0 8px 0;font-size:14px;font-weight:600;
+  }
+  .skip-link:focus{left:0;}
+
+  .mobile-sticky-cta{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;
+    background:var(--ink);border-top:1px solid var(--line-dark);
+    padding:12px 16px;gap:10px;align-items:center;
+    box-shadow:0 -8px 24px -12px rgba(0,0,0,0.3);
+  }
+  @media (max-width:640px){
+    .mobile-sticky-cta{display:flex;}
+    body{padding-bottom:64px;}
+  }
+  .mobile-sticky-cta a{flex:1;text-align:center;}
+
+  .cookie-banner{
+    display:none;position:fixed;bottom:0;left:0;right:0;z-index:70;
+    background:var(--ink);border-top:1px solid var(--line-dark);
+    padding:16px 24px;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+    box-shadow:0 -8px 24px -12px rgba(0,0,0,0.4);
+  }
+  .cookie-banner.visible{display:flex;}
+  .cookie-banner p{font-size:13px;color:var(--text-on-dark-muted);max-width:520px;margin:0;}
+  .cookie-banner a{color:var(--gold-light);text-decoration:underline;}
+  .cookie-actions{display:flex;gap:10px;flex-shrink:0;}
+  @media (max-width:640px){
+    .cookie-banner{bottom:64px;}
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,243,236,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--max); margin:0 auto;
+  }
+  .logo{
+    font-family:'Fraunces',serif;
+    font-weight:600;font-size:19px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .logo-mark{width:26px;height:26px;flex-shrink:0;}
+  .nav-links{display:flex;gap:32px;align-items:center;}
+  .nav-links a{
+    font-size:14.5px;font-weight:500;color:var(--text-muted);
+    transition:color .25s ease;
+  }
+  .nav-links a:hover{color:var(--emerald);}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  .nav-toggle{
+    display:none;background:none;border:1px solid var(--line);border-radius:8px;cursor:pointer;
+    padding:8px;color:var(--text);align-items:center;justify-content:center;
+  }
+  .mobile-menu{
+    display:none;flex-direction:column;gap:2px;padding:10px 28px 20px;
+    border-top:1px solid var(--line);background:var(--paper);
+  }
+  .mobile-menu a{
+    padding:12px 4px;font-size:15px;font-weight:500;color:var(--text);border-bottom:1px solid var(--line);
+  }
+  .mobile-menu.open{display:flex;}
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:radial-gradient(120% 100% at 15% 0%, var(--ink-3) 0%, var(--ink-2) 45%, var(--ink) 100%);
+    color:var(--text-on-dark);
+    padding:88px 0 0;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
+    padding-bottom:60px;
+  }
+  .hero h1{font-size:clamp(34px,4.6vw,58px); color:#fff; max-width:640px;}
+  .hero-sub{
+    margin-top:22px;font-size:17.5px;line-height:1.65;color:var(--text-on-dark-muted);
+    max-width:520px;
+  }
+  .hero-ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  .trust-row{
+    display:flex;flex-wrap:wrap;gap:22px;margin-top:38px;
+    padding-top:26px;border-top:1px solid var(--line-dark);
+  }
+  .trust-item{
+    display:flex;align-items:center;gap:9px;font-size:13.5px;color:var(--text-on-dark-muted);
+  }
+  .trust-item .dot{width:6px;height:6px;border-radius:50%;background:var(--gold-light);flex-shrink:0;}
+
+  .growth-chart-card{
+    background:rgba(255,255,255,0.03);
+    border:1px solid var(--line-dark);
+    border-radius:20px;
+    padding:26px 22px 22px;
+  }
+  .gcc-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+  .gcc-head .mono{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-on-dark-muted);}
+  .gcc-figure{font-family:'Fraunces',serif;font-size:15px;color:var(--gold-light);}
+  #growthSvg{width:100%;height:auto;}
+  .gcc-legend{display:flex;justify-content:space-between;margin-top:14px;}
+  .gcc-legend span{font-size:11.5px;color:var(--text-on-dark-muted);font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- GENERIC SECTION HEADS ---------- */
+  .section-pad{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);}
+  .section-head .lede{margin-top:16px;font-size:17px;color:var(--text-muted);}
+  .center{text-align:center;margin-left:auto;margin-right:auto;}
+
+  /* ---------- PROBLEM ---------- */
+  .problem{background:var(--paper);}
+  .problem-list{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px;margin-top:8px;max-width:820px;
+  }
+  .problem-list li{
+    list-style:none;display:flex;gap:12px;font-size:15.5px;color:var(--text);padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .problem-list li svg{flex-shrink:0;margin-top:3px;}
+  .problem-close{
+    margin-top:38px;font-family:'Fraunces',serif;font-size:22px;font-weight:500;
+    color:var(--emerald-dark);max-width:600px;
+  }
+  @media (max-width:720px){.problem-list{grid-template-columns:1fr;}}
+
+  /* ---------- VALUE CARDS ---------- */
+  .value{background:var(--ink);color:var(--text-on-dark);}
+  .value-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+    background:var(--line-dark);
+    border:1px solid var(--line-dark);
+    border-radius:16px;overflow:hidden;
+  }
+  .value-card{background:var(--ink-2);padding:30px 22px;min-height:210px;display:flex;flex-direction:column;}
+  .value-card .num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--gold-light);margin-bottom:16px;}
+  .value-card h3{font-size:17.5px;color:#fff;margin-bottom:10px;}
+  .value-card p{font-size:13.8px;color:var(--text-on-dark-muted);line-height:1.55;}
+  @media (max-width:980px){.value-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.value-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PACKAGES ---------- */
+  .packages{background:var(--paper);}
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;}
+  .pkg-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px 28px;display:flex;flex-direction:column;
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .pkg-card:hover{transform:translateY(-4px);box-shadow:0 24px 48px -28px rgba(19,32,24,0.28);}
+  .pkg-card.featured{
+    background:var(--ink);color:var(--text-on-dark);
+    border-color:var(--gold);
+    transform:scale(1.035);
+    box-shadow:0 30px 60px -24px rgba(13,31,26,0.45);
+    position:relative;
+  }
+  .pkg-card.featured:hover{transform:scale(1.035) translateY(-4px);}
+  .pkg-ribbon{
+    position:absolute;top:-13px;left:28px;
+    background:var(--gold);color:#1E1503;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    padding:6px 14px;border-radius:999px;font-weight:500;
+  }
+  .pkg-badge{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--emerald);margin-bottom:14px;
+  }
+  .pkg-card.featured .pkg-badge{color:var(--gold-light);}
+  .pkg-card h3{font-size:23px;margin-bottom:6px;}
+  .pkg-card.featured h3{color:#fff;}
+  .pkg-for{font-size:13.8px;color:var(--text-muted);margin-bottom:22px;min-height:40px;}
+  .pkg-card.featured .pkg-for{color:var(--text-on-dark-muted);}
+  .pkg-price{font-family:'Fraunces',serif;font-size:30px;font-weight:600;}
+  .pkg-card.featured .pkg-price{color:#fff;}
+  .pkg-delivery{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--text-muted);margin:8px 0 22px;}
+  .pkg-card.featured .pkg-delivery{color:var(--text-on-dark-muted);}
+  .pkg-includes{list-style:none;padding:0;margin:0 0 24px;flex-grow:1;}
+  .pkg-includes li{
+    display:flex;gap:10px;align-items:flex-start;font-size:14.3px;padding:7px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .pkg-card.featured .pkg-includes li{border-bottom:1px solid var(--line-dark);}
+  .pkg-includes li svg{flex-shrink:0;margin-top:4px;}
+  .pkg-outcome{
+    font-size:14px;font-style:italic;color:var(--text-muted);margin-bottom:22px;
+    font-family:'Fraunces',serif;line-height:1.5;
+  }
+  .pkg-card.featured .pkg-outcome{color:var(--text-on-dark-muted);}
+
+  /* ---------- ADD-ONS ---------- */
+  .addons{background:var(--paper-2);}
+  .addons-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .addon-col{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;
+  }
+  .addon-col h4{
+    font-size:14px;font-family:'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.06em;
+    color:var(--emerald-dark);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--line);
+  }
+  .addon-col ul{list-style:none;margin:0;padding:0;}
+  .addon-col li{
+    display:flex;justify-content:space-between;gap:10px;font-size:14px;padding:9px 0;color:var(--text);
+  }
+  .addon-col li span:last-child{color:var(--text-muted);font-family:'IBM Plex Mono',monospace;font-size:12.5px;flex-shrink:0;}
+  @media (max-width:900px){.addons-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.addons-grid{grid-template-columns:1fr;}}
+
+  .bundles{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px;}
+  .bundle-card{
+    background:var(--ink);color:var(--text-on-dark);border-radius:var(--radius);
+    padding:26px 24px;border:1px solid var(--line-dark);
+  }
+  .bundle-card h4{font-family:'Fraunces',serif;font-size:18px;color:var(--gold-light);margin-bottom:8px;font-weight:600;}
+  .bundle-price{font-family:'IBM Plex Mono',monospace;font-size:14px;color:#fff;margin-bottom:10px;}
+  .bundle-card p{font-size:13.5px;color:var(--text-on-dark-muted);line-height:1.55;}
+  @media (max-width:900px){.bundles{grid-template-columns:1fr;}}
+
+  /* ---------- ACTIVATION TIMELINE ---------- */
+  .activation-block{margin-top:44px;padding-top:40px;border-top:1px solid var(--line-dark);}
+  .activation-head{margin-bottom:28px;}
+  .activation-head h3{font-family:'Fraunces',serif;font-size:20px;color:#fff;font-weight:600;}
+  .activation-head p{font-size:13.8px;color:var(--text-on-dark-muted);margin-top:8px;max-width:560px;}
+  .activation-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;position:relative;}
+  .activation-steps::before{content:"";position:absolute;top:17px;left:0;right:0;height:1px;background:var(--line-dark);z-index:0;}
+  .a-step{position:relative;z-index:1;}
+  .a-step .a-dot{
+    width:34px;height:34px;border-radius:50%;background:var(--ink-2);border:1px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:11px;
+    color:var(--gold-light);margin-bottom:14px;
+  }
+  .a-step .a-day{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--gold-light);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+  .a-step h4{font-size:14.5px;color:#fff;margin-bottom:6px;font-weight:600;}
+  .a-step p{font-size:12.5px;color:var(--text-on-dark-muted);line-height:1.5;}
+  @media (max-width:900px){
+    .activation-steps{grid-template-columns:repeat(3,1fr);row-gap:28px;}
+    .activation-steps::before{display:none;}
+  }
+  @media (max-width:560px){.activation-steps{grid-template-columns:1fr 1fr;}}
+
+  /* ---------- LIVE DEMO ---------- */
+  .demo-section{background:var(--ink);color:var(--text-on-dark);}
+
+  .demo-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
+  .demo-tab{
+    flex:1;min-width:200px;text-align:left;cursor:pointer;
+    background:rgba(255,255,255,0.03);border:1px solid var(--line-dark);border-radius:12px;
+    padding:14px 18px;transition:border-color .3s ease, background .3s ease, transform .3s var(--ease);
+  }
+  .demo-tab:hover{transform:translateY(-2px);}
+  .demo-tab .dtab-label{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-on-dark-muted);}
+  .demo-tab .dtab-name{font-family:'Fraunces',serif;font-size:15.5px;color:#fff;margin-top:5px;font-weight:500;}
+  .demo-tab.active{border-color:var(--gold);background:rgba(201,154,59,0.08);box-shadow:0 0 0 1px rgba(201,154,59,0.25), 0 12px 28px -18px rgba(201,154,59,0.5);}
+  .demo-tab.active .dtab-label{color:var(--gold-light);}
+
+  .demo-card{
+    background:var(--ink-2);border:1px solid var(--line-dark);border-radius:18px;
+    padding:0;overflow:hidden;
+  }
+  .demo-toolbar{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    padding:20px 24px;border-bottom:1px solid var(--line-dark);
+  }
+  .demo-toolbar-left{display:flex;align-items:center;gap:12px;min-width:0;}
+  .demo-dots{display:flex;gap:6px;flex-shrink:0;}
+  .demo-dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,0.15);}
+  .demo-title{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--text-on-dark-muted);letter-spacing:.04em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .demo-status{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
+    padding:5px 12px;border-radius:999px;background:rgba(255,255,255,0.06);color:var(--text-on-dark-muted);white-space:nowrap;
+  }
+  .demo-status.running{color:var(--gold-light);background:rgba(201,154,59,0.12);}
+  .demo-status.complete{color:#8FE3B8;background:rgba(27,122,90,0.2);}
+  .demo-controls{display:flex;gap:10px;align-items:center;}
+  .demo-progress-track{height:3px;background:var(--line-dark);}
+  .demo-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--emerald),var(--gold));transition:width .5s var(--ease);}
+  .demo-body{padding:26px 24px;min-height:120px;}
+
+  .demo-empty{font-size:14px;color:var(--text-on-dark-muted);font-family:'IBM Plex Mono',monospace;}
+
+  .dstep{
+    padding:20px 0;border-bottom:1px solid var(--line-dark);
+    opacity:0;transform:translateY(10px);transition:opacity .5s var(--ease), transform .5s var(--ease);
+  }
+  .dstep:last-child{border-bottom:none;padding-bottom:0;}
+  .dstep:first-child{padding-top:0;}
+  .dstep.shown{opacity:1;transform:translateY(0);}
+  .dstep-head{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .dstep-icon{
+    width:30px;height:30px;border-radius:9px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,0.06);font-size:14px;
+  }
+  .dstep-time{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--gold-light);
+    background:rgba(201,154,59,0.12);padding:3px 9px;border-radius:6px;flex-shrink:0;
+  }
+  .dstep-title{font-family:'Fraunces',serif;font-size:16.5px;color:#fff;font-weight:600;}
+  .dstep-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .dstep-col{border-radius:10px;padding:14px 16px;}
+  .dstep-col.user{background:rgba(255,255,255,0.035);border:1px solid var(--line-dark);}
+  .dstep-col.engine{background:rgba(27,122,90,0.08);border:1px solid rgba(27,122,90,0.25);}
+  .dstep-col-label{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.07em;text-transform:uppercase;
+    margin-bottom:8px;display:block;
+  }
+  .dstep-col.user .dstep-col-label{color:var(--text-on-dark-muted);}
+  .dstep-col.engine .dstep-col-label{color:#8FE3B8;}
+  .dstep-col-text{font-size:13.5px;line-height:1.55;color:var(--text-on-dark-muted);}
+  .dstep-col.user .dstep-col-text{color:#DCE4DE;}
+  @media (max-width:700px){.dstep-grid{grid-template-columns:1fr;}}
+
+  .live-badge{display:inline-flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#FF6B6B;letter-spacing:.05em;}
+  .live-dot{width:7px;height:7px;border-radius:50%;background:#FF6B6B;animation:liveBlink 1.4s infinite ease-in-out;}
+  @keyframes liveBlink{0%,100%{opacity:1;}50%{opacity:.25;}}
+  .demo-clock{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--text-on-dark-muted);}
+
+  .sound-toggle{
+    background:rgba(255,255,255,0.06);border:1px solid var(--line-dark);border-radius:8px;
+    width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;
+    color:var(--text-on-dark-muted);flex-shrink:0;
+  }
+  .sound-toggle.on{color:var(--gold-light);border-color:rgba(201,154,59,0.4);}
+
+  .demo-agents{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-dark);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .agent-chip{
+    background:var(--ink-2);padding:12px 14px;display:flex;align-items:center;gap:9px;
+    transition:background .3s ease;
+  }
+  .agent-chip .achip-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.18);flex-shrink:0;transition:background .3s ease, box-shadow .3s ease;}
+  .agent-chip.processing .achip-dot{background:var(--gold-light);box-shadow:0 0 0 4px rgba(201,154,59,0.18);animation:agentPulse 0.9s infinite ease-in-out;}
+  .agent-chip.done .achip-dot{background:#4ADE9C;box-shadow:0 0 0 4px rgba(74,222,156,0.14);}
+  @keyframes agentPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.35);}}
+  .achip-info{min-width:0;}
+  .achip-name{font-size:12px;font-weight:600;color:#fff;line-height:1.2;}
+  .achip-state{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-on-dark-muted);text-transform:uppercase;letter-spacing:.04em;}
+  .agent-chip.processing .achip-state{color:var(--gold-light);}
+  .agent-chip.done .achip-state{color:#4ADE9C;}
+  @media (max-width:700px){.demo-agents{grid-template-columns:repeat(2,1fr);}}
+
+  .dstep-thinking{
+    display:flex;align-items:center;gap:10px;padding:14px 0;color:var(--text-on-dark-muted);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;
+  }
+  .think-dots{display:inline-flex;gap:4px;}
+  .think-dots span{width:5px;height:5px;border-radius:50%;background:var(--gold-light);animation:thinkBlink 1s infinite ease-in-out;}
+  .think-dots span:nth-child(2){animation-delay:.15s;}
+  .think-dots span:nth-child(3){animation-delay:.3s;}
+  @keyframes thinkBlink{0%,80%,100%{opacity:.2;transform:translateY(0);}40%{opacity:1;transform:translateY(-2px);}}
+
+  .demo-note{margin-top:18px;font-size:12.5px;color:var(--text-on-dark-muted);}
+
+  .demo-playground{
+    margin-top:22px;background:linear-gradient(135deg, rgba(201,154,59,0.1), rgba(27,122,90,0.08));
+    border:1px solid rgba(201,154,59,0.3);border-radius:16px;padding:26px 28px;
+  }
+  .playground-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .playground-bolt{color:var(--gold-light);font-size:16px;}
+  .playground-title{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:#fff;}
+  .playground-sub{font-size:13.8px;color:var(--text-on-dark-muted);margin-bottom:18px;max-width:560px;}
+  .playground-row{display:flex;gap:12px;flex-wrap:wrap;align-items:stretch;}
+  .playground-row input{
+    flex:1;min-width:220px;background:rgba(255,255,255,0.06);border:1px solid var(--line-dark);
+    border-radius:10px;padding:13px 16px;color:#fff;font-family:'Inter',sans-serif;font-size:14.5px;
+  }
+  .playground-row input::placeholder{color:var(--text-on-dark-muted);}
+  .playground-disclaimer{font-size:11.5px;color:var(--text-on-dark-muted);margin-top:12px;}
+
+  .phone-mock{
+    margin-top:20px;max-width:300px;background:#0A1512;border:1px solid var(--line-dark);
+    border-radius:24px;padding:0;display:none;overflow:hidden;
+    box-shadow:0 20px 40px -20px rgba(0,0,0,0.5);
+  }
+  .phone-mock.active{display:block;}
+  .phone-statusbar{
+    display:flex;justify-content:space-between;align-items:center;padding:8px 16px 4px;
+    font-family:'Inter',sans-serif;font-size:11px;font-weight:600;color:#fff;
+  }
+  .phone-statusbar .psb-icons{display:flex;gap:4px;align-items:center;}
+  .phone-mock-head{
+    text-align:center;padding:2px 16px 10px;
+  }
+  .phone-mock-head .pmh-name{font-family:'Inter',sans-serif;font-size:13px;font-weight:600;color:#fff;}
+  .phone-mock-head .pmh-sub{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--text-on-dark-muted);margin-top:2px;}
+  .phone-thread{padding:6px 14px 16px;min-height:60px;}
+  .phone-bubble{
+    max-width:82%;padding:9px 13px;border-radius:14px;font-size:13px;line-height:1.4;margin-bottom:8px;
+    opacity:0;transform:translateY(6px);transition:opacity .4s var(--ease), transform .4s var(--ease);
+  }
+  .phone-bubble.shown{opacity:1;transform:translateY(0);}
+  .phone-bubble.them{background:rgba(255,255,255,0.08);color:#EAF0EA;border-bottom-left-radius:4px;}
+  .phone-bubble.us{background:var(--emerald);color:#F4F8F4;margin-left:auto;border-bottom-right-radius:4px;}
+  .phone-receipt{
+    font-family:'IBM Plex Mono',monospace;font-size:9.5px;color:var(--text-on-dark-muted);
+    text-align:right;margin:-4px 0 8px;opacity:0;transition:opacity .3s ease;
+  }
+  .phone-receipt.shown{opacity:1;}
+  .phone-typing{
+    display:inline-flex;gap:4px;padding:10px 14px;border-radius:14px;background:rgba(255,255,255,0.08);
+    border-bottom-left-radius:4px;margin-bottom:8px;opacity:0;transform:translateY(6px);
+    transition:opacity .3s var(--ease), transform .3s var(--ease);
+  }
+  .phone-typing.shown{opacity:1;transform:translateY(0);}
+  .phone-typing span{width:5px;height:5px;border-radius:50%;background:var(--text-on-dark-muted);animation:thinkBlink 1s infinite ease-in-out;}
+  .phone-typing span:nth-child(2){animation-delay:.15s;}
+  .phone-typing span:nth-child(3){animation-delay:.3s;}
+
+  @media (max-width:600px){
+    .demo-toolbar{align-items:flex-start;}
+  }
+
+  /* ---------- FULL SERVICE SUITE ---------- */
+  .suite-section{background:var(--paper);}
+  .suite-intro{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 28px;margin-bottom:44px;border-left:3px solid var(--emerald);
+  }
+  .suite-intro p{font-size:15.5px;line-height:1.65;color:var(--text);}
+  .stream-grid{display:flex;flex-direction:column;gap:16px;margin-bottom:20px;}
+  .stream-card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px;
+  }
+  .stream-top{display:flex;align-items:flex-start;gap:16px;}
+  .stream-icon{
+    width:42px;height:42px;border-radius:11px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;background:var(--paper-2);
+  }
+  .stream-info{flex-grow:1;}
+  .stream-name{font-family:'Fraunces',serif;font-size:18px;font-weight:600;margin-bottom:4px;}
+  .stream-desc{font-size:13.8px;color:var(--text-muted);line-height:1.5;}
+  .stream-price{
+    font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;color:var(--emerald-dark);
+    text-align:right;white-space:nowrap;
+  }
+  .stream-price small{display:block;font-size:11px;color:var(--text-muted);font-weight:400;margin-top:2px;}
+  .stream-toggle{
+    font-size:12.5px;color:var(--text-muted);background:none;border:none;cursor:pointer;
+    padding:0;margin-top:14px;display:flex;align-items:center;gap:6px;font-family:'Inter',sans-serif;font-weight:500;
+  }
+  .stream-toggle:hover{color:var(--emerald-dark);}
+  .stream-toggle .chevron{transition:transform .3s var(--ease);}
+  .stream-card.open .stream-toggle .chevron{transform:rotate(180deg);}
+  .stream-details{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);}
+  .stream-details-inner{padding-top:14px;margin-top:14px;border-top:1px solid var(--line);}
+  .stream-details-inner li{
+    display:flex;gap:9px;align-items:flex-start;font-size:13.8px;padding:6px 0;color:var(--text);list-style:none;
+  }
+  .stream-details-inner li svg{flex-shrink:0;margin-top:3px;}
+  .stream-details-inner ul{margin:0;padding:0;}
+  @media (max-width:640px){
+    .stream-top{flex-wrap:wrap;}
+    .stream-price{text-align:left;margin-top:8px;}
+  }
+
+  .digital-label{margin:36px 0 16px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald-dark);}
+  .digital-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .digital-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;}
+  .digital-card .stream-name{font-size:15.5px;}
+  .digital-card .stream-desc{font-size:13px;margin:6px 0 12px;}
+  .digital-price{font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:600;color:var(--emerald-dark);}
+  .digital-price small{display:block;font-size:11px;font-weight:400;color:var(--text-muted);margin-top:2px;}
+  @media (max-width:860px){.digital-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.digital-grid{grid-template-columns:1fr;}}
+
+  .affiliate-card{
+    margin-top:36px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 26px;
+  }
+  .affiliate-card .stream-desc{font-size:14px;margin-top:8px;}
+  .affiliate-disclosure{font-size:12px;color:var(--text-muted);margin-top:10px;font-style:italic;}
+
+  /* ---------- AI AUTOMATION ---------- */
+  .automation{background:var(--ink);color:var(--text-on-dark);}
+  .automation-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:16px;overflow:hidden;margin-bottom:44px;}
+  .auto-card{background:var(--ink-2);padding:28px 22px;display:flex;flex-direction:column;min-height:200px;}
+  .auto-card .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-light);margin-bottom:16px;}
+  .auto-card h3{font-size:16.5px;color:#fff;margin-bottom:10px;}
+  .auto-card p{font-size:13.5px;color:var(--text-on-dark-muted);line-height:1.55;}
+  @media (max-width:980px){.automation-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.automation-grid{grid-template-columns:1fr;}}
+
+  .auto-tiers{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .auto-tier{
+    background:rgba(255,255,255,0.03);border:1px solid var(--line-dark);border-radius:var(--radius);
+    padding:30px 28px;display:flex;flex-direction:column;
+  }
+  .auto-tier.pro{border-color:var(--gold);}
+  .auto-tier .pkg-badge{color:var(--gold-light);}
+  .auto-tier h3{font-size:20px;color:#fff;margin-bottom:8px;}
+  .auto-tier .price{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:#fff;margin-bottom:6px;}
+  .auto-tier .per{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text-on-dark-muted);margin-bottom:20px;}
+  .auto-tier ul{list-style:none;margin:0 0 22px;padding:0;flex-grow:1;}
+  .auto-tier li{display:flex;gap:10px;align-items:flex-start;font-size:14px;padding:7px 0;color:var(--text-on-dark-muted);border-bottom:1px solid var(--line-dark);}
+  .auto-tier li:last-child{border-bottom:none;}
+  .auto-tier li svg{flex-shrink:0;margin-top:4px;}
+  .auto-note{margin-top:28px;font-size:13px;color:var(--text-on-dark-muted);max-width:640px;}
+  @media (max-width:760px){.auto-tiers{grid-template-columns:1fr;}}
+
+  /* ---------- PROCESS ---------- */
+  .process{background:var(--paper);}
+  .process-line{position:relative;margin-top:20px;}
+  .process-steps{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:16px;position:relative;
+  }
+  .process-steps::before{
+    content:"";position:absolute;top:17px;left:0;right:0;height:1px;background:var(--line);
+    z-index:0;
+  }
+  .p-step{position:relative;z-index:1;}
+  .p-dot{
+    width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--emerald);
+    margin-bottom:18px;
+  }
+  .p-step h4{font-size:15.5px;margin-bottom:8px;}
+  .p-step p{font-size:13.3px;color:var(--text-muted);line-height:1.5;}
+  .process-timing{
+    margin-top:44px;display:flex;gap:28px;flex-wrap:wrap;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--text-muted);
+    padding-top:24px;border-top:1px solid var(--line);
+  }
+  .process-timing b{color:var(--text);font-weight:600;}
+  @media (max-width:900px){
+    .process-steps{grid-template-columns:repeat(3,1fr);row-gap:32px;}
+    .process-steps::before{display:none;}
+  }
+  @media (max-width:560px){.process-steps{grid-template-columns:1fr 1fr;}}
+
+  /* ---------- PROOF ---------- */
+  .proof{background:var(--ink);color:var(--text-on-dark);}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .testi-card{
+    background:var(--ink-2);border:1px solid var(--line-dark);border-radius:var(--radius);
+    padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .testi-card p.quote{
+    font-family:'Fraunces',serif;font-size:17px;line-height:1.5;color:#fff;font-weight:500;
+  }
+  .testi-name{margin-top:20px;font-size:13px;color:var(--gold-light);font-family:'IBM Plex Mono',monospace;}
+  @media (max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+  .testi-placeholder{
+    display:flex;gap:16px;align-items:flex-start;margin-top:40px;
+    border:1px dashed var(--line-dark);border-radius:14px;padding:22px 24px;background:rgba(255,255,255,0.02);
+  }
+  .tp-icon{font-size:18px;color:var(--gold-light);flex-shrink:0;margin-top:2px;}
+  .tp-title{font-family:'Fraunces',serif;font-size:15.5px;color:#fff;font-weight:600;}
+  .tp-sub{font-size:13.3px;color:var(--text-on-dark-muted);margin-top:4px;line-height:1.5;}
+
+  /* ---------- SEO / AUTHORITY ---------- */
+  .authority{background:var(--paper);}
+  .authority-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .authority-list{list-style:none;margin:24px 0 0;padding:0;}
+  .authority-list li{
+    display:flex;gap:12px;padding:11px 0;font-size:15px;border-bottom:1px solid var(--line);
+  }
+  .authority-close{
+    margin-top:26px;font-family:'Fraunces',serif;font-size:20px;font-weight:500;color:var(--emerald-dark);
+  }
+  .authority-visual{
+    background:var(--ink);border-radius:20px;padding:34px;color:var(--text-on-dark);
+  }
+  .authority-visual .mono{font-size:11.5px;color:var(--text-on-dark-muted);letter-spacing:.08em;text-transform:uppercase;}
+  @media (max-width:900px){.authority-grid{grid-template-columns:1fr;}}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--paper-2);}
+  .faq-list{max-width:760px;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;
+    font-family:'Fraunces',serif;font-size:17.5px;font-weight:500;color:var(--text);
+  }
+  .faq-q .plus{
+    flex-shrink:0;width:22px;height:22px;position:relative;
+  }
+  .faq-q .plus::before,.faq-q .plus::after{
+    content:"";position:absolute;background:var(--emerald);border-radius:2px;
+  }
+  .faq-q .plus::before{top:50%;left:0;width:100%;height:2px;transform:translateY(-50%);}
+  .faq-q .plus::after{left:50%;top:0;height:100%;width:2px;transform:translateX(-50%);transition:transform .3s var(--ease);}
+  .faq-item.open .faq-q .plus::after{transform:translateX(-50%) rotate(90deg);}
+  .faq-a{
+    max-height:0;overflow:hidden;transition:max-height .4s var(--ease);
+  }
+  .faq-a-inner{padding:0 0 24px;font-size:15px;color:var(--text-muted);max-width:660px;line-height:1.6;}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{background:radial-gradient(120% 120% at 85% 100%, var(--ink-3) 0%, var(--ink) 60%);color:var(--text-on-dark);}
+  .final-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .final h2{font-size:clamp(28px,3.6vw,42px);color:#fff;max-width:460px;}
+  .final .lede{margin-top:16px;font-size:16.5px;color:var(--text-on-dark-muted);max-width:440px;}
+  .final-ctas{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;}
+  .reassure{margin-top:22px;font-size:13.5px;color:var(--text-on-dark-muted);font-family:'IBM Plex Mono',monospace;}
+  .form-card{
+    background:rgba(255,255,255,0.04);border:1px solid var(--line-dark);border-radius:18px;padding:30px;
+  }
+  .form-row{margin-bottom:16px;}
+  .form-row label{display:block;font-size:12.5px;color:var(--text-on-dark-muted);margin-bottom:7px;font-family:'IBM Plex Mono',monospace;letter-spacing:.03em;text-transform:uppercase;}
+  .form-row input,.form-row select,.form-row textarea{
+    width:100%;background:rgba(255,255,255,0.06);border:1px solid var(--line-dark);
+    border-radius:8px;padding:12px 14px;color:#fff;font-family:'Inter',sans-serif;font-size:14.5px;
+  }
+  .form-row input::placeholder,.form-row textarea::placeholder{color:var(--text-on-dark-muted);}
+  .form-row select{color:#fff;}
+  .form-row select option{color:#000;}
+  .form-note{font-size:12px;color:var(--text-on-dark-muted);margin-top:14px;}
+  @media (max-width:900px){.final-grid{grid-template-columns:1fr;}}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:var(--text-on-dark-muted);padding:44px 0;border-top:1px solid var(--line-dark);}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .footer-links{display:flex;gap:22px;font-size:13.5px;}
+  .footer-links a:hover{color:#fff;}
+  .footer-tag{font-size:13px;margin-top:6px;}
+  .footer-bottom{margin-top:26px;padding-top:20px;border-top:1px solid var(--line-dark);font-size:12.5px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .pkg-grid{grid-template-columns:1fr;}
+    .pkg-card.featured{transform:none;order:-1;}
+    .pkg-card.featured:hover{transform:translateY(-4px);}
+    .section-pad{padding:64px 0;}
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<header>
+  <nav class="nav">
+    <div class="logo">
+      <svg class="logo-mark" viewBox="0 0 26 26" fill="none">
+        <path d="M2 20L9 12L14 16L24 4" stroke="#1B7A5A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="24" cy="4" r="2.4" fill="#C99A3B"/>
+      </svg>
+      CH Business Services
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#automation">AI Automation</a>
+      <a href="#demo">Live Demo</a>
+      <a href="#suite">Full Suite</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary btn-sm">Book a Call</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" onclick="toggleMobileMenu()">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMobileMenu()">Services</a>
+    <a href="#packages" onclick="closeMobileMenu()">Packages</a>
+    <a href="#automation" onclick="closeMobileMenu()">AI Automation</a>
+    <a href="#demo" onclick="closeMobileMenu()">Live Demo</a>
+    <a href="#suite" onclick="closeMobileMenu()">Full Suite</a>
+    <a href="#process" onclick="closeMobileMenu()">Process</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+    <a href="#contact" class="btn btn-primary btn-block" onclick="closeMobileMenu()" style="margin-top:8px;">Book a Call</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="main-content">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow" style="color:var(--gold-light)">Web Design &amp; Digital Growth</span>
+      <h1>Websites that help your business get found, build trust, and win more customers</h1>
+      <p class="hero-sub">We design smart, conversion-focused websites for small businesses, growing brands, and professional services that want real results — not just a pretty page.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Book a Free Strategy Call</a>
+        <a href="#packages" class="btn btn-ghost">View Website Packages</a>
+      </div>
+      <div class="trust-row">
+        <div class="trust-item"><span class="dot"></span>5–10 day delivery on Starter sites</div>
+        <div class="trust-item"><span class="dot"></span>SEO-focused from day one</div>
+        <div class="trust-item"><span class="dot"></span>Built to generate leads, not just look good</div>
+        <div class="trust-item"><span class="dot"></span>Simple, transparent pricing</div>
+      </div>
+    </div>
+    <div class="reveal in" id="services">
+      <div class="growth-chart-card">
+        <div class="gcc-head">
+          <span class="mono">Illustrative growth pattern</span>
+          <span class="gcc-figure">Sample only</span>
+        </div>
+        <svg id="growthSvg" viewBox="0 0 460 220" fill="none">
+          <line x1="0" y1="20" x2="460" y2="20" stroke="rgba(255,255,255,0.06)"/>
+          <line x1="0" y1="80" x2="460" y2="80" stroke="rgba(255,255,255,0.06)"/>
+          <line x1="0" y1="140" x2="460" y2="140" stroke="rgba(255,255,255,0.06)"/>
+          <line x1="0" y1="200" x2="460" y2="200" stroke="rgba(255,255,255,0.1)"/>
+          <path id="growthPath" d="M0,190 C60,188 90,182 120,168 C160,150 170,140 210,120 C250,100 260,90 300,66 C340,44 360,40 460,10"
+            stroke="#C99A3B" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <path d="M0,190 C60,188 90,182 120,168 C160,150 170,140 210,120 C250,100 260,90 300,66 C340,44 360,40 460,10 L460,210 L0,210 Z"
+            fill="url(#gfade)"/>
+          <defs>
+            <linearGradient id="gfade" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C99A3B" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#C99A3B" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <circle cx="120" cy="168" r="4" fill="#EAF0EA"/>
+          <circle cx="300" cy="66" r="4" fill="#EAF0EA"/>
+          <circle cx="460" cy="10" r="5" fill="#C99A3B"/>
+        </svg>
+        <div class="gcc-legend">
+          <span>VISIBILITY</span><span>LEADS</span><span>REVENUE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Problem</span>
+      <h2>Most business websites look nice — but don't actually work for you</h2>
+    </div>
+    <ul class="problem-list reveal">
+      <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#C99A3B" stroke-width="1.4"/><path d="M9 5v4.5M9 12.2v.1" stroke="#C99A3B" stroke-width="1.6" stroke-linecap="round"/></svg>They don't show up in Google when local customers search.</li>
+      <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#C99A3B" stroke-width="1.4"/><path d="M9 5v4.5M9 12.2v.1" stroke="#C99A3B" stroke-width="1.6" stroke-linecap="round"/></svg>They look good but don't convert visitors into leads.</li>
+      <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#C99A3B" stroke-width="1.4"/><path d="M9 5v4.5M9 12.2v.1" stroke="#C99A3B" stroke-width="1.6" stroke-linecap="round"/></svg>They're outdated, slow, or not mobile-friendly.</li>
+      <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#C99A3B" stroke-width="1.4"/><path d="M9 5v4.5M9 12.2v.1" stroke="#C99A3B" stroke-width="1.6" stroke-linecap="round"/></svg>They don't connect with your booking, CRM, or email systems.</li>
+      <li><svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" stroke="#C99A3B" stroke-width="1.4"/><path d="M9 5v4.5M9 12.2v.1" stroke="#C99A3B" stroke-width="1.6" stroke-linecap="round"/></svg>They make your business look smaller than it is.</li>
+    </ul>
+    <p class="problem-close reveal">Your website should be your best salesperson — not a digital business card.</p>
+  </div>
+</section>
+
+<!-- VALUE PROPOSITION -->
+<section class="value section-pad">
+  <div class="wrap">
+    <div class="section-head reveal on-dark">
+      <span class="eyebrow">Why CH</span>
+      <h2 style="color:#fff">We build websites that grow your business</h2>
+      <p class="lede" style="color:var(--text-on-dark-muted)">We don't just design websites. We build systems that help you get found, build credibility, and turn visitors into paying customers.</p>
+    </div>
+    <div class="value-grid reveal">
+      <div class="value-card">
+        <span class="num">01</span>
+        <h3>Get found locally</h3>
+        <p>SEO-friendly structure and local SEO setup so customers searching for your services can find you.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">02</span>
+        <h3>Turn visitors into leads</h3>
+        <p>Conversion-focused design, clear calls to action, and forms that capture real interest.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">03</span>
+        <h3>Look professional and trustworthy</h3>
+        <p>Modern, premium design that builds confidence the moment someone lands on your site.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">04</span>
+        <h3>Work with your business tools</h3>
+        <p>Integrations for booking, payments, CRM, email marketing, and automation.</p>
+      </div>
+      <div class="value-card">
+        <span class="num">05</span>
+        <h3>Grow over time</h3>
+        <p>Ongoing SEO, content, maintenance, and support so your site keeps improving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages section-pad" id="packages">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Website Packages</span>
+      <h2>Services built to make your business look premium and convert better</h2>
+      <p class="lede">We design and build modern websites that feel alive, look high-end, and help turn visitors into leads. Every project is built with a clear strategy, strong UI/UX, fast performance, and SEO in mind.</p>
+    </div>
+
+    <div class="pkg-grid reveal">
+      <div class="pkg-card">
+        <span class="pkg-badge">Great for getting started</span>
+        <h3>Starter Website</h3>
+        <p class="pkg-for">Small businesses, startups, solo professionals, local service providers</p>
+        <div class="pkg-price">$750–$1,500</div>
+        <div class="pkg-delivery">DELIVERY: 5–10 BUSINESS DAYS</div>
+        <ul class="pkg-includes">
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>1–5 page website</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Mobile responsive design</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Contact form</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic SEO setup</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Social media integration</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Google Maps integration</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic speed optimization</li>
+          <li style="border-bottom:none;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>1 revision round</li>
+        </ul>
+        <p class="pkg-outcome">"A clean, professional website that gets you online fast and looks great on any device."</p>
+        <button type="button" class="btn btn-ghost btn-block" onclick="requestInfo('Starter Website ($750–$1,500)')">Get Started</button>
+      </div>
+
+      <div class="pkg-card featured">
+        <span class="pkg-ribbon">Most Popular</span>
+        <span class="pkg-badge">Recommended</span>
+        <h3>Growth Website</h3>
+        <p class="pkg-for">Growing businesses that need stronger branding and lead generation</p>
+        <div class="pkg-price">$2,000–$4,500</div>
+        <div class="pkg-delivery">DELIVERY: 2–4 WEEKS</div>
+        <ul class="pkg-includes">
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>5–10 custom pages</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Premium UI/UX design</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>On-page SEO optimization</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Lead capture forms</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>CRM / email integration</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Blog setup</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic analytics setup</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Speed optimization</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>2 revision rounds</li>
+          <li style="border-bottom:none;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Basic local SEO structure</li>
+        </ul>
+        <p class="pkg-outcome">"A modern, high-quality website built to generate more leads and support your growth."</p>
+        <button type="button" class="btn btn-gold btn-block" onclick="requestInfo('Growth Website ($2,000–$4,500)')">Most Popular — Get Started</button>
+      </div>
+
+      <div class="pkg-card">
+        <span class="pkg-badge">For established brands</span>
+        <h3>Premium / Authority Website</h3>
+        <p class="pkg-for">Established brands, high-ticket businesses, medical/legal/home services, multi-location brands</p>
+        <div class="pkg-price">$5,000–$15,000+</div>
+        <div class="pkg-delivery">DELIVERY: 4–8 WEEKS</div>
+        <ul class="pkg-includes">
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Fully custom design</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Advanced SEO architecture</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Conversion-focused UX</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Multi-location / service area structure</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Advanced integrations</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Booking / payment systems</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Automation workflows</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>CRM pipeline setup</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Analytics dashboard</li>
+          <li style="border-bottom:none;"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#1B7A5A" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>30 days support</li>
+        </ul>
+        <p class="pkg-outcome">"A premium, fully custom website that acts as a growth engine for your business."</p>
+        <button type="button" class="btn btn-ghost btn-block" onclick="requestInfo('Premium / Authority Website ($5,000–$15,000+)')">Book a Strategy Call</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="addons section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Add-Ons</span>
+      <h2>High-profit add-ons to maximize your results</h2>
+      <p class="lede">These upgrades help you turn a good website into a complete growth system. Add any of these to your package, or as standalone services.</p>
+    </div>
+
+    <div class="addons-grid reveal">
+      <div class="addon-col">
+        <h4>Brand &amp; Identity</h4>
+        <ul>
+          <li><span>Logo Design</span><span>$250–$1,500</span></li>
+          <li><span>Business Cards</span><span>$100–$350</span></li>
+          <li><span>Brand Kit</span><span>$300–$1,200</span></li>
+        </ul>
+      </div>
+      <div class="addon-col">
+        <h4>Copy &amp; Content</h4>
+        <ul>
+          <li><span>Copywriting</span><span>$200–$2,000</span></li>
+          <li><span>Blog Content</span><span>$100–$500/article</span></li>
+          <li><span>Extra Landing Pages</span><span>$150–$600/pg</span></li>
+        </ul>
+      </div>
+      <div class="addon-col">
+        <h4>SEO &amp; Local Visibility</h4>
+        <ul>
+          <li><span>SEO Setup</span><span>$300–$2,500</span></li>
+          <li><span>Monthly SEO Retainer</span><span>$500–$5,000/mo</span></li>
+          <li><span>Google Business Optimization</span><span>$200–$800</span></li>
+          <li><span>Local SEO Expansion</span><span>custom</span></li>
+        </ul>
+      </div>
+      <div class="addon-col">
+        <h4>Marketing &amp; Automation</h4>
+        <ul>
+          <li><span>CRM Setup</span><span>$300–$2,000</span></li>
+          <li><span>Email Marketing Setup</span><span>$250–$1,500</span></li>
+          <li><span>Social Media Setup</span><span>$150–$800</span></li>
+          <li><span>Booking Integration</span><span>$200–$1,000</span></li>
+          <li><span>AI Chatbot</span><span>$300–$2,500</span></li>
+          <li><span>PPC Management</span><span>custom</span></li>
+        </ul>
+      </div>
+      <div class="addon-col">
+        <h4>Ongoing Support</h4>
+        <ul>
+          <li><span>Website Maintenance</span><span>$99–$499/mo</span></li>
+          <li><span>Photo/Video Coordination</span><span>+20–40%</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bundles reveal">
+      <div class="bundle-card">
+        <h4>Starter Boost Pack</h4>
+        <div class="bundle-price">$799–$1,299</div>
+        <p>Logo + Copywriting (lite) + Google Business Optimization</p>
+        <button type="button" class="btn btn-ghost btn-sm btn-block" style="margin-top:14px;color:#fff;border-color:var(--line-dark);" onclick="requestInfo('Starter Boost Pack ($799–$1,299)')">Get This Bundle</button>
+      </div>
+      <div class="bundle-card">
+        <h4>Growth Accelerator</h4>
+        <div class="bundle-price">$1,500–$3,000</div>
+        <p>SEO Setup + 2–4 Landing Pages + Email Capture Funnel</p>
+        <button type="button" class="btn btn-ghost btn-sm btn-block" style="margin-top:14px;color:#fff;border-color:var(--line-dark);" onclick="requestInfo('Growth Accelerator Bundle ($1,500–$3,000)')">Get This Bundle</button>
+      </div>
+      <div class="bundle-card">
+        <h4>Authority Expansion</h4>
+        <div class="bundle-price">$3,000–$7,000</div>
+        <p>Advanced SEO + Content Batch (5–10 articles) + CRM Automation + Reputation System</p>
+        <button type="button" class="btn btn-ghost btn-sm btn-block" style="margin-top:14px;color:#fff;border-color:var(--line-dark);" onclick="requestInfo('Authority Expansion Bundle ($3,000–$7,000)')">Get This Bundle</button>
+      </div>
+    </div>
+    <p class="problem-close reveal" style="margin-top:36px;">Want the best result? Start with a package, then add the upgrades that match your goals.</p>
+  </div>
+</section>
+
+<!-- AI BUSINESS AUTOMATION -->
+<section class="automation section-pad" id="automation">
+  <div class="wrap">
+    <div class="section-head reveal on-dark">
+      <span class="eyebrow">New Service</span>
+      <h2 style="color:#fff">Your business, running on autopilot</h2>
+      <p class="lede" style="color:var(--text-on-dark-muted)">Your website brings the traffic in. Our AI agents handle everything after the click — following up on leads, answering routine questions, keeping your records current — so nothing falls through the cracks.</p>
+    </div>
+
+    <div class="automation-grid reveal">
+      <div class="auto-card">
+        <span class="tag">Sales</span>
+        <h3>Follow-Up Agent</h3>
+        <p>Follows up with every lead automatically, answers early questions, and books meetings straight onto your calendar.</p>
+      </div>
+      <div class="auto-card">
+        <span class="tag">Support</span>
+        <h3>Response Agent</h3>
+        <p>Answers common customer questions instantly and resolves simple requests, handing off anything complex to your team.</p>
+      </div>
+      <div class="auto-card">
+        <span class="tag">CRM</span>
+        <h3>Records Agent</h3>
+        <p>Keeps your CRM current automatically — logs calls and emails, updates deal stages, and flags contacts going cold.</p>
+      </div>
+      <div class="auto-card">
+        <span class="tag">Billing</span>
+        <h3>Invoicing Agent</h3>
+        <p>Sends invoices on schedule, tracks what's been paid, and sends polite, on-brand reminders for anything overdue.</p>
+      </div>
+    </div>
+
+    <div class="auto-tiers reveal">
+      <div class="auto-tier">
+        <span class="pkg-badge">Focused automation</span>
+        <h3>Automation Starter</h3>
+        <div class="price">$500–$1,500</div>
+        <div class="per">PER MONTH</div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>One workflow automated (lead follow-up or support triage)</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Connects to your existing email, calendar, or CRM</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Human-in-the-loop approval on every action</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Monthly performance report</li>
+        </ul>
+        <button type="button" class="btn btn-ghost btn-block" onclick="requestInfo('AI Automation Starter ($500–$1,500/mo)')">Talk About Starter</button>
+      </div>
+      <div class="auto-tier pro">
+        <span class="pkg-badge">Full operations coverage</span>
+        <h3>Automation Pro</h3>
+        <div class="price">$2,000–$5,000</div>
+        <div class="per">PER MONTH</div>
+        <ul>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Multiple agents across sales, support, CRM, and billing</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom integrations (Stripe, HubSpot/Salesforce, Slack, and more)</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Escalation rules so a human reviews anything sensitive</li>
+          <li><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M3 8l3 3 6-7" stroke="#E4C77E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Weekly optimization and a live activity dashboard</li>
+        </ul>
+        <button type="button" class="btn btn-gold btn-block" onclick="requestInfo('AI Automation Pro ($2,000–$5,000/mo)')">Talk About Pro</button>
+      </div>
+    </div>
+    <p class="auto-note reveal">Every agent works under clear rules and human oversight — it drafts, flags, and executes routine work, and hands anything sensitive to a real person on your team.</p>
+
+    <div class="activation-block reveal">
+      <div class="activation-head">
+        <h3>What happens after you sign up</h3>
+        <p>No waiting around wondering what's next. Here's exactly how your automation goes from "purchased" to "running" — usually inside a week.</p>
+      </div>
+      <div class="activation-steps">
+        <div class="a-step">
+          <div class="a-dot">1</div>
+          <div class="a-day">Day 0</div>
+          <h4>You sign up</h4>
+          <p>Submit the form below or book a call. We confirm scope and get you an invoice the same day.</p>
+        </div>
+        <div class="a-step">
+          <div class="a-dot">2</div>
+          <div class="a-day">Day 1</div>
+          <h4>Onboarding intake</h4>
+          <p>A short form collects your CRM, calendar, phone number, pricing rules, and how you want things worded. <a href="onboarding.html" style="color:var(--gold-light);">Preview the form →</a></p>
+        </div>
+        <div class="a-step">
+          <div class="a-dot">3</div>
+          <div class="a-day">Day 1–3</div>
+          <h4>We connect your accounts</h4>
+          <p>We link your email, calendar, and phone line to the automation platform — nothing changes on your end.</p>
+        </div>
+        <div class="a-step">
+          <div class="a-dot">4</div>
+          <div class="a-day">Day 2–4</div>
+          <h4>Rules get configured</h4>
+          <p>Follow-up sequences, escalation triggers, and CRM rules are built around your business specifically.</p>
+        </div>
+        <div class="a-step">
+          <div class="a-dot">5</div>
+          <div class="a-day">Day 4–7</div>
+          <h4>Tested, then live</h4>
+          <p>We run test leads through it before it ever touches a real customer, then flip it on.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE DEMO -->
+<section class="demo-section section-pad" id="demo">
+  <div class="wrap">
+    <div class="section-head reveal on-dark">
+      <span class="eyebrow">See It In Action</span>
+      <h2 style="color:#fff">Watch how it runs, before you commit to anything</h2>
+      <p class="lede" style="color:var(--text-on-dark-muted)">Choose a scenario below to see exactly what your customer experiences on one side, and what the automation is doing behind the scenes on the other.</p>
+    </div>
+
+    <div class="demo-tabs reveal">
+      <div class="demo-tab active" id="tabA" onclick="selectScenario('A')">
+        <div class="dtab-label">Scenario A</div>
+        <div class="dtab-name">High-Value Lead</div>
+      </div>
+      <div class="demo-tab" id="tabB" onclick="selectScenario('B')">
+        <div class="dtab-label">Scenario B</div>
+        <div class="dtab-name">After-Hours Spike</div>
+      </div>
+      <div class="demo-tab" id="tabC" onclick="selectScenario('C')">
+        <div class="dtab-label">Scenario C</div>
+        <div class="dtab-name">Complex Escalation</div>
+      </div>
+    </div>
+
+    <div class="demo-card reveal">
+      <div class="demo-toolbar">
+        <div class="demo-toolbar-left">
+          <div class="demo-dots"><span></span><span></span><span></span></div>
+          <span class="demo-title" id="demoTitle">automation-log · high-value-lead</span>
+        </div>
+        <div class="demo-controls">
+          <span class="live-badge" id="liveBadge" style="display:none;"><span class="live-dot"></span>LIVE</span>
+          <span class="demo-clock" id="demoClock"></span>
+          <span class="demo-status" id="demoStatus">Idle</span>
+          <button class="sound-toggle" id="soundToggle" onclick="toggleSound()" aria-label="Toggle sound" aria-pressed="false" title="Toggle sound effects">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 5.5v4h2.5l3 2.5v-9l-3 2.5H2z" fill="currentColor"/><path id="soundWaves" d="M9.5 5.2c1 .7 1.6 1.7 1.6 2.8s-.6 2.1-1.6 2.8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" fill="none"/></svg>
+          </button>
+          <button class="btn btn-gold btn-sm" id="demoRunBtn" onclick="runDemo()">Run Demo</button>
+        </div>
+      </div>
+      <div class="demo-agents" id="demoAgents">
+        <div class="agent-chip" id="chipSales"><span class="achip-dot"></span><div class="achip-info"><div class="achip-name">Sales Agent</div><div class="achip-state">Idle</div></div></div>
+        <div class="agent-chip" id="chipSupport"><span class="achip-dot"></span><div class="achip-info"><div class="achip-name">Support Agent</div><div class="achip-state">Idle</div></div></div>
+        <div class="agent-chip" id="chipCRM"><span class="achip-dot"></span><div class="achip-info"><div class="achip-name">CRM Agent</div><div class="achip-state">Idle</div></div></div>
+        <div class="agent-chip" id="chipBilling"><span class="achip-dot"></span><div class="achip-info"><div class="achip-name">Billing Agent</div><div class="achip-state">Idle</div></div></div>
+      </div>
+      <div class="demo-progress-track"><div class="demo-progress-fill" id="demoProgress"></div></div>
+      <div class="demo-body" id="demoBody">
+        <span class="demo-empty">Press "Run Demo" to watch this scenario play out, step by step.</span>
+      </div>
+    </div>
+
+    <div class="demo-playground reveal">
+      <div class="playground-head">
+        <span class="playground-bolt">⚡</span>
+        <span class="playground-title">Live Playground — experience it firsthand</span>
+      </div>
+      <p class="playground-sub">Preview what your customers will see on their phone. Enter a name below and watch a simulated text exchange play out, using the same wording style the agent would use for your business.</p>
+      <div class="playground-row">
+        <input type="text" id="playgroundName" placeholder="Type a first name (e.g. Alex)" maxlength="24">
+        <button class="btn btn-primary" onclick="runPlayground()">Run Live Simulation</button>
+      </div>
+      <p class="playground-disclaimer">This is an in-page preview, not a real text message. When we build your system, this exact flow gets connected to your number through your CRM or SMS provider, so it runs for real.</p>
+      <div class="phone-mock" id="phoneMock">
+        <div class="phone-statusbar">
+          <span id="phoneClock">9:41</span>
+          <span class="psb-icons">📶 🔋</span>
+        </div>
+        <div class="phone-mock-head">
+          <div class="pmh-name">Your Business</div>
+          <div class="pmh-sub">Automation Preview · SMS</div>
+        </div>
+        <div class="phone-thread" id="phoneThread"></div>
+      </div>
+    </div>
+
+    <p class="demo-note reveal">Simulated for demonstration — actual response times, wording, and escalation rules are configured to match your business before launch.</p>
+  </div>
+</section>
+
+<!-- FULL SERVICE SUITE -->
+<section class="suite-section section-pad" id="suite">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Beyond the Website</span>
+      <h2>Everything else that keeps growth going</h2>
+      <p class="lede">A website is the foundation. These are the ongoing services we layer on top for clients who want us handling marketing, not just the build.</p>
+    </div>
+
+    <div class="suite-intro reveal">
+      <p>Once your site is live, the work that actually drives revenue is what happens next: fresh ad creative every month, automated follow-up on every lead, and — for clients who want it — websites we run on your behalf to route local customers straight to your business.</p>
+    </div>
+
+    <div class="stream-grid reveal">
+
+      <div class="stream-card">
+        <div class="stream-top">
+          <div class="stream-icon" style="background:#E1F5EE;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#085041" stroke-width="1.5"/><circle cx="7.5" cy="8" r="1.2" fill="#085041"/><circle cx="12.5" cy="7" r="1" fill="#085041"/><circle cx="13" cy="12" r="1" fill="#085041"/></svg>
+          </div>
+          <div class="stream-info">
+            <div class="stream-name">Monthly Ad Creative Package</div>
+            <div class="stream-desc">Done-for-you ad creatives, delivered every month — no agency retainer, no learning curve.</div>
+          </div>
+          <div class="stream-price">$997–$2,500<small>per month</small></div>
+        </div>
+        <button class="stream-toggle" onclick="toggleStream(this)">
+          <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          What exactly do you get?
+        </button>
+        <div class="stream-details">
+          <div class="stream-details-inner">
+            <ul>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>12 ad creatives per month — a mix of static images and short video clips</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>3 hook variations per creative, so you can test what performs best</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Ad copy for every creative — headline, caption, and call to action</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Formatted and ready for Meta (Facebook/Instagram) and TikTok</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>A 30-minute monthly strategy call to review performance</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Delivered via a shared folder by the 5th of each month</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited revision requests</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-sm" style="margin-top:14px;" onclick="requestInfo('Monthly Ad Creative Package ($997–$2,500/mo)')">Get Started</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="stream-card">
+        <div class="stream-top">
+          <div class="stream-icon" style="background:#E6F1FB;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2.5" y="4" width="15" height="10" rx="1.5" stroke="#185FA5" stroke-width="1.5"/><path d="M7 17h6" stroke="#185FA5" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="stream-info">
+            <div class="stream-name">White-Label CRM &amp; Automation Platform</div>
+            <div class="stream-desc">A full CRM and automation system that follows up with every lead for you — set it up once, and it runs itself.</div>
+          </div>
+          <div class="stream-price">$297–$497<small>per month, add-on</small></div>
+        </div>
+        <button class="stream-toggle" onclick="toggleStream(this)">
+          <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          What exactly do you get?
+        </button>
+        <div class="stream-details">
+          <div class="stream-details-inner">
+            <ul>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Full CRM with contacts, pipeline stages, and deal tracking</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Missed-call text-back automation that responds instantly</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Appointment reminder sequences by SMS and email</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Automated review requests after every visit</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Lead nurture email/SMS sequences pre-built for your industry</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Online booking calendar</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-sm" style="margin-top:14px;" onclick="requestInfo('White-Label CRM & Automation Platform ($297–$497/mo)')">Get Started</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="stream-card">
+        <div class="stream-top">
+          <div class="stream-icon" style="background:#FAEEDA;">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7.5" stroke="#633806" stroke-width="1.5"/><path d="M2.5 10h15M10 2.5c2 2.2 3 5 3 7.5s-1 5.3-3 7.5c-2-2.2-3-5-3-7.5s1-5.3 3-7.5z" stroke="#633806" stroke-width="1.3"/></svg>
+          </div>
+          <div class="stream-info">
+            <div class="stream-name">Local Lead Generation Websites</div>
+            <div class="stream-desc">Pre-built, search-ranked local websites that route real customer leads directly to your business.</div>
+          </div>
+          <div class="stream-price">$500–$1,500<small>per site/month</small></div>
+        </div>
+        <button class="stream-toggle" onclick="toggleStream(this)">
+          <svg class="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          How it works
+        </button>
+        <div class="stream-details">
+          <div class="stream-details-inner">
+            <ul>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Live, search-optimized sites already built for specific niches (med spa, dental, fitness, and more)</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Real calls and form fills routed straight to you once a site ranks</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>No setup, hosting, or maintenance on your end</li>
+              <li><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l2.5 2.5 6-6.5" stroke="#1B7A5A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Flat monthly fee for as long as leads keep flowing to your business</li>
+            </ul>
+            <button type="button" class="btn btn-primary btn-sm" style="margin-top:14px;" onclick="requestInfo('Local Lead Generation Website ($500–$1,500/mo per site)')">Get Started</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="digital-label reveal">Digital Resource Library — one-time purchase</div>
+    <div class="digital-grid reveal">
+      <div class="digital-card">
+        <div class="stream-name">AI Ad Prompt Library</div>
+        <p class="stream-desc">60 ready-to-use prompts for generating ad creatives in Leonardo.ai, Runway ML, and ChatGPT.</p>
+        <div class="digital-price">$47<small>one-time</small></div>
+        <a href="https://gum.co/ai-ad-prompt-library" target="_blank" rel="noopener" class="btn btn-ghost btn-sm btn-block" style="margin-top:12px;">Buy Now</a>
+      </div>
+      <div class="digital-card">
+        <div class="stream-name">Agency Operations Playbook</div>
+        <p class="stream-desc">The full SOP for running a lean, VA-supported creative operation — hiring, QC, tech stack, and client scripts.</p>
+        <div class="digital-price">$97<small>one-time</small></div>
+        <a href="https://gum.co/agency-operations-playbook" target="_blank" rel="noopener" class="btn btn-ghost btn-sm btn-block" style="margin-top:12px;">Buy Now</a>
+      </div>
+      <div class="digital-card">
+        <div class="stream-name">Outreach Script Pack</div>
+        <p class="stream-desc">Every DM, email, and call script needed to land new local business clients, plus a 7-day follow-up calendar.</p>
+        <div class="digital-price">$27<small>one-time</small></div>
+        <a href="https://gum.co/outreach-script-pack" target="_blank" rel="noopener" class="btn btn-ghost btn-sm btn-block" style="margin-top:12px;">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="affiliate-card reveal">
+      <div class="stream-name" style="font-size:16px;">Trusted Partner Tools</div>
+      <p class="stream-desc">We recommend and help you set up the platforms we trust most for CRM, funnels, cold outreach, copywriting, and SEO — including GoHighLevel, ClickFunnels, Instantly, Jasper, and Surfer SEO.</p>
+      <p class="affiliate-disclosure">Disclosure: we're an affiliate partner for some of these platforms and may earn a commission if you sign up through our link — this never affects your price.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process section-pad" id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2>A clear, predictable process — from first conversation to launch and beyond</h2>
+    </div>
+    <div class="process-steps reveal">
+      <div class="p-step"><div class="p-dot">1</div><h4>Discover</h4><p>We learn about your business, goals, audience, and what success looks like.</p></div>
+      <div class="p-step"><div class="p-dot">2</div><h4>Strategy</h4><p>We map out your site structure, messaging, and key conversion paths.</p></div>
+      <div class="p-step"><div class="p-dot">3</div><h4>Design</h4><p>We create a modern, custom design that reflects your brand and appeals to your ideal customers.</p></div>
+      <div class="p-step"><div class="p-dot">4</div><h4>Build</h4><p>We build your website with clean code, SEO best practices, and smooth performance.</p></div>
+      <div class="p-step"><div class="p-dot">5</div><h4>Optimize</h4><p>We fine-tune speed, SEO, and conversions before launch.</p></div>
+      <div class="p-step"><div class="p-dot">6</div><h4>Launch &amp; Grow</h4><p>We launch your site, then support you with maintenance, SEO, and growth services.</p></div>
+    </div>
+    <div class="process-timing reveal">
+      <span><b>Starter:</b> 5–10 days</span>
+      <span><b>Growth:</b> 2–4 weeks</span>
+      <span><b>Premium:</b> 4–8 weeks</span>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITMENT (honest trust content — replace testi-placeholder with real client quotes as they come in) -->
+<section class="proof section-pad">
+  <div class="wrap">
+    <div class="section-head reveal on-dark">
+      <span class="eyebrow">Our Commitment</span>
+      <h2 style="color:#fff">What you can count on, in writing</h2>
+      <p class="lede" style="color:var(--text-on-dark-muted)">No fabricated stats, no stock testimonials — just what we actually commit to for every project.</p>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <p class="quote">Every package and add-on price is published right here on this page. No hidden fees, no surprise invoices after the fact.</p>
+        <p class="testi-name">— Transparent Pricing</p>
+      </div>
+      <div class="testi-card">
+        <p class="quote">Starter sites ship in 5–10 business days, Growth in 2–4 weeks, Premium in 4–8 weeks — agreed before work starts, not estimated after.</p>
+        <p class="testi-name">— Fixed Timelines</p>
+      </div>
+      <div class="testi-card">
+        <p class="quote">You work directly with the person building your site — not routed through account managers or an offshore support queue.</p>
+        <p class="testi-name">— Direct Access</p>
+      </div>
+    </div>
+    <div class="testi-placeholder reveal">
+      <span class="tp-icon">★</span>
+      <div>
+        <p class="tp-title">Client results will go here as projects launch</p>
+        <p class="tp-sub">We'd rather show you nothing than make something up. Ask us directly for recent examples of our work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY / SEO -->
+<section class="authority section-pad">
+  <div class="wrap authority-grid">
+    <div class="reveal">
+      <span class="eyebrow">Built to Be Found</span>
+      <h2>Websites built for both people and search engines</h2>
+      <p class="lede" style="margin-top:14px;">Good websites don't just look great — they help you get found. Our process includes SEO-friendly structure, fast load speeds, mobile optimization, and clear content that search engines understand.</p>
+      <ul class="authority-list">
+        <li>On-page SEO setup</li>
+        <li>Local SEO structure for service areas</li>
+        <li>Speed and performance optimization</li>
+        <li>Clean, semantic code</li>
+        <li>Content that answers real customer questions</li>
+      </ul>
+      <p class="authority-close">Your website should be the foundation of your online visibility, not an afterthought.</p>
+    </div>
+    <div class="authority-visual reveal">
+      <span class="mono">Ranking signal checklist</span>
+      <svg width="100%" height="170" viewBox="0 0 380 170" style="margin-top:18px;">
+        <line x1="0" y1="30" x2="380" y2="30" stroke="rgba(255,255,255,0.1)"/>
+        <line x1="0" y1="70" x2="380" y2="70" stroke="rgba(255,255,255,0.1)"/>
+        <line x1="0" y1="110" x2="380" y2="110" stroke="rgba(255,255,255,0.1)"/>
+        <line x1="0" y1="150" x2="380" y2="150" stroke="rgba(255,255,255,0.1)"/>
+        <rect x="10" y="8" width="220" height="18" rx="4" fill="#1B7A5A"/>
+        <rect x="10" y="48" width="300" height="18" rx="4" fill="#1B7A5A"/>
+        <rect x="10" y="88" width="180" height="18" rx="4" fill="#C99A3B"/>
+        <rect x="10" y="128" width="260" height="18" rx="4" fill="#1B7A5A"/>
+      </svg>
+      <p style="font-size:12.5px;color:var(--text-on-dark-muted);margin-top:12px;">Structure, speed, mobile UX, and content clarity — reinforced across every page.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq section-pad" id="faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <button class="faq-q"><span>What do I get with the Ad Creative Package?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Every month you get 12 ads — images and video — made specifically for your business, with 3 different hooks per ad so you can test what performs. Everything is formatted and ready to run on Facebook and Instagram. We handle production end-to-end; you just post or hand them to whoever runs your ads.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>What is the CRM / automation add-on?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">It's a platform that automatically follows up with every lead you get — texting them back if you miss a call, reminding them of appointments, and asking for reviews after visits. You set it up once and it runs itself.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>How does pricing work if I want everything?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">The ad creative package starts at $997/month. Add the CRM and automation system on top for $297 more per month — we recommend pairing them, since automated follow-up makes the extra ad volume worth more. Lead generation sites, digital resources, and partner tools are priced separately and can be added any time.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>How much does a website cost?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Starter websites start at $750–$1,500, Growth packages range from $2,000–$4,500, and Premium websites start at $5,000 and go up to $15,000+. Add-ons can increase the total, but they also increase results.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>How long does it take to build a website?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Starter websites are delivered in 5–10 business days, Growth sites in 2–4 weeks, and Premium sites in 4–8 weeks.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>How many revisions do I get?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Starter includes 1 revision round, Growth includes 2, and Premium includes 3.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Do you write the content for my site?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Copywriting is available as an add-on or included in certain packages. We can guide your content or handle it for you.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Will my website be mobile-friendly?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. All our websites are fully responsive and optimized for mobile devices.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Do you handle SEO?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We include basic SEO setup on Starter packages, on-page optimization on Growth, and advanced SEO architecture on Premium. Monthly SEO retainers are also available.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Who owns the website after it's built?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">You own your website and all content once it's paid for.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Do you offer ongoing support?</span><span class="plus"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We offer monthly maintenance plans starting at $99/mo, plus ongoing SEO, content, and marketing services.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final section-pad" id="contact">
+  <div class="wrap final-grid">
+    <div class="reveal on-dark">
+      <span class="eyebrow">Let's Talk</span>
+      <h2>Ready to grow your business with a better website?</h2>
+      <p class="lede">Let's talk about your goals, your audience, and what a high-performing website can do for you.</p>
+      <div class="final-ctas">
+        <a href="#contact" class="btn btn-gold">Book a Free Strategy Call</a>
+        <a href="#contact" class="btn btn-ghost">Get a Custom Quote</a>
+      </div>
+      <p class="reassure">No pressure. No jargon. Just clear, honest advice.</p>
+    </div>
+    <form class="form-card reveal" id="contactForm" onsubmit="return handleContactSubmit(event)">
+      <!-- Honeypot spam trap: real visitors never see or fill this -->
+      <div style="position:absolute;left:-9999px;" aria-hidden="true">
+        <label for="companyWebsite">Website</label>
+        <input type="text" id="companyWebsite" name="companyWebsite" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="form-row">
+        <label for="ctName">Name</label>
+        <input type="text" id="ctName" name="name" placeholder="Your full name" required>
+      </div>
+      <div class="form-row">
+        <label for="ctEmail">Email</label>
+        <input type="email" id="ctEmail" name="email" placeholder="you@business.com" required>
+      </div>
+      <div class="form-row">
+        <label for="ctBusiness">Business name</label>
+        <input type="text" id="ctBusiness" name="business" placeholder="Your business name">
+      </div>
+      <div class="form-row">
+        <label for="ctInterest">What are you looking for?</label>
+        <select id="ctInterest" name="interest">
+          <option>Not sure yet</option>
+          <option>Starter</option>
+          <option>Growth</option>
+          <option>Premium</option>
+          <option>AI Business Automation</option>
+          <option>Full Service Suite</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="ctMessage">Message (optional)</label>
+        <textarea id="ctMessage" name="message" rows="3" placeholder="Tell us a bit about your project"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block" id="ctSubmitBtn">Send &amp; Book My Call</button>
+      <p class="form-note" id="ctFormNote">We typically respond within 1 business day.</p>
+    </form>
+  </div>
+</section>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>We use basic cookies to remember your preferences and, if enabled, to understand site traffic. See our <a href="privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-ghost btn-sm" style="color:#fff;border-color:var(--line-dark);" onclick="setCookieConsent(false)">Decline</button>
+    <button class="btn btn-primary btn-sm" onclick="setCookieConsent(true)">Accept</button>
+  </div>
+</div>
+
+<div class="mobile-sticky-cta">
+  <a href="tel:+10000000000" class="btn btn-ghost btn-sm" style="color:#fff;border-color:var(--line-dark);">Call Now</a>
+  <a href="#contact" class="btn btn-gold btn-sm">Book a Call</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <div>
+        <div class="logo" style="color:#fff;">CH Business Services</div>
+        <p class="footer-tag">Modern websites built for growth, leads, and local visibility.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#packages">Packages</a>
+        <a href="#automation">AI Automation</a>
+        <a href="#demo">Live Demo</a>
+        <a href="#suite">Full Suite</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CH Business Services. All rights reserved.</span>
+      <span class="footer-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Universal "request info" handler — every product/package/bundle CTA on the page
+  // routes here. It scrolls to the real contact form, pre-fills the message with
+  // exactly what was clicked, and focuses the name field so the visitor can just
+  // start typing. This is a real, working action, not a decorative link.
+  window.requestInfo = function(productName){
+    const msgField = document.getElementById('ctMessage');
+    const interestField = document.getElementById('ctInterest');
+    if(msgField){
+      const line = `I'm interested in: ${productName}`;
+      if(!msgField.value.trim()){
+        msgField.value = line;
+      } else if(!msgField.value.includes(line)){
+        msgField.value = line + '\n' + msgField.value;
+      }
+    }
+    // Try to match the dropdown to a sensible option based on the product name
+    if(interestField){
+      const opts = Array.from(interestField.options).map(o=>o.value || o.text);
+      const match = opts.find(o => productName.toLowerCase().includes(o.toLowerCase()));
+      if(match){ interestField.value = match; }
+    }
+    const contactSection = document.getElementById('contact');
+    if(contactSection) contactSection.scrollIntoView({behavior:'smooth', block:'start'});
+    setTimeout(()=>{
+      const nameField = document.getElementById('ctName');
+      if(nameField) nameField.focus();
+    }, 550);
+  };
+
+  // Contact form — sends to Formspree (replace FORMSPREE_ENDPOINT below with your real endpoint)
+  // Sign up free at https://formspree.io, create a form, and paste your endpoint URL here.
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+  const FALLBACK_EMAIL = 'you@yourdomain.com';
+
+  window.handleContactSubmit = function(e){
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const btn = document.getElementById('ctSubmitBtn');
+    const note = document.getElementById('ctFormNote');
+
+    // Honeypot check — if this hidden field has anything in it, silently drop the submission
+    if(document.getElementById('companyWebsite').value){
+      note.textContent = 'Thanks — we typically respond within 1 business day.';
+      form.reset();
+      return false;
+    }
+
+    const data = new FormData(form);
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    if(FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')){
+      // Endpoint not configured yet — fall back to a pre-filled email draft so nothing is silently lost
+      const subject = encodeURIComponent('New inquiry from ' + (data.get('name') || 'website visitor'));
+      const body = encodeURIComponent(
+        'Name: ' + data.get('name') + '\n' +
+        'Email: ' + data.get('email') + '\n' +
+        'Business: ' + data.get('business') + '\n' +
+        'Interested in: ' + data.get('interest') + '\n' +
+        'Message: ' + data.get('message')
+      );
+      window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
+      note.textContent = "Opening your email app to send this — once you've connected Formspree, this will submit automatically instead.";
+      btn.disabled = false;
+      btn.textContent = 'Send & Book My Call';
+      return false;
+    }
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if(response.ok){
+        form.reset();
+        note.textContent = "Thanks — that's in. We typically respond within 1 business day.";
+      } else {
+        note.textContent = "Something went wrong sending that. Please email us directly at " + FALLBACK_EMAIL + ".";
+      }
+    }).catch(()=>{
+      note.textContent = "Something went wrong sending that. Please email us directly at " + FALLBACK_EMAIL + ".";
+    }).finally(()=>{
+      btn.disabled = false;
+      btn.textContent = 'Send & Book My Call';
+    });
+
+    return false;
+  };
+
+  // Cookie consent
+  function getCookie(name){
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+  }
+  window.setCookieConsent = function(accepted){
+    document.cookie = 'chbs_consent=' + (accepted ? 'accepted' : 'declined') + ';max-age=' + (60*60*24*180) + ';path=/';
+    document.getElementById('cookieBanner').classList.remove('visible');
+  };
+  if(!getCookie('chbs_consent')){
+    document.getElementById('cookieBanner').classList.add('visible');
+  }
+
+  // Mobile nav
+  window.toggleMobileMenu = function(){
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.getElementById('navToggle');
+    const isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  };
+  window.closeMobileMenu = function(){
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.getElementById('navToggle').setAttribute('aria-expanded','false');
+  };
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // Live automation demo — scenario data (each step tagged with the agent driving it)
+  const scenarios = {
+    A: {
+      title: 'automation-log · high-value-lead',
+      steps: [
+        {icon:'📥', time:'0:00', title:'Customer intake', agent:'Sales', userView:'Sarah M., owner of a 3-location fitness brand, submits the contact form asking about a premium website timeline.', engineOps:'Triage agent reads the message, flags it as a high-value lead based on business size and budget signals, and checks calendar availability.'},
+        {icon:'✉️', time:'0:04', title:'Personalized response', agent:'Sales', userView:'Receives a custom email laying out a 4–8 week project timeline, with two specific call times to choose from.', engineOps:'Follow-up agent pulls from the pricing and scope rules for Premium-tier projects, and generates a booking link matching those two open slots.'},
+        {icon:'📅', time:'0:41', title:'Meeting booked', agent:'CRM', userView:'Clicks a time slot in the email and instantly gets a calendar invite.', engineOps:'Records agent creates the CRM contact, sets the deal stage to "Meeting Scheduled," and posts a summary to your team channel.'},
+        {icon:'🚨', time:'2:15', title:'Escalated to you', agent:'Billing', userView:'Texts back asking for a discount if she pays the full amount upfront.', engineOps:'Response agent recognizes this falls outside its pricing rules, pauses the automated thread, and sends you the message with full context so you can reply personally.'},
+      ]
+    },
+    B: {
+      title: 'automation-log · after-hours-spike',
+      steps: [
+        {icon:'📥', time:'11:47 PM', title:'Multiple inquiries arrive', agent:'Support', userView:'Three separate visitors submit the contact form within 20 minutes, well after business hours.', engineOps:'Intake agent queues each lead, checks for duplicates, and starts an individual reply sequence for each one.'},
+        {icon:'✉️', time:'11:49 PM', title:'Instant acknowledgment sent', agent:'Sales', userView:'Each visitor gets an immediate reply confirming their message was received, with an estimated response window.', engineOps:'Follow-up agent sends a tailored first response per lead, referencing what each one specifically asked about.'},
+        {icon:'📋', time:'7:02 AM', title:'Morning briefing ready', agent:'CRM', userView:'You wake up to one short summary instead of three separate emails to dig through.', engineOps:'CRM agent compiles all three leads into a prioritized morning briefing, ranked by likely value and urgency.'},
+        {icon:'✅', time:'7:05 AM', title:'Warm follow-up in progress', agent:'CRM', userView:'Two of the three leads already replied overnight and picked a call time on their own.', engineOps:'Records agent logs both bookings automatically and flags the third, unresponsive lead for a manual nudge.'},
+      ]
+    },
+    C: {
+      title: 'automation-log · complex-escalation',
+      steps: [
+        {icon:'📥', time:'9:14 AM', title:'Support request comes in', agent:'Support', userView:'An existing customer emails saying their invoice amount looks wrong.', engineOps:"Support agent checks the billing records against what was sent and confirms there's a genuine discrepancy, not just confusion."},
+        {icon:'💬', time:'9:15 AM', title:'Clear explanation offered', agent:'Billing', userView:'Gets an immediate reply acknowledging the issue and explaining exactly where the discrepancy came from.', engineOps:'Billing agent cross-references the invoice line items with the original contract terms to explain the gap in plain language.'},
+        {icon:'🚨', time:'9:16 AM', title:'Correction flagged for approval', agent:'Billing', userView:"Is told a correction is being reviewed and they'll hear back shortly — no promises made yet.", engineOps:"Because refunds and credits sit outside the agent's automatic authority, it drafts a proposed fix and routes it to you for one-click approval."},
+        {icon:'✅', time:'10:30 AM', title:'Resolved and logged', agent:'CRM', userView:'Receives your approved correction and a follow-up confirming everything looks right now.', engineOps:'Once you approve, the agent sends the corrected invoice, updates the CRM note, and closes the ticket.'},
+      ]
+    }
+  };
+  let currentScenario = 'A';
+  let demoRunning = false;
+  let demoClockInterval = null;
+  let soundOn = false;
+  const agentChipMap = {Sales:'chipSales', Support:'chipSupport', CRM:'chipCRM', Billing:'chipBilling'};
+
+  // Tiny synthesized notification tone — no external audio file needed
+  let audioCtx = null;
+  function playChime(freq){
+    if(!soundOn) return;
+    try{
+      audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq || 720;
+      gain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.06, audioCtx.currentTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.28);
+      osc.connect(gain).connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.3);
+    }catch(e){ /* audio not available — fail silently */ }
+  }
+
+  window.toggleSound = function(){
+    soundOn = !soundOn;
+    const btn = document.getElementById('soundToggle');
+    btn.classList.toggle('on', soundOn);
+    btn.setAttribute('aria-pressed', soundOn ? 'true' : 'false');
+    if(soundOn) playChime(880);
+  };
+
+  function resetAgentChips(){
+    Object.values(agentChipMap).forEach(id=>{
+      const chip = document.getElementById(id);
+      chip.className = 'agent-chip';
+      chip.querySelector('.achip-state').textContent = 'Idle';
+    });
+  }
+
+  function setAgentState(agentName, state){
+    const chipId = agentChipMap[agentName];
+    if(!chipId) return;
+    const chip = document.getElementById(chipId);
+    chip.className = 'agent-chip ' + state;
+    chip.querySelector('.achip-state').textContent = state === 'processing' ? 'Working…' : state === 'done' ? 'Done' : 'Idle';
+  }
+
+  function resetDemoUI(){
+    const body = document.getElementById('demoBody');
+    body.innerHTML = '<span class="demo-empty">Press "Run Demo" to watch this scenario play out, step by step.</span>';
+    document.getElementById('demoProgress').style.width = '0%';
+    const status = document.getElementById('demoStatus');
+    status.textContent = 'Idle';
+    status.className = 'demo-status';
+    const btn = document.getElementById('demoRunBtn');
+    btn.textContent = 'Run Demo';
+    btn.disabled = false;
+    document.getElementById('liveBadge').style.display = 'none';
+    document.getElementById('demoClock').textContent = '';
+    if(demoClockInterval){ clearInterval(demoClockInterval); demoClockInterval = null; }
+    resetAgentChips();
+    demoRunning = false;
+  }
+
+  window.selectScenario = function(id){
+    if(demoRunning) return;
+    currentScenario = id;
+    document.querySelectorAll('.demo-tab').forEach(t=>t.classList.remove('active'));
+    document.getElementById('tab'+id).classList.add('active');
+    document.getElementById('demoTitle').textContent = scenarios[id].title;
+    resetDemoUI();
+  };
+
+  window.runDemo = function(){
+    if(demoRunning) return;
+    demoRunning = true;
+    const steps = scenarios[currentScenario].steps;
+    const btn = document.getElementById('demoRunBtn');
+    const status = document.getElementById('demoStatus');
+    const body = document.getElementById('demoBody');
+    const progress = document.getElementById('demoProgress');
+    const liveBadge = document.getElementById('liveBadge');
+    const clockEl = document.getElementById('demoClock');
+
+    btn.textContent = 'Running…';
+    btn.disabled = true;
+    status.textContent = 'Running';
+    status.className = 'demo-status running';
+    body.innerHTML = '';
+    progress.style.width = '0%';
+    resetAgentChips();
+    liveBadge.style.display = 'inline-flex';
+
+    let elapsed = 0;
+    clockEl.textContent = '0:00';
+    if(demoClockInterval) clearInterval(demoClockInterval);
+    demoClockInterval = setInterval(()=>{
+      elapsed += 1;
+      const m = Math.floor(elapsed/60), s = elapsed%60;
+      clockEl.textContent = m + ':' + String(s).padStart(2,'0');
+    }, 1000);
+
+    const STEP_GAP = 1900;
+    const THINK_DELAY = 650;
+
+    steps.forEach((step, i)=>{
+      // Phase 1: agent starts "processing" and a thinking indicator appears
+      setTimeout(()=>{
+        setAgentState(step.agent, 'processing');
+        const think = document.createElement('div');
+        think.className = 'dstep-thinking';
+        think.id = 'think-' + i;
+        think.innerHTML = `<span class="think-dots"><span></span><span></span><span></span></span> ${step.agent} agent processing…`;
+        body.appendChild(think);
+        body.scrollTop = body.scrollHeight;
+      }, i * STEP_GAP);
+
+      // Phase 2: reveal the actual step content
+      setTimeout(()=>{
+        const think = document.getElementById('think-' + i);
+        if(think) think.remove();
+        setAgentState(step.agent, 'done');
+        playChime(620 + i*40);
+
+        const div = document.createElement('div');
+        div.className = 'dstep';
+        div.innerHTML = `
+          <div class="dstep-head">
+            <div class="dstep-icon">${step.icon}</div>
+            <span class="dstep-time">${step.time}</span>
+            <span class="dstep-title">${step.title}</span>
+          </div>
+          <div class="dstep-grid">
+            <div class="dstep-col user"><span class="dstep-col-label">What they see</span><span class="dstep-col-text">${step.userView}</span></div>
+            <div class="dstep-col engine"><span class="dstep-col-label">Behind the scenes</span><span class="dstep-col-text">${step.engineOps}</span></div>
+          </div>`;
+        body.appendChild(div);
+        requestAnimationFrame(()=> div.classList.add('shown'));
+        progress.style.width = (((i+1)/steps.length)*100) + '%';
+
+        if(i === steps.length - 1){
+          status.textContent = 'Complete';
+          status.className = 'demo-status complete';
+          btn.textContent = 'Replay Demo';
+          btn.disabled = false;
+          liveBadge.style.display = 'none';
+          if(demoClockInterval){ clearInterval(demoClockInterval); demoClockInterval = null; }
+          demoRunning = false;
+        }
+      }, i * STEP_GAP + THINK_DELAY);
+    });
+  };
+
+  // Live Playground — in-page simulated SMS preview with typing indicators + read receipts
+  let playgroundRunning = false;
+  window.runPlayground = function(){
+    if(playgroundRunning) return;
+    playgroundRunning = true;
+    const nameInput = document.getElementById('playgroundName');
+    const name = (nameInput.value || 'there').trim().slice(0,24);
+    const mock = document.getElementById('phoneMock');
+    const thread = document.getElementById('phoneThread');
+    mock.classList.add('active');
+    thread.innerHTML = '';
+
+    const now = new Date();
+    const hr = now.getHours() % 12 || 12;
+    const min = String(now.getMinutes()).padStart(2,'0');
+    const clockEl = document.getElementById('phoneClock');
+    if(clockEl) clockEl.textContent = hr + ':' + min;
+
+    const msgs = [
+      {from:'them', text:`Hi, this is ${name} — I saw your ad and wanted pricing info.`},
+      {from:'us', text:`Hey ${name}! Happy to help — one-time project, or ongoing support?`},
+      {from:'them', text:'Ongoing, probably. Something for my gym.'},
+      {from:'us', text:'Got it. I can grab you 15 min tomorrow at 10am or 2pm — which works?'},
+      {from:'them', text:'2pm works.'},
+      {from:'us', text:`Booked! Calendar invite is on its way, ${name}. Talk soon.`},
+    ];
+
+    let cursor = 0;
+    function playNext(i){
+      if(i >= msgs.length){ playgroundRunning = false; return; }
+      const m = msgs[i];
+      const isUs = m.from === 'us';
+      // Show typing dots first, then replace with the real bubble
+      const typing = document.createElement('div');
+      typing.className = 'phone-typing shown';
+      typing.style.marginLeft = isUs ? 'auto' : '0';
+      typing.innerHTML = '<span></span><span></span><span></span>';
+      thread.appendChild(typing);
+      thread.scrollTop = thread.scrollHeight;
+
+      setTimeout(()=>{
+        typing.remove();
+        const b = document.createElement('div');
+        b.className = 'phone-bubble ' + m.from;
+        b.textContent = m.text;
+        thread.appendChild(b);
+        requestAnimationFrame(()=> b.classList.add('shown'));
+        playChime(isUs ? 740 : 520);
+
+        if(isUs){
+          const receipt = document.createElement('div');
+          receipt.className = 'phone-receipt';
+          receipt.textContent = 'Delivered';
+          thread.appendChild(receipt);
+          requestAnimationFrame(()=> receipt.classList.add('shown'));
+        }
+        thread.scrollTop = thread.scrollHeight;
+        playNext(i+1);
+      }, isUs ? 750 : 550);
+    }
+    playNext(0);
+  };
+
+  // Stream card details toggle
+  window.toggleStream = function(btn){
+    const card = btn.closest('.stream-card');
+    const details = btn.nextElementSibling;
+    const isOpen = card.classList.contains('open');
+    card.classList.toggle('open', !isOpen);
+    details.style.maxHeight = isOpen ? 0 : details.scrollHeight + 'px';
+    btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  };
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
+    if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(other=>{
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = 0;
+        other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+        q.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // Animate growth line on load
+  const path = document.getElementById('growthPath');
+  if(path){
+    const len = path.getTotalLength();
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = len;
+    requestAnimationFrame(()=>{
+      path.style.transition = 'stroke-dashoffset 1.8s cubic-bezier(.16,.8,.28,1)';
+      path.style.strokeDashoffset = 0;
+    });
+  }
+</script>
+
+</body>
+</html>

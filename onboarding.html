@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Onboarding | CH Business Services</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' rx='6' fill='%230D1F1A'/%3E%3Cpath d='M4 19L10 12L14 15L22 6' stroke='%231B7A5A' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='22' cy='6' r='2.2' fill='%23C99A3B'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#0D1F1A; --ink-2:#132D25; --paper:#F1F3EC; --line:rgba(13,31,26,0.12);
+    --line-dark:rgba(241,243,236,0.14); --emerald:#1B7A5A; --emerald-dark:#125440;
+    --gold:#C99A3B; --gold-light:#E4C77E; --text:#132018; --text-muted:#4B5C55;
+    --text-on-dark:#EAF0EA; --text-on-dark-muted:#9FB3AA;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  h1,h2{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;margin:0;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+  header{background:var(--ink);color:#fff;padding:36px 0 30px;}
+  .logo{font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin-bottom:14px;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:10px;display:block;}
+  h1{font-size:clamp(24px,3.6vw,32px);color:#fff;}
+  .sub{margin-top:10px;font-size:14.5px;color:var(--text-on-dark-muted);max-width:520px;}
+  main{padding:40px 0 80px;}
+  .progress-track{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin-bottom:36px;}
+  .progress-fill{height:100%;width:14%;background:linear-gradient(90deg,var(--emerald),var(--gold));transition:width .4s ease;}
+  fieldset{border:none;padding:0;margin:0 0 34px;}
+  legend{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin-bottom:6px;padding:0;}
+  .field-sub{font-size:13px;color:var(--text-muted);margin-bottom:16px;}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px;}
+  .field .hint{font-weight:400;color:var(--text-muted);font-size:11.5px;margin-left:4px;}
+  input, select, textarea{
+    width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 14px;
+    font-family:'Inter',sans-serif;font-size:14.5px;background:#fff;color:var(--text);
+  }
+  input:focus, select:focus, textarea:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--emerald);}
+  .radio-row{display:flex;gap:10px;flex-wrap:wrap;}
+  .radio-pill{position:relative;}
+  .radio-pill input{position:absolute;opacity:0;width:100%;height:100%;cursor:pointer;margin:0;}
+  .radio-pill span{
+    display:block;padding:9px 16px;border:1px solid var(--line);border-radius:999px;font-size:13.5px;
+    background:#fff;transition:all .2s ease;
+  }
+  .radio-pill input:checked + span{background:var(--emerald);color:#fff;border-color:var(--emerald);}
+  .radio-pill input:focus-visible + span{outline:2px solid var(--gold);outline-offset:1px;}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:560px){.two-col{grid-template-columns:1fr;}}
+  .required-mark{color:var(--emerald-dark);}
+  button[type="submit"]{
+    width:100%;padding:15px;border-radius:999px;border:none;background:var(--emerald);color:#fff;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:15px;cursor:pointer;transition:transform .3s ease;
+  }
+  button[type="submit"]:hover{transform:translateY(-2px);}
+  button[type="submit"]:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+  .form-note{text-align:center;font-size:13px;color:var(--text-muted);margin-top:14px;}
+  .error-msg{color:#B3261E;font-size:12.5px;margin-top:5px;display:none;}
+  .field.invalid input, .field.invalid select, .field.invalid textarea{border-color:#B3261E;}
+  .field.invalid .error-msg{display:block;}
+  .success-box{
+    display:none;background:#fff;border:1px solid var(--emerald);border-radius:12px;padding:32px;text-align:center;
+  }
+  .success-box.visible{display:block;}
+  .success-box .check{font-size:34px;color:var(--emerald);margin-bottom:12px;}
+  .success-box h2{font-size:22px;}
+  .success-box p{font-size:14.5px;color:var(--text-muted);margin-top:10px;}
+  #onboardingForm.hidden{display:none;}
+  a.back{color:var(--text-on-dark-muted);font-size:13px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="logo">CH Business Services</div>
+    <a class="back" href="index.html">&larr; Back to site</a>
+    <span class="eyebrow" style="margin-top:18px;">Client Onboarding</span>
+    <h1>Let's get your automation connected</h1>
+    <p class="sub">This takes about 5 minutes. The more specific your answers, the faster we can configure your agents correctly the first time.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+
+  <div class="success-box" id="successBox">
+    <div class="check">✓</div>
+    <h2>You're all set</h2>
+    <p>We've received your onboarding details. Expect an email within 1 business day confirming your connected accounts and configuration timeline.</p>
+  </div>
+
+  <form id="onboardingForm" novalidate>
+    <!-- Honeypot -->
+    <div style="position:absolute;left:-9999px;" aria-hidden="true">
+      <label for="hp">Website</label>
+      <input type="text" id="hp" name="hp_website" tabindex="-1" autocomplete="off">
+    </div>
+
+    <fieldset>
+      <legend>1. Your business</legend>
+      <p class="field-sub">Basic details so we know who we're setting this up for.</p>
+      <div class="two-col">
+        <div class="field">
+          <label for="bizName">Business name <span class="required-mark">*</span></label>
+          <input type="text" id="bizName" name="business_name" required>
+          <div class="error-msg">Please enter your business name.</div>
+        </div>
+        <div class="field">
+          <label for="contactName">Your name <span class="required-mark">*</span></label>
+          <input type="text" id="contactName" name="contact_name" required>
+          <div class="error-msg">Please enter your name.</div>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="field">
+          <label for="bizEmail">Email <span class="required-mark">*</span></label>
+          <input type="email" id="bizEmail" name="email" required>
+          <div class="error-msg">Enter a valid email address.</div>
+        </div>
+        <div class="field">
+          <label for="bizPhone">Phone number <span class="required-mark">*</span><span class="hint">for SMS follow-up</span></label>
+          <input type="tel" id="bizPhone" name="phone" required placeholder="(555) 555-5555">
+          <div class="error-msg">Enter a valid phone number.</div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="industry">Industry <span class="required-mark">*</span></label>
+        <select id="industry" name="industry" required>
+          <option value="">Select one…</option>
+          <option>Fitness / Gym</option>
+          <option>Medical / Med Spa</option>
+          <option>Dental</option>
+          <option>Real Estate</option>
+          <option>Home Services (HVAC, plumbing, etc.)</option>
+          <option>Legal</option>
+          <option>Retail / E-commerce</option>
+          <option>Other professional services</option>
+        </select>
+        <div class="error-msg">Please select an industry.</div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Which service are you activating?</legend>
+      <p class="field-sub">This determines which agents we configure for you.</p>
+      <div class="field">
+        <div class="radio-row" role="group" aria-label="Package">
+          <label class="radio-pill"><input type="radio" name="package" value="Automation Starter" required><span>Automation Starter</span></label>
+          <label class="radio-pill"><input type="radio" name="package" value="Automation Pro"><span>Automation Pro</span></label>
+          <label class="radio-pill"><input type="radio" name="package" value="Full Suite"><span>Full Suite</span></label>
+          <label class="radio-pill"><input type="radio" name="package" value="Not sure yet"><span>Not sure yet</span></label>
+        </div>
+        <div class="error-msg">Please choose an option.</div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Systems you already use</legend>
+      <p class="field-sub">So we know what to connect — leave blank if you're not using one yet.</p>
+      <div class="two-col">
+        <div class="field">
+          <label for="crmTool">Current CRM (if any)</label>
+          <input type="text" id="crmTool" name="crm_tool" placeholder="e.g. HubSpot, GoHighLevel, none">
+        </div>
+        <div class="field">
+          <label for="calTool">Calendar tool</label>
+          <input type="text" id="calTool" name="calendar_tool" placeholder="e.g. Google Calendar, Calendly">
+        </div>
+      </div>
+      <div class="field">
+        <label for="emailTool">Business email provider</label>
+        <input type="text" id="emailTool" name="email_provider" placeholder="e.g. Gmail, Outlook">
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. How should we handle escalations?</legend>
+      <p class="field-sub">Anything outside these rules gets routed straight to you.</p>
+      <div class="field">
+        <label for="escalationContact">Who should be notified for anything the agent can't handle? <span class="required-mark">*</span></label>
+        <input type="text" id="escalationContact" name="escalation_contact" required placeholder="Name and best phone/email">
+        <div class="error-msg">Let us know who to notify.</div>
+      </div>
+      <div class="field">
+        <label for="escalationRules">Any specific situations that should always go to a human? <span class="hint">e.g. discount requests, complaints, cancellations</span></label>
+        <textarea id="escalationRules" name="escalation_rules" rows="3"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Voice &amp; tone</legend>
+      <p class="field-sub">A quick sample helps the agent sound like you, not a generic bot.</p>
+      <div class="field">
+        <label for="toneSample">Paste an example of how you'd normally reply to a customer message</label>
+        <textarea id="toneSample" name="tone_sample" rows="3" placeholder="e.g. 'Hey! Thanks for reaching out — happy to help...'"></textarea>
+      </div>
+    </fieldset>
+
+    <button type="submit" id="obSubmitBtn">Submit Onboarding Details</button>
+    <p class="form-note" id="obFormNote">We'll follow up by email within 1 business day.</p>
+  </form>
+</main>
+
+<script>
+  // Same pattern as the main contact form: real Formspree submission with a
+  // graceful mailto fallback until FORMSPREE_ENDPOINT is configured.
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_ONBOARDING_FORM_ID';
+  const FALLBACK_EMAIL = 'you@yourdomain.com';
+
+  const form = document.getElementById('onboardingForm');
+  const progressFill = document.getElementById('progressFill');
+
+  // Live progress bar based on how many required-ish fields are filled
+  function updateProgress(){
+    const fields = form.querySelectorAll('input[required], select[required], input[type="radio"]');
+    const radioGroups = new Set();
+    let total = 0, filled = 0;
+    fields.forEach(f=>{
+      if(f.type === 'radio'){
+        if(radioGroups.has(f.name)) return;
+        radioGroups.add(f.name);
+        total++;
+        if(form.querySelector(`input[name="${f.name}"]:checked`)) filled++;
+      } else {
+        total++;
+        if(f.value.trim()) filled++;
+      }
+    });
+    const pct = Math.max(14, Math.round((filled/total)*100));
+    progressFill.style.width = pct + '%';
+  }
+  form.addEventListener('input', updateProgress);
+  form.addEventListener('change', updateProgress);
+  updateProgress();
+
+  function validateForm(){
+    let valid = true;
+    form.querySelectorAll('.field').forEach(f=>f.classList.remove('invalid'));
+
+    // Text/email/tel/select required fields
+    form.querySelectorAll('[required]:not([type="radio"])').forEach(el=>{
+      const fieldWrap = el.closest('.field');
+      if(!fieldWrap) return;
+      let ok = el.value.trim().length > 0;
+      if(ok && el.type === 'email'){
+        ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim());
+      }
+      if(ok && el.type === 'tel'){
+        ok = el.value.replace(/\D/g,'').length >= 7;
+      }
+      if(!ok){ fieldWrap.classList.add('invalid'); valid = false; }
+    });
+
+    // Radio group (package)
+    const packageChecked = form.querySelector('input[name="package"]:checked');
+    if(!packageChecked){
+      const wrap = form.querySelector('input[name="package"]').closest('.field');
+      wrap.classList.add('invalid');
+      valid = false;
+    }
+    return valid;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(document.getElementById('hp').value){ return; } // honeypot tripped, drop silently
+
+    if(!validateForm()){
+      const firstInvalid = form.querySelector('.invalid');
+      if(firstInvalid) firstInvalid.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    const btn = document.getElementById('obSubmitBtn');
+    const note = document.getElementById('obFormNote');
+    const data = new FormData(form);
+    btn.disabled = true;
+    btn.textContent = 'Submitting…';
+
+    function showSuccess(){
+      form.classList.add('hidden');
+      document.getElementById('successBox').classList.add('visible');
+      progressFill.style.width = '100%';
+    }
+
+    if(FORMSPREE_ENDPOINT.includes('YOUR_ONBOARDING_FORM_ID')){
+      const subject = encodeURIComponent('Onboarding intake: ' + (data.get('business_name') || 'New client'));
+      let body = '';
+      for (const [key, value] of data.entries()) {
+        if(key === 'hp_website') continue;
+        body += key + ': ' + value + '\n';
+      }
+      window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${encodeURIComponent(body)}`;
+      note.textContent = "Opening your email app to send this — once Formspree is connected, this submits automatically instead.";
+      btn.disabled = false;
+      btn.textContent = 'Submit Onboarding Details';
+      return;
+    }
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(response=>{
+      if(response.ok){ showSuccess(); }
+      else { note.textContent = 'Something went wrong. Please email us directly at ' + FALLBACK_EMAIL + '.'; }
+    }).catch(()=>{
+      note.textContent = 'Something went wrong. Please email us directly at ' + FALLBACK_EMAIL + '.';
+    }).finally(()=>{
+      btn.disabled = false;
+      btn.textContent = 'Submit Onboarding Details';
+    });
+  });
+</script>
+</body>
+</html>
