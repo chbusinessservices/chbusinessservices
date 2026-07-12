@@ -39,13 +39,32 @@
   .footer-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:1180px;margin:0 auto;padding:0 28px;font-size:13px;}
   footer a{color:var(--text-on-dark-muted);}
   footer a:hover{color:#fff;}
+  #google_translate_element{line-height:1;}
+  #google_translate_element .goog-te-gadget{font-family:'Inter',sans-serif !important;font-size:0 !important;}
+  #google_translate_element .goog-te-gadget-simple{
+    background:transparent !important;border:1px solid var(--line) !important;border-radius:8px !important;
+    padding:6px 10px !important;display:inline-flex !important;align-items:center !important;
+    box-shadow:none !important;cursor:pointer;
+  }
+  #google_translate_element .goog-te-gadget-simple .goog-te-menu-value{
+    color:var(--text-muted) !important;font-size:13.5px !important;font-weight:500 !important;
+  }
+  #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span{border:none !important;}
+  #google_translate_element img{display:none !important;}
+  .goog-te-banner-frame.skiptranslate{display:none !important;}
+  body{top:0 !important;}
+  .goog-tooltip, .goog-tooltip:hover{display:none !important;}
+  .goog-text-highlight{background:none !important;box-shadow:none !important;}
 </style>
 </head>
 <body>
 <header>
   <nav class="nav">
     <div class="logo">CH Business Services</div>
-    <a class="back" href="ch-business-services.html">&larr; Back to site</a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div id="google_translate_element" aria-label="Select language"></div>
+      <a class="back" href="ch-business-services.html">&larr; Back to site</a>
+    </div>
   </nav>
 </header>
 
@@ -130,5 +149,16 @@
     <span><a href="ch-business-services.html#contact">Contact</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a></span>
   </div>
 </footer>
+
+<script>
+  function googleTranslateElementInit(){
+    new google.translate.TranslateElement({
+      pageLanguage:'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay:false
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>

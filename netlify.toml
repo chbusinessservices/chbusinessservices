@@ -7,9 +7,8 @@ redirects = []
   [functions."*"]
 
 [build]
-publish = "/Users/eliaschouchani/Desktop/ch-business-services-site"
+publish = "."
 publishOrigin = "default"
-base = "/Users/eliaschouchani/Desktop/ch-business-services-site"
 
   [build.environment]
 

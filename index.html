@@ -234,6 +234,24 @@
     .nav-toggle{display:flex;}
   }
 
+  /* ---------- LANGUAGE SWITCHER ---------- */
+  #google_translate_element{line-height:1;}
+  #google_translate_element .goog-te-gadget{font-family:'Inter',sans-serif !important;font-size:0 !important;}
+  #google_translate_element .goog-te-gadget-simple{
+    background:transparent !important;border:1px solid var(--line) !important;border-radius:8px !important;
+    padding:6px 10px !important;display:inline-flex !important;align-items:center !important;
+    box-shadow:none !important;cursor:pointer;
+  }
+  #google_translate_element .goog-te-gadget-simple .goog-te-menu-value{
+    color:var(--text-muted) !important;font-size:13.5px !important;font-weight:500 !important;
+  }
+  #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span{border:none !important;}
+  #google_translate_element img{display:none !important;}
+  .goog-te-banner-frame.skiptranslate{display:none !important;}
+  body{top:0 !important;}
+  .goog-tooltip, .goog-tooltip:hover{display:none !important;}
+  .goog-text-highlight{background:none !important;box-shadow:none !important;}
+
   /* ---------- HERO ---------- */
   .hero{
     background:radial-gradient(120% 100% at 15% 0%, var(--ink-3) 0%, var(--ink-2) 45%, var(--ink) 100%);
@@ -826,6 +844,7 @@
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
+      <div id="google_translate_element" aria-label="Select language"></div>
       <a href="#contact" class="btn btn-primary btn-sm">Book a Call</a>
       <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" onclick="toggleMobileMenu()">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
@@ -2075,6 +2094,17 @@
     });
   }
 </script>
+
+<script>
+  function googleTranslateElementInit(){
+    new google.translate.TranslateElement({
+      pageLanguage:'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay:false
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 
 </body>
 </html>

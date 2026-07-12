@@ -70,13 +70,35 @@
   .success-box p{font-size:14.5px;color:var(--text-muted);margin-top:10px;}
   #onboardingForm.hidden{display:none;}
   a.back{color:var(--text-on-dark-muted);font-size:13px;}
+  .header-top{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+  #google_translate_element{line-height:1;}
+  #google_translate_element .goog-te-gadget{font-family:'Inter',sans-serif !important;font-size:0 !important;}
+  #google_translate_element .goog-te-gadget-simple{
+    background:transparent !important;border:1px solid var(--line-dark) !important;border-radius:8px !important;
+    padding:6px 10px !important;display:inline-flex !important;align-items:center !important;
+    box-shadow:none !important;cursor:pointer;
+  }
+  #google_translate_element .goog-te-gadget-simple .goog-te-menu-value{
+    color:var(--text-on-dark-muted) !important;font-size:13px !important;font-weight:500 !important;
+  }
+  #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span{border:none !important;}
+  #google_translate_element img{display:none !important;}
+  .goog-te-banner-frame.skiptranslate{display:none !important;}
+  body{top:0 !important;}
+  .goog-tooltip, .goog-tooltip:hover{display:none !important;}
+  .goog-text-highlight{background:none !important;box-shadow:none !important;}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <div class="logo">CH Business Services</div>
-    <a class="back" href="index.html">&larr; Back to site</a>
+    <div class="header-top">
+      <div class="logo">CH Business Services</div>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div id="google_translate_element" aria-label="Select language"></div>
+        <a class="back" href="index.html">&larr; Back to site</a>
+      </div>
+    </div>
     <span class="eyebrow" style="margin-top:18px;">Client Onboarding</span>
     <h1>Let's get your automation connected</h1>
     <p class="sub">This takes about 5 minutes. The more specific your answers, the faster we can configure your agents correctly the first time.</p>
@@ -315,5 +337,16 @@
     });
   });
 </script>
+
+<script>
+  function googleTranslateElementInit(){
+    new google.translate.TranslateElement({
+      pageLanguage:'en',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay:false
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 </body>
 </html>
