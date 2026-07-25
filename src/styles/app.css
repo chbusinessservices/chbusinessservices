@@ -1,0 +1,399 @@
+@import "tailwindcss";
+
+/* ─── Brand Theme (Tailwind v4) ─── */
+@theme {
+  /* Background colors */
+  --color-brand-dark: #0a0f1e;
+  --color-brand-dark-lighter: #111827;
+  --color-brand-slate: #1e293b;
+  --color-brand-slate-light: #334155;
+  --color-brand-surface: #f8fafc;
+  --color-brand-surface-alt: #f1f5f9;
+
+  /* Accent colors */
+  --color-brand-accent: #6366f1;
+  --color-brand-accent-light: #818cf8;
+  --color-brand-accent-dark: #4f46e5;
+  --color-brand-accent-glow: rgba(99, 102, 241, 0.3);
+
+  /* Text colors */
+  --color-brand-text: #0f172a;
+  --color-brand-text-secondary: #475569;
+  --color-brand-text-muted: #94a3b8;
+  --color-brand-text-inverse: #f1f5f9;
+
+  /* Border colors */
+  --color-brand-border: rgba(15, 23, 42, 0.1);
+  --color-brand-border-light: rgba(15, 23, 42, 0.06);
+  --color-brand-border-inverse: rgba(255, 255, 255, 0.1);
+  --color-brand-border-inverse-light: rgba(255, 255, 255, 0.06);
+
+  /* Fonts */
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "Fira Code", monospace;
+
+  /* Easing */
+  --ease-brand: cubic-bezier(0.16, 0.8, 0.28, 1);
+}
+
+@layer base {
+  html,
+  body {
+    @apply bg-brand-surface text-brand-text antialiased;
+    scroll-behavior: smooth;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+  }
+
+  h1 { font-weight: 700; }
+  h2 { font-weight: 600; }
+  h3 { font-weight: 500; }
+
+  /* Selection */
+  ::selection {
+    background: rgba(99, 102, 241, 0.2);
+    color: #1e1b4b;
+  }
+}
+
+/* ─── Custom Animations ─── */
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ─── Utility classes ─── */
+
+.animate-fade-in-up { animation: fade-in-up 0.7s var(--ease-brand) forwards; }
+.animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+.animate-slide-in-right { animation: slide-in-right 0.5s var(--ease-brand) forwards; }
+.animate-slide-in-down { animation: slide-in-down 0.4s var(--ease-brand) forwards; }
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* ─── Stagger children ─── */
+
+.stagger-children > * {
+  opacity: 0;
+  animation: fade-in-up 0.6s var(--ease-brand) forwards;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 80ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 160ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 240ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 320ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 400ms; }
+.stagger-children > *:nth-child(7) { animation-delay: 480ms; }
+.stagger-children > *:nth-child(8) { animation-delay: 560ms; }
+.stagger-children > *:nth-child(9) { animation-delay: 640ms; }
+.stagger-children > *:nth-child(10) { animation-delay: 720ms; }
+
+/* ─── Button system ─── */
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-xl bg-brand-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-accent/20;
+  transition: all 0.3s var(--ease-brand);
+}
+.btn-primary:hover {
+  @apply bg-brand-accent-dark shadow-xl shadow-brand-accent/30;
+  transform: translateY(-2px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+  @apply shadow-md;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-xl border border-brand-border bg-white px-6 py-3 text-sm font-semibold text-brand-text shadow-sm;
+  transition: all 0.3s var(--ease-brand);
+}
+.btn-secondary:hover {
+  @apply border-brand-accent/30 bg-brand-surface-alt text-brand-accent shadow-md;
+  transform: translateY(-2px);
+}
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center rounded-xl border border-white/15 px-6 py-3 text-sm font-semibold text-white;
+  transition: all 0.3s var(--ease-brand);
+}
+.btn-ghost:hover {
+  @apply bg-white/10 border-white/25;
+  transform: translateY(-2px);
+}
+.btn-ghost:active {
+  transform: translateY(0);
+}
+
+/* ─── Card system ─── */
+
+.card-premium {
+  @apply rounded-2xl border border-brand-border-light bg-white shadow-sm;
+  transition: all 0.4s var(--ease-brand);
+}
+.card-premium:hover {
+  @apply border-brand-accent/20 shadow-lg shadow-brand-accent/5;
+  transform: translateY(-4px);
+}
+
+.card-glass {
+  @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl;
+  transition: all 0.4s var(--ease-brand);
+}
+.card-glass:hover {
+  @apply border-white/20 bg-white/10;
+  transform: translateY(-4px);
+}
+
+.card-glass-light {
+  @apply rounded-2xl border border-brand-border-light bg-white/80 backdrop-blur-xl shadow-sm;
+  transition: all 0.4s var(--ease-brand);
+}
+.card-glass-light:hover {
+  @apply border-brand-accent/20 shadow-lg;
+  transform: translateY(-4px);
+}
+
+/* ─── Form inputs ─── */
+
+.input-premium {
+  @apply block w-full rounded-xl border border-brand-border bg-white px-4 py-3 text-brand-text shadow-sm placeholder:text-brand-text-muted;
+  transition: all 0.2s ease;
+}
+.input-premium:focus {
+  @apply border-brand-accent outline-none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ─── Nav underline animation ─── */
+
+.nav-link-underline {
+  position: relative;
+}
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  transition: all 0.35s var(--ease-brand);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+.nav-link-underline:hover::after,
+.nav-link-underline.active::after {
+  width: 60%;
+}
+
+/* ─── Gradient text ─── */
+
+.gradient-text {
+  background: linear-gradient(135deg, #6366f1 0%, #818cf8 50%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-warm {
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ef4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-white {
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, #6366f1 0%, #a78bfa 50%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Hero decorative elements ─── */
+
+.hero-dots {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.hero-dots-light {
+  background-image: radial-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.hero-grid-pattern {
+  background-image:
+    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* ─── Section padding utility ─── */
+
+.section-pad {
+  @apply py-24;
+}
+
+/* ─── Glow card (for featured pricing) ─── */
+
+.card-glow {
+  position: relative;
+}
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.3));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-brand);
+}
+.card-glow:hover::before,
+.card-glow.featured::before {
+  opacity: 1;
+}
+
+/* ─── Page transition ─── */
+
+.page-enter {
+  animation: fade-in-up 0.5s var(--ease-brand) forwards;
+}
+
+/* ─── FAQ accordion animation ─── */
+
+.faq-answer {
+  overflow: hidden;
+  transition: max-height 0.45s var(--ease-brand), opacity 0.35s ease;
+  max-height: 0;
+  opacity: 0;
+}
+.faq-answer.open {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* ─── Timeline line ─── */
+
+.timeline-line {
+  position: relative;
+}
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1 0%, rgba(99, 102, 241, 0.15) 100%);
+  z-index: 0;
+}
+
+/* ─── Number badge for steps ─── */
+
+.step-number {
+  font-family: "IBM Plex Mono", monospace;
+  @apply flex h-14 w-14 items-center justify-center rounded-full bg-brand-accent text-2xl font-bold text-white shadow-lg shadow-brand-accent/25;
+}
+
+/* ─── Badge / tag ─── */
+
+.badge {
+  @apply inline-flex items-center rounded-full px-3 py-1 font-mono text-xs font-semibold;
+}
+
+.badge-accent {
+  @apply bg-brand-accent/10 text-brand-accent;
+}
+
+.badge-success {
+  @apply bg-emerald-500/10 text-emerald-600;
+}
+
+/* ─── Divider ─── */
+
+.divider {
+  @apply h-px w-full bg-gradient-to-r from-transparent via-brand-accent/20 to-transparent;
+}
+
+/* ─── Dark section gradient backgrounds ─── */
+
+.bg-dark-gradient {
+  background: linear-gradient(135deg, #0a0f1e 0%, #111827 50%, #0f172a 100%);
+}
+
+.bg-dark-gradient-alt {
+  background: linear-gradient(135deg, #111827 0%, #1e293b 50%, #0f172a 100%);
+}
+
+/* ─── Section heading utility ─── */
+
+.section-label {
+  @apply inline-block font-mono text-xs font-semibold uppercase tracking-widest text-brand-accent;
+}
+
+.section-heading {
+  @apply mt-3 font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl;
+}
+
+.section-subtitle {
+  @apply mx-auto mt-4 max-w-2xl text-brand-text-secondary;
+}
+
+/* ─── Noise texture overlay ─── */
+
+.noise-overlay {
+  position: relative;
+}
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
