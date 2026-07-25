@@ -3,6 +3,23 @@ import { AnimatedSection } from "~/components/AnimatedSection";
 
 export const Route = createFileRoute("/about")({
   component: About,
+  head: () => ({
+    meta: [
+      { title: "About — CH Business Services" },
+      { name: "description", content: "CH Business Services builds conversion-focused websites and automation systems for service businesses. Learn about our team and approach." },
+      { property: "og:title", content: "About — CH Business Services" },
+      { property: "og:description", content: "CH Business Services builds conversion-focused websites and automation systems for service businesses. Learn about our team and approach." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/about" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "About — CH Business Services" },
+      { name: "twitter:description", content: "CH Business Services builds conversion-focused websites and automation systems for service businesses. Learn about our team and approach." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/about" },
+    ],
+  }),
 });
 
 function SearchIcon({ className }: { className?: string }) {

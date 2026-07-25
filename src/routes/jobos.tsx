@@ -1,7 +1,14 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AnimatedSection } from "~/components/AnimatedSection";
+import { pageHead, faqLd, SITE_URL } from "~/lib/seo";
 
 export const Route = createFileRoute("/jobos")({
+  head: () => pageHead({
+    title: "Hire AI Workers for Your Business | JobOS by CH Business Services",
+    description: "Deploy pre-trained AI agents for customer support, bookkeeping, marketing, and more — at a fraction of traditional costs. 50+ roles, deploy in 48 hours.",
+    path: "/jobos",
+    ogType: "website",
+  }),
   component: JobOS,
 });
 
@@ -204,6 +211,21 @@ function WorkerCard({ title, description, icon, rate }: WorkerRole) {
 function JobOS() {
   return (
     <>
+      {/* FAQ JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqLd(
+              faqs.map((f) => ({
+                question: f.q,
+                answer: f.a.replace(/<[^>]*>/g, ""),
+              }))
+            )
+          ),
+        }}
+      />
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-brand-surface-alt">
         <div className="absolute inset-0 hero-dots-light opacity-50" />

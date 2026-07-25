@@ -3,6 +3,23 @@ import { AnimatedSection } from "~/components/AnimatedSection";
 
 export const Route = createFileRoute("/case-studies")({
   component: CaseStudies,
+  head: () => ({
+    meta: [
+      { title: "Case Studies — Real Results from Real Businesses | CH Business Services" },
+      { name: "description", content: "See how CH Business Services helped businesses increase conversions, automate workflows, and grow revenue. Real results, real stories." },
+      { property: "og:title", content: "Case Studies — Real Results from Real Businesses | CH Business Services" },
+      { property: "og:description", content: "See how CH Business Services helped businesses increase conversions, automate workflows, and grow revenue. Real results, real stories." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/case-studies" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Case Studies — Real Results from Real Businesses | CH Business Services" },
+      { name: "twitter:description", content: "See how CH Business Services helped businesses increase conversions, automate workflows, and grow revenue. Real results, real stories." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/case-studies" },
+    ],
+  }),
 });
 
 /* ─── Inline icons ─── */

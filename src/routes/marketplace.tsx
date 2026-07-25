@@ -5,8 +5,19 @@ export const Route = createFileRoute("/marketplace")({
   component: Marketplace,
   head: () => ({
     meta: [
-      { title: "Marketplace — CH Business Services" },
-      { name: "description", content: "Buy and sell AI business kits — ready-to-launch systems with prompts, agents, configs, and sales flows." },
+      { title: "AI Business Kits Marketplace — Ready-to-Launch Systems | CH Business Services" },
+      { name: "description", content: "Buy and sell AI business kits — ready-to-launch systems with prompts, agents, configs, and sales flows. 28 products across 14 categories." },
+      { property: "og:title", content: "AI Business Kits Marketplace — Ready-to-Launch Systems | CH Business Services" },
+      { property: "og:description", content: "Buy and sell AI business kits — ready-to-launch systems with prompts, agents, configs, and sales flows. 28 products across 14 categories." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/marketplace" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AI Business Kits Marketplace — Ready-to-Launch Systems | CH Business Services" },
+      { name: "twitter:description", content: "Buy and sell AI business kits — ready-to-launch systems with prompts, agents, configs, and sales flows." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/marketplace" },
     ],
   }),
 });

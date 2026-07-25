@@ -3,6 +3,23 @@ import { AnimatedSection } from "~/components/AnimatedSection";
 
 export const Route = createFileRoute("/reports")({
   component: Reports,
+  head: () => ({
+    meta: [
+      { title: "Market Reports — Intelligence Briefs | CH Business Services" },
+      { name: "description", content: "Download market intelligence reports compiled by CH Business Services. Niche analysis, competitor insights, and opportunity briefs." },
+      { property: "og:title", content: "Market Reports — Intelligence Briefs | CH Business Services" },
+      { property: "og:description", content: "Download market intelligence reports compiled by CH Business Services. Niche analysis, competitor insights, and opportunity briefs." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/reports" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Market Reports — Intelligence Briefs | CH Business Services" },
+      { name: "twitter:description", content: "Download market intelligence reports compiled by CH Business Services. Niche analysis, competitor insights, and opportunity briefs." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/reports" },
+    ],
+  }),
 });
 
 interface ReportCard { title: string; category: string; painScore: number; slug: string; }

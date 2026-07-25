@@ -5,6 +5,23 @@ import { getPublicSignals, type MarketSignal } from "~/lib/intelligence";
 
 export const Route = createFileRoute("/vault")({
   component: Vault,
+  head: () => ({
+    meta: [
+      { title: "Report Vault — Intelligence Archive | CH Business Services" },
+      { name: "description", content: "Access our archive of market intelligence reports, niche analysis briefs, and opportunity scans. Subscribe for weekly updates." },
+      { property: "og:title", content: "Report Vault — Intelligence Archive | CH Business Services" },
+      { property: "og:description", content: "Access our archive of market intelligence reports, niche analysis briefs, and opportunity scans. Subscribe for weekly updates." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/vault" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Report Vault — Intelligence Archive | CH Business Services" },
+      { name: "twitter:description", content: "Access our archive of market intelligence reports, niche analysis briefs, and opportunity scans. Subscribe for weekly updates." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/vault" },
+    ],
+  }),
 });
 
 const STRIPE_VAULT_LINK = "https://buy.stripe.com/28E28r15v99m1909Jq9Zm0c";

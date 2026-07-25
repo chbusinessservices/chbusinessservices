@@ -7,6 +7,23 @@ import { sql } from "~/db";
 
 export const Route = createFileRoute("/contact")({
   component: Contact,
+  head: () => ({
+    meta: [
+      { title: "Contact Us — CH Business Services" },
+      { name: "description", content: "Get in touch with CH Business Services. Start with a free Business Gap Scan or ask about our conversion websites and automation systems." },
+      { property: "og:title", content: "Contact Us — CH Business Services" },
+      { property: "og:description", content: "Get in touch with CH Business Services. Start with a free Business Gap Scan or ask about our conversion websites and automation systems." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/contact" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Contact Us — CH Business Services" },
+      { name: "twitter:description", content: "Get in touch with CH Business Services. Start with a free Business Gap Scan or ask about our conversion websites and automation systems." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/contact" },
+    ],
+  }),
 });
 
 /* ─── Server function for contact submissions ─── */

@@ -13,6 +13,7 @@ void Link;
 
 import appCss from "~/styles/app.css?url";
 import { ToastProvider } from "~/components/Toast";
+import { SITE_URL, SITE_NAME, organizationLd } from "~/lib/seo";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -95,14 +96,21 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CH Business Services — Premium Websites & Business Systems" },
+      { title: "AI Business Kits & Automation Systems | CH Business Services" },
       {
         name: "description",
         content:
-          "CH Business Services designs conversion-focused, SEO-smart websites and business automation systems for small businesses and growing brands. Turn visitors into customers.",
+          "CH Business Services builds conversion-focused websites, AI business kits, automation systems, and intelligence reports for service businesses and growing brands.",
       },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:url", content: SITE_URL },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "AI Business Kits & Automation Systems | CH Business Services" },
+      { name: "twitter:description", content: "CH Business Services builds conversion-focused websites, AI business kits, automation systems, and intelligence reports for service businesses and growing brands." },
     ],
     links: [
+      { rel: "canonical", href: SITE_URL },
       { rel: "stylesheet", href: appCss },
       {
         rel: "preconnect",

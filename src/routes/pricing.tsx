@@ -4,6 +4,23 @@ import { useState } from "react";
 
 export const Route = createFileRoute("/pricing")({
   component: Pricing,
+  head: () => ({
+    meta: [
+      { title: "Pricing — Packages from $1,500 | CH Business Services" },
+      { name: "description", content: "Transparent pricing for conversion websites, automation systems, Growth OS retainers, and AI business kits. Free gap scan included." },
+      { property: "og:title", content: "Pricing — Packages from $1,500 | CH Business Services" },
+      { property: "og:description", content: "Transparent pricing for conversion websites, automation systems, Growth OS retainers, and AI business kits. Free gap scan included." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/pricing" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Pricing — Packages from $1,500 | CH Business Services" },
+      { name: "twitter:description", content: "Transparent pricing for conversion websites, automation systems, Growth OS retainers, and AI business kits. Free gap scan included." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/pricing" },
+    ],
+  }),
 });
 
 /* ─── Preserved Stripe links from original tiers ─── */

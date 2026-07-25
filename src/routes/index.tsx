@@ -1,8 +1,14 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AnimatedSection } from "~/components/AnimatedSection";
 import { useState } from "react";
+import { SITE_URL, pageHead, organizationLd, faqLd } from "~/lib/seo";
 
 export const Route = createFileRoute("/")({
+  head: () => pageHead({
+    title: "AI Business Kits & Automation Systems | CH Business Services",
+    description: "CH Business Services builds conversion-focused websites, AI business kits, automation systems, and intelligence reports. Get a free Business Gap Scan today.",
+    ogType: "website",
+  }),
   component: Home,
 });
 
@@ -127,6 +133,27 @@ function Home() {
 
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationLd()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            faqLd(
+              faqs.map((f) => ({
+                question: f.q,
+                answer: f.a.replace(/<[^>]*>/g, ""),
+              }))
+            )
+          ),
+        }}
+      />
+
       {/* ═══════════════════════════════════════════
           1. HERO — dark, bold, minimal
           ═══════════════════════════════════════════ */}
@@ -205,6 +232,38 @@ function Home() {
 
         {/* Bottom fade to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-brand-surface" />
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          TRUST BAR — social proof right after hero
+          ═══════════════════════════════════════════ */}
+      <section className="bg-brand-surface py-8 sm:py-10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <p className="text-center text-sm font-medium uppercase tracking-wider text-brand-text-muted/70">
+              Trusted by growing businesses
+            </p>
+          </AnimatedSection>
+          <AnimatedSection delay={100}>
+            <div className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4">
+              {[
+                { stat: "50+", label: "Projects delivered" },
+                { stat: "98%", label: "Client satisfaction" },
+                { stat: "14 days", label: "Avg. time to launch" },
+                { stat: "40%", label: "Avg. conversion lift" },
+              ].map((item) => (
+                <div key={item.label} className="text-center">
+                  <div className="font-mono text-3xl font-bold gradient-text sm:text-4xl">
+                    {item.stat}
+                  </div>
+                  <div className="mt-1 text-sm text-brand-text-secondary">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════
@@ -305,7 +364,91 @@ function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          4. SERVICES PREVIEW — white bg, 4 cards
+          4. TRUST / TESTIMONIALS — moved up for social proof
+          ═══════════════════════════════════════════ */}
+      <section className="section-pad bg-brand-surface-alt">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="mx-auto max-w-2xl text-center">
+              <div className="badge badge-accent mb-4">Testimonials</div>
+              <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
+                Real <span className="gradient-text">results</span> from real businesses
+              </h2>
+            </div>
+          </AnimatedSection>
+
+          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {[
+              {
+                metric: "40%",
+                label: "more booked jobs",
+                quote: "I didn't realize how much business I was losing until the system showed me. Now I wake up to booked jobs instead of missed calls.",
+                author: "Mike R.",
+                role: "Owner, Denver Plumbing Co.",
+              },
+              {
+                metric: "15 hrs",
+                label: "saved per week",
+                quote: "We were drowning in manual work. Now our pipeline runs itself — and our conversion rate proves it.",
+                author: "Sarah Chen",
+                role: "CEO, DataPulse Analytics",
+              },
+              {
+                metric: "$24K/mo",
+                label: "from content alone",
+                quote: "I was already creating great content — I just had no system to turn it into clients. Now my podcast is my best salesperson.",
+                author: "James Oluwole",
+                role: "Founder, Amplify Coaching",
+              },
+            ].map((t, i) => (
+              <AnimatedSection key={t.author} delay={i * 120}>
+                <div className="card-glass-light flex h-full flex-col p-8">
+                  <div className="font-mono text-4xl font-bold gradient-text">
+                    {t.metric}
+                  </div>
+                  <div className="mt-1 text-sm font-semibold text-brand-text">{t.label}</div>
+                  <blockquote className="mt-4 flex-1 leading-relaxed text-brand-text-secondary italic">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+                  <div className="mt-6 flex items-center gap-3 border-t border-brand-border-light pt-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent font-serif text-sm font-bold text-white shadow-sm shadow-brand-accent/20">
+                      {t.author.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="text-sm font-semibold text-brand-text">{t.author}</div>
+                      <div className="text-xs text-brand-text-secondary">{t.role}</div>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          <AnimatedSection delay={400}>
+            <div className="mt-10 text-center">
+              <Link to="/case-studies" className="btn-secondary px-8 py-4 text-base">
+                Read full case studies
+              </Link>
+            </div>
+          </AnimatedSection>
+
+          {/* Inline CTA — third gap scan offer on homepage */}
+          <AnimatedSection delay={500}>
+            <div className="mt-8 text-center">
+              <p className="text-sm text-brand-text-secondary mb-3">Ready to get similar results?</p>
+              <Link
+                to="/offers/gap-scan"
+                className="btn-primary px-8 py-4 text-base"
+              >
+                Start your free Gap Scan
+              </Link>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          5. SERVICES PREVIEW — white bg, 4 cards
           ═══════════════════════════════════════════ */}
       <section className="section-pad bg-brand-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -577,78 +720,7 @@ function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          8. TRUST / TESTIMONIALS — alt bg
-          ═══════════════════════════════════════════ */}
-      <section className="section-pad bg-brand-surface-alt">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedSection>
-            <div className="mx-auto max-w-2xl text-center">
-              <div className="badge badge-accent mb-4">Testimonials</div>
-              <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
-                Real <span className="gradient-text">results</span> from real businesses
-              </h2>
-            </div>
-          </AnimatedSection>
-
-          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[
-              {
-                metric: "40%",
-                label: "more booked jobs",
-                quote: "I didn't realize how much business I was losing until the system showed me. Now I wake up to booked jobs instead of missed calls.",
-                author: "Mike R.",
-                role: "Owner, Denver Plumbing Co.",
-              },
-              {
-                metric: "15 hrs",
-                label: "saved per week",
-                quote: "We were drowning in manual work. Now our pipeline runs itself — and our conversion rate proves it.",
-                author: "Sarah Chen",
-                role: "CEO, DataPulse Analytics",
-              },
-              {
-                metric: "$24K/mo",
-                label: "from content alone",
-                quote: "I was already creating great content — I just had no system to turn it into clients. Now my podcast is my best salesperson.",
-                author: "James Oluwole",
-                role: "Founder, Amplify Coaching",
-              },
-            ].map((t, i) => (
-              <AnimatedSection key={t.author} delay={i * 120}>
-                <div className="card-glass-light flex h-full flex-col p-8">
-                  <div className="font-mono text-4xl font-bold gradient-text">
-                    {t.metric}
-                  </div>
-                  <div className="mt-1 text-sm font-semibold text-brand-text">{t.label}</div>
-                  <blockquote className="mt-4 flex-1 leading-relaxed text-brand-text-secondary italic">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                  <div className="mt-6 flex items-center gap-3 border-t border-brand-border-light pt-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent font-serif text-sm font-bold text-white shadow-sm shadow-brand-accent/20">
-                      {t.author.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="text-sm font-semibold text-brand-text">{t.author}</div>
-                      <div className="text-xs text-brand-text-secondary">{t.role}</div>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <AnimatedSection delay={400}>
-            <div className="mt-10 text-center">
-              <Link to="/case-studies" className="btn-secondary px-8 py-4 text-base">
-                Read full case studies
-              </Link>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          9. FAQ — white bg
+          8. FAQ — white bg
           ═══════════════════════════════════════════ */}
       <section className="section-pad bg-brand-surface">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

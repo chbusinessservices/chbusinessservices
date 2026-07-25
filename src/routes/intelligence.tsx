@@ -5,6 +5,23 @@ import { getPublicSignals, type MarketSignal } from "~/lib/intelligence";
 
 export const Route = createFileRoute("/intelligence")({
   component: Intelligence,
+  head: () => ({
+    meta: [
+      { title: "Market Intelligence — Reports & Briefs | CH Business Services" },
+      { name: "description", content: "Niche opportunity briefs, market gap analysis, and weekly alerts. Data-driven intelligence to find your next business opportunity." },
+      { property: "og:title", content: "Market Intelligence — Reports & Briefs | CH Business Services" },
+      { property: "og:description", content: "Niche opportunity briefs, market gap analysis, and weekly alerts. Data-driven intelligence to find your next business opportunity." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/intelligence" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Market Intelligence — Reports & Briefs | CH Business Services" },
+      { name: "twitter:description", content: "Niche opportunity briefs, market gap analysis, and weekly alerts. Data-driven intelligence to find your next business opportunity." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/intelligence" },
+    ],
+  }),
 });
 
 const STRIPE_VAULT_LINK = "https://buy.stripe.com/28E28r15v99m1909Jq9Zm0c";

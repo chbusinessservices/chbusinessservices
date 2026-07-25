@@ -91,6 +91,29 @@ function ProductCard({ product }: { product: Product }) {
    ═══════════════════════════════════════════ */
 export const Route = createFileRoute("/marketplace/$category")({
   component: CategoryPage,
+  head: ({ params }) => {
+    const displayName = categoryLookup[params.category] || "Category";
+    const desc = categoryDescriptions[params.category] || "Browse AI business kits in this category";
+    const title = `${displayName} — AI Business Kits | CH Business Services Marketplace`;
+    const url = `https://chbusinessservices.pro/marketplace/${params.category}`;
+    return {
+      meta: [
+        { title },
+        { name: "description", content: desc },
+        { property: "og:title", content: title },
+        { property: "og:description", content: desc },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
+        { property: "og:site_name", content: "CH Business Services" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: desc },
+      ],
+      links: [
+        { rel: "canonical", href: url },
+      ],
+    };
+  },
 });
 
 function CategoryPage() {

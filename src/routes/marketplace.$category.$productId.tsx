@@ -13,6 +13,7 @@ import {
   getStripeTier,
   type Product,
 } from "~/lib/marketplace-data";
+import { pageHead, productLd, breadcrumbLd, SITE_URL } from "~/lib/seo";
 
 /* ═══════════════════════════════════════════
    Admin Auth Server Function
@@ -292,10 +293,23 @@ export const Route = createFileRoute("/marketplace/$category/$productId")({
       ? `${product.name} — ${formatPrice(product.price)} | CH Business Services Marketplace`
       : "Product — CH Business Services Marketplace";
     const desc = product?.description || "View product details and preview AI business kits.";
+    const path = `/marketplace/${params.category}/${params.productId}`;
+    const url = `${SITE_URL}${path}`;
     return {
       meta: [
         { title },
         { name: "description", content: desc },
+        { property: "og:title", content: title },
+        { property: "og:description", content: desc },
+        { property: "og:type", content: "product" },
+        { property: "og:url", content: url },
+        { property: "og:site_name", content: "CH Business Services" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: desc },
+      ],
+      links: [
+        { rel: "canonical", href: url },
       ],
     };
   },
@@ -346,6 +360,38 @@ function ProductDetailPage() {
 
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      {product && (
+        <>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(
+                productLd({
+                  name: product.name,
+                  description: product.description,
+                  price: product.price,
+                  url: `${SITE_URL}/marketplace/${category}/${productId}`,
+                  category: categoryLookup[product.category] || product.category,
+                })
+              ),
+            }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(
+                breadcrumbLd([
+                  { name: "Home", url: SITE_URL },
+                  { name: "Marketplace", url: `${SITE_URL}/marketplace` },
+                  { name: categoryLookup[product.category] || product.category, url: `${SITE_URL}/marketplace/${product.category}` },
+                  { name: product.name, url: `${SITE_URL}/marketplace/${category}/${productId}` },
+                ])
+              ),
+            }}
+          />
+        </>
+      )}
       {/* ═══ Hero ═══ */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white to-indigo-50/50">
         <div className="absolute inset-0 hero-dots opacity-30" />

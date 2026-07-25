@@ -3,6 +3,23 @@ import { AnimatedSection } from "~/components/AnimatedSection";
 
 export const Route = createFileRoute("/services")({
   component: Services,
+  head: () => ({
+    meta: [
+      { title: "Services — Premium Websites & Automation | CH Business Services" },
+      { name: "description", content: "Conversion-focused websites, automation systems, intelligence reports, and AI business kits. Turn visitors into customers with CH Business Services." },
+      { property: "og:title", content: "Services — Premium Websites & Automation | CH Business Services" },
+      { property: "og:description", content: "Conversion-focused websites, automation systems, intelligence reports, and AI business kits. Turn visitors into customers with CH Business Services." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/services" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Services — Premium Websites & Automation | CH Business Services" },
+      { name: "twitter:description", content: "Conversion-focused websites, automation systems, intelligence reports, and AI business kits. Turn visitors into customers with CH Business Services." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/services" },
+    ],
+  }),
 });
 
 interface ServiceCard { title: string; description: string; icon: React.ReactNode; cta?: string; ctaTo?: string; }

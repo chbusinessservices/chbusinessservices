@@ -5,6 +5,23 @@ import { getPublishedPosts, type ContentBrief } from "~/lib/intelligence";
 
 export const Route = createFileRoute("/blog")({
   component: Blog,
+  head: () => ({
+    meta: [
+      { title: "Blog — Business Growth & Automation Tips | CH Business Services" },
+      { name: "description", content: "Expert insights on business automation, website conversion, AI business kits, and market intelligence. Read the CH Business Services blog." },
+      { property: "og:title", content: "Blog — Business Growth & Automation Tips | CH Business Services" },
+      { property: "og:description", content: "Expert insights on business automation, website conversion, AI business kits, and market intelligence. Read the CH Business Services blog." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://chbusinessservices.pro/blog" },
+      { property: "og:site_name", content: "CH Business Services" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Blog — Business Growth & Automation Tips | CH Business Services" },
+      { name: "twitter:description", content: "Expert insights on business automation, website conversion, AI business kits, and market intelligence. Read the CH Business Services blog." },
+    ],
+    links: [
+      { rel: "canonical", href: "https://chbusinessservices.pro/blog" },
+    ],
+  }),
 });
 
 function calculateReadTime(wordCount: number | null): string {

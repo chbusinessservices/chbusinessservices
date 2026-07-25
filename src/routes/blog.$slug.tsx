@@ -2,6 +2,7 @@ import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { AnimatedSection } from "~/components/AnimatedSection";
 import { getPostBySlug, getPublishedPosts, type ContentBrief } from "~/lib/intelligence";
+import { SITE_URL, blogPostingLd } from "~/lib/seo";
 
 export const Route = createFileRoute("/blog/$slug")({
   component: BlogPost,
@@ -10,9 +11,10 @@ export const Route = createFileRoute("/blog/$slug")({
     if (!post) throw notFound();
     return { post };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     const post = loaderData?.post;
     if (!post) return {};
+    const url = `${SITE_URL}/blog/${post.slug}`;
     return {
       meta: [
         { title: `${post.title} — CH Business Services Blog` },
@@ -26,8 +28,15 @@ export const Route = createFileRoute("/blog/$slug")({
           content: post.meta_description || "",
         },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        { property: "og:site_name", content: "CH Business Services" },
         { property: "article:published_time", content: post.published_at || "" },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: post.title },
+        { name: "twitter:description", content: post.meta_description || "" },
+      ],
+      links: [
+        { rel: "canonical", href: url },
       ],
     };
   },
@@ -66,6 +75,20 @@ function BlogPost() {
 
   return (
     <>
+      {/* BlogPosting JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            blogPostingLd({
+              title: post.title,
+              description: post.meta_description || "",
+              url: `${SITE_URL}/blog/${post.slug}`,
+              datePublished: post.published_at || new Date().toISOString(),
+            })
+          ),
+        }}
+      />
       {/* Hero header */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white to-indigo-50/30">
         <div className="absolute inset-0 hero-dots opacity-20" />
