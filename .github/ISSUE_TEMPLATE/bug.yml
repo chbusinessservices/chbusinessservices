@@ -1,0 +1,99 @@
+name: 🐛 Bug Report
+description: Report a bug or issue
+title: "[BUG] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🐛 Bug Report
+        
+        Thank you for reporting a bug! Please fill in the details below to help us investigate.
+
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Description
+      description: What is the bug? Describe the issue clearly.
+      placeholder: "The application crashes when..."
+      validations:
+        required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version are you using?
+      placeholder: "v1.0.0 or commit SHA"
+      validations:
+        required: true
+
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce the bug?
+      placeholder: |
+        1. Open the application
+        2. Navigate to ...
+        3. Click on ...
+        4. Observe the issue
+      validations:
+        required: true
+
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+      placeholder: "The page should load successfully..."
+      validations:
+        required: true
+
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: "The page shows an error..."
+      validations:
+        required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Your system details
+      placeholder: |
+        - OS: macOS 14.x
+        - Node: v18.x
+        - Browser: Chrome 120
+        - Runtime: Bun v1.0
+      validations:
+        required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Error Messages
+      description: Paste any relevant error messages or logs
+      render: shell
+      validations:
+        required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information?
+      validations:
+        required: false
+
+  - type: checkbox
+    id: searched_issues
+    attributes:
+      label: Search
+      description: I've searched existing issues and this is not a duplicate
+      validations:
+        required: true

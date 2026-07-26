@@ -1,0 +1,33 @@
+# Ch Business Services CODEOWNERS
+# Code owners are required to approve PRs before merging
+
+# Default owners for everything in the repository
+* @chbusinessservices
+
+# Proprietary AI/Agent Engine - Requires approval
+/src/lib/agent/ @chbusinessservices
+/src/server/api/ @chbusinessservices
+
+# Billing & Payment Processing - Requires approval
+/src/lib/billing/ @chbusinessservices
+/src/routes/api/stripe/ @chbusinessservices
+
+# Authentication & Security - Requires approval
+/src/lib/auth.ts @chbusinessservices
+/src/server/api/auth/ @chbusinessservices
+
+# Deployment & Infrastructure - Requires approval
+.github/ @chbusinessservices
+*.sh @chbusinessservices
+Dockerfile @chbusinessservices
+*.yml @chbusinessservices
+
+# Licensing & IP - Requires approval
+LICENSE @chbusinessservices
+LICENSING.md @chbusinessservices
+SECURITY.md @chbusinessservices
+CONTRIBUTING.md @chbusinessservices
+
+# Documentation
+README.md @chbusinessservices
+CODE_OF_CONDUCT.md @chbusinessservices

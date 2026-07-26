@@ -1,0 +1,63 @@
+name: 💡 Feature Request
+description: Suggest a new feature or enhancement
+title: "[FEATURE] "
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 💡 Feature Request
+        
+        Got an idea? We'd love to hear it! Please describe your feature request.
+
+  - type: textarea
+    id: feature_description
+    attributes:
+      label: Feature Description
+      description: Describe the feature you'd like to see
+      placeholder: "I would like to add..."
+      validations:
+        required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why do you need this feature? What problem does it solve?
+      placeholder: "This would help because..."
+      validations:
+        required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: How do you envision this feature working?
+      placeholder: "The feature could work by..."
+      validations:
+        required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Are there other ways to achieve this?
+      validations:
+        required: false
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information?
+      validations:
+        required: false
+
+  - type: checkbox
+    id: searched_issues
+    attributes:
+      label: Search
+      description: I've searched existing issues and this is not a duplicate
+      validations:
+        required: true

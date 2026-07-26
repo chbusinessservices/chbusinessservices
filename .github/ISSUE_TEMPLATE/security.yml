@@ -1,0 +1,150 @@
+name: 🔒 Security Vulnerability Report
+description: Report a security vulnerability privately
+title: "[SECURITY] "
+labels: ["security", "vulnerability"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 🔒 Security Vulnerability Report
+        
+        **IMPORTANT:** Please do NOT disclose security vulnerabilities publicly. Use this form to report privately.
+        
+        ⚠️ **DO NOT include:**
+        - Working exploits
+        - Proof-of-concept code that demonstrates the vulnerability
+        - Details that could be used to exploit other systems
+        
+        We take security seriously and will investigate and respond promptly.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this vulnerability?
+      options:
+        - "🔴 Critical (Immediate exploitation, data breach risk)"
+        - "🟠 High (Significant security impact)"
+        - "🟡 Medium (Notable security concern)"
+        - "🟢 Low (Minor security issue)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: vulnerability_description
+    attributes:
+      label: Vulnerability Description
+      description: Describe the vulnerability in detail (without revealing the exploit)
+      placeholder: |
+        Example: "Sensitive database credentials are hardcoded in the configuration file and could be accessed by unauthorized users."
+      validations:
+        required: true
+
+  - type: textarea
+    id: affected_component
+    attributes:
+      label: Affected Component(s)
+      description: Which files, modules, or systems are affected?
+      placeholder: |
+        - File: src/auth/session.ts
+        - Component: AuthMiddleware
+        - Function: validateToken()
+      validations:
+        required: true
+
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: Steps to Reproduce (if applicable)
+      description: How can the security team reproduce this issue? (Avoid detailed exploit instructions)
+      placeholder: |
+        1. Access the login endpoint
+        2. Observe the response headers
+        3. Notice the exposed information
+      validations:
+        required: false
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Potential Impact
+      description: What could an attacker accomplish with this vulnerability?
+      placeholder: |
+        - Data breach affecting user credentials
+        - Unauthorized access to admin functions
+        - Denial of service
+      validations:
+        required: true
+
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: Suggested Fix (Optional)
+      description: If you have ideas for remediation, share them here
+      placeholder: |
+        Consider using environment variables instead of hardcoded credentials, or implement input validation on all user-facing endpoints.
+      validations:
+        required: false
+
+  - type: input
+    id: reporter_email
+    attributes:
+      label: Your Email Address
+      description: We'll use this to contact you about the report (kept confidential)
+      placeholder: security@yourcompany.com
+      validations:
+        required: true
+
+  - type: input
+    id: reporter_name
+    attributes:
+      label: Your Name (Optional)
+      description: For attribution if you wish to be credited
+      placeholder: Jane Doe
+      validations:
+        required: false
+
+  - type: dropdown
+    id: disclosure_preference
+    attributes:
+      label: Disclosure Preference
+      description: How would you like to be credited after the fix?
+      options:
+        - "🤐 Keep me anonymous"
+        - "✅ Credit with name only"
+        - "✅ Credit with name + company"
+        - "✅ Credit with name + website"
+        - "⏳ Contact me first"
+    validations:
+      required: true
+
+  - type: checkbox
+    id: confidentiality
+    attributes:
+      label: Confidentiality Agreement
+      description: I understand this report will be kept confidential until a fix is released
+      validations:
+        required: true
+
+  - type: checkbox
+    id: responsible_disclosure
+    attributes:
+      label: Responsible Disclosure
+      description: I agree not to publicly disclose this vulnerability before Ch Business Services has released a fix
+      validations:
+        required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ## Response Timeline
+        
+        - **24-48 hours:** Initial acknowledgment
+        - **7-30 days:** Patch release (depending on severity)
+        - **After patch:** Public disclosure (with your permission)
+        
+        Thank you for helping us keep our systems secure! 🙏
