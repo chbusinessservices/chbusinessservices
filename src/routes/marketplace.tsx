@@ -1,5 +1,7 @@
 import { Link, Outlet, createFileRoute, useRouterState } from "@tanstack/react-router";
 import { AnimatedSection } from "~/components/AnimatedSection";
+import { withSuccessUrl } from "~/lib/fulfillment";
+import { STRIPE_LINKS } from "~/lib/marketplace-data";
 
 export const Route = createFileRoute("/marketplace")({
   component: Marketplace,
@@ -123,7 +125,7 @@ function Marketplace() {
                 price: "$3,500",
                 description: "AI-powered outreach with lead scraping, email sequences, and A/B testing — launch campaigns that convert at scale.",
                 features: ["AI lead scraping", "Multi-step email sequences", "A/B testing engine", "CRM auto-sync"],
-                link: "https://buy.stripe.com/fZu4gzaG5fxK3h82gY9Zm0o",
+                link: withSuccessUrl(STRIPE_LINKS.starter, "starter"),
                 popular: true,
               },
               {
@@ -132,7 +134,7 @@ function Marketplace() {
                 price: "$5,000",
                 description: "Auto-generates keyword-optimized blog posts at scale, with internal linking and content calendars built-in.",
                 features: ["Keyword research automation", "AI content generation", "Content calendar", "Performance tracking"],
-                link: "https://buy.stripe.com/3cI14n15v0CQ04W7Bi9Zm0m",
+                link: withSuccessUrl(STRIPE_LINKS.standard, "standard"),
                 popular: false,
               },
               {
@@ -141,7 +143,7 @@ function Marketplace() {
                 price: "$4,500",
                 description: "AI agent that optimizes ad spend across Google & Facebook — maximize ROAS with automated adjustments.",
                 features: ["Cross-platform bid management", "Creative A/B testing", "Audience segmentation", "Real-time alerts"],
-                link: "https://buy.stripe.com/3cI14n15v0CQ04W7Bi9Zm0m",
+                link: withSuccessUrl(STRIPE_LINKS.standard, "standard"),
                 popular: false,
               },
             ].map((product, i) => (
@@ -214,7 +216,7 @@ function Marketplace() {
           <AnimatedSection delay={200}>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://buy.stripe.com/cNi4gz29zadq2d47Bi9Zm0f"
+                href={withSuccessUrl("https://buy.stripe.com/cNi4gz29zadq2d47Bi9Zm0f", "pro")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-indigo-600 shadow-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]"

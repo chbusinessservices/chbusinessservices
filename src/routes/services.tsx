@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AnimatedSection } from "~/components/AnimatedSection";
+import { withSuccessUrl } from "~/lib/fulfillment";
 
 export const Route = createFileRoute("/services")({
   component: Services,
@@ -23,6 +24,12 @@ export const Route = createFileRoute("/services")({
 });
 
 interface ServiceCard { title: string; description: string; icon: React.ReactNode; cta?: string; ctaTo?: string; }
+
+/* ─── Preserved Stripe links for service CTAs ─── */
+const STRIPE = {
+  customBrief: "https://buy.stripe.com/8x2bJ101r99m2d48Fm9Zm0d",
+  growthOS: "https://buy.stripe.com/eVq8wP6pPbhubNEf3K9Zm0b",
+};
 
 function GlobeIcon({ className }: { className?: string }) {
   return (<svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" /></svg>);
@@ -122,12 +129,12 @@ function Services() {
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <AnimatedSection delay={200}>
-              <a href="https://buy.stripe.com/8x2bJ101r99m2d48Fm9Zm0d" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center px-8 py-4 text-base">
+              <a href={withSuccessUrl(STRIPE.customBrief, "custom-brief")} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center px-8 py-4 text-base">
                 Buy Custom Brief — $500
               </a>
             </AnimatedSection>
             <AnimatedSection delay={280}>
-              <a href="https://buy.stripe.com/eVq8wP6pPbhubNEf3K9Zm0b" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center px-8 py-4 text-base">
+              <a href={withSuccessUrl(STRIPE.growthOS, "growth-os-retainer")} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center px-8 py-4 text-base">
                 Subscribe Growth OS — $997/mo
               </a>
             </AnimatedSection>

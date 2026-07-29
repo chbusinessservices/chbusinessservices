@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AnimatedSection } from "~/components/AnimatedSection";
+import { withSuccessUrl } from "~/lib/fulfillment";
 
 export const Route = createFileRoute("/offers/ai-business-kit")({ component: AIBusinessKit });
 
@@ -60,7 +61,7 @@ function AIBusinessKit() {
                 <span className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-100 to-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700 self-center">Starter</span>
                 <p className="mt-4 text-3xl font-bold tracking-tight text-gray-900">$3,000</p>
                 <p className="mt-2 text-sm text-gray-600">Brand, site, prompts, and automation — the essentials to launch fast.</p>
-                <a href="https://buy.stripe.com/4gM5kDg0p5Xag3U08Q9Zm0e" target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold">Buy Starter Kit — $3,000</a>
+                <a href={withSuccessUrl("https://buy.stripe.com/4gM5kDg0p5Xag3U08Q9Zm0e", "starter")} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold">Buy Starter Kit — $3,000</a>
               </div>
             </AnimatedSection>
 
@@ -73,7 +74,7 @@ function AIBusinessKit() {
                 <span className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 px-3 py-1 text-xs font-semibold text-indigo-700 self-center mt-2">Pro</span>
                 <p className="mt-4 text-3xl font-bold tracking-tight text-gray-900">$15,000</p>
                 <p className="mt-2 text-sm text-gray-600">Full launch-ready business with report logic, sales flow, and complete marketing assets.</p>
-                <a href="https://buy.stripe.com/cNi4gz29zadq2d47Bi9Zm0f" target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500">Buy Pro Kit — $15,000</a>
+                <a href={withSuccessUrl("https://buy.stripe.com/cNi4gz29zadq2d47Bi9Zm0f", "pro")} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500">Buy Pro Kit — $15,000</a>
               </div>
             </AnimatedSection>
           </div>

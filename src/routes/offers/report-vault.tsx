@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AnimatedSection } from "~/components/AnimatedSection";
+import { withSuccessUrl } from "~/lib/fulfillment";
 
 export const Route = createFileRoute("/offers/report-vault")({ component: ReportVault });
 
@@ -47,7 +48,7 @@ function ReportVault() {
       <section className="bg-gray-50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <AnimatedSection><h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Join the vault today</h2></AnimatedSection>
-          <AnimatedSection delay={200}><a href="https://buy.stripe.com/28E28r15v99m1909Jq9Zm0c" target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center px-8 py-4 text-base">Subscribe Report Vault — $99/mo</a></AnimatedSection>
+          <AnimatedSection delay={200}><a href={withSuccessUrl("https://buy.stripe.com/28E28r15v99m1909Jq9Zm0c", "report-vault")} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center px-8 py-4 text-base">Subscribe Report Vault — $99/mo</a></AnimatedSection>
         </div>
       </section>
     </>

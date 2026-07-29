@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AnimatedSection } from "~/components/AnimatedSection";
+import { withSuccessUrl } from "~/lib/fulfillment";
 
 export const Route = createFileRoute("/offers/conversion-site-sprint")({ component: ConversionSiteSprint });
 
@@ -48,7 +49,7 @@ function ConversionSiteSprint() {
         <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
           <AnimatedSection><h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Ready to launch?</h2></AnimatedSection>
           <AnimatedSection delay={200}>
-            <a href="https://buy.stripe.com/4gM5kD01r4T6eZQg7O9Zm08" target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center px-8 py-4 text-base">Buy Conversion Site Sprint — $1,500</a>
+            <a href={withSuccessUrl("https://buy.stripe.com/4gM5kD01r4T6eZQg7O9Zm08", "conversion-site-sprint")} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center px-8 py-4 text-base">Buy Conversion Site Sprint — $1,500</a>
           </AnimatedSection>
         </div>
       </section>

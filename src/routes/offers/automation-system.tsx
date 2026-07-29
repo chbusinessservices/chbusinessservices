@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AnimatedSection } from "~/components/AnimatedSection";
+import { withSuccessUrl } from "~/lib/fulfillment";
 
 export const Route = createFileRoute("/offers/automation-system")({ component: AutomationSystem });
 
@@ -59,7 +60,7 @@ function AutomationSystem() {
                 <span className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-100 to-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-700 self-center">Starter</span>
                 <p className="mt-4 text-3xl font-bold tracking-tight text-gray-900">$500<span className="text-lg font-medium text-gray-500">/mo</span></p>
                 <p className="mt-2 text-sm text-gray-600">Essential automation for small teams — CRM, pipelines, and follow-up workflows.</p>
-                <a href="https://buy.stripe.com/14A5kD29z5XadVM3l29Zm09" target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold">Buy Automation Starter — $500/mo</a>
+                <a href={withSuccessUrl("https://buy.stripe.com/14A5kD29z5XadVM3l29Zm09", "automation-starter")} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold">Buy Automation Starter — $500/mo</a>
               </div>
             </AnimatedSection>
 
@@ -72,7 +73,7 @@ function AutomationSystem() {
                 <span className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 px-3 py-1 text-xs font-semibold text-indigo-700 self-center mt-2">Pro</span>
                 <p className="mt-4 text-3xl font-bold tracking-tight text-gray-900">$2,000<span className="text-lg font-medium text-gray-500">/mo</span></p>
                 <p className="mt-2 text-sm text-gray-600">Advanced automation with custom integrations, multi-channel sequences, and priority support.</p>
-                <a href="https://buy.stripe.com/00w4gz15vclybNEg7O9Zm0a" target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500">Buy Automation Pro — $2,000/mo</a>
+                <a href={withSuccessUrl("https://buy.stripe.com/00w4gz15vclybNEg7O9Zm0a", "automation-pro")} target="_blank" rel="noopener noreferrer" className="btn-primary mt-6 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold bg-gradient-to-r from-indigo-600 to-indigo-500">Buy Automation Pro — $2,000/mo</a>
               </div>
             </AnimatedSection>
           </div>

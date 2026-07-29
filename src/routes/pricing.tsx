@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { AnimatedSection } from "~/components/AnimatedSection";
+import { withSuccessUrl } from "~/lib/fulfillment";
 import { useState } from "react";
 
 export const Route = createFileRoute("/pricing")({
@@ -60,7 +61,7 @@ const PACKAGES: PkgCol[] = [
     price: "$997/mo",
     features: [true, true, "1 workflow", "Advanced", "Priority", "Monthly"],
     cta: "Start Growth",
-    stripeLink: STRIPE.growthOS,
+    stripeLink: withSuccessUrl(STRIPE.growthOS, "growth-os-retainer"),
     highlight: true,
   },
   {
@@ -68,7 +69,7 @@ const PACKAGES: PkgCol[] = [
     price: "$2,000/mo",
     features: [true, true, "Multiple agents", "Full audit", "Dedicated", "Weekly"],
     cta: "Go Pro",
-    stripeLink: STRIPE.automation,
+    stripeLink: withSuccessUrl(STRIPE.automation, "automation-pro"),
     highlight: false,
   },
   {
@@ -76,7 +77,7 @@ const PACKAGES: PkgCol[] = [
     price: "Custom",
     features: [true, true, "Custom", "Dedicated", "24/7", "Real-time"],
     cta: "Contact us",
-    stripeLink: STRIPE.customBrief,
+    stripeLink: withSuccessUrl(STRIPE.customBrief, "custom-brief"),
     highlight: false,
   },
 ];
@@ -106,28 +107,28 @@ const ADDONS: Addon[] = [
     price: "$1,500",
     desc: "Launch a site that converts — positioning, homepage copy, design system, and basic SEO in one sprint.",
     cta: "Buy now — $1,500",
-    stripeLink: STRIPE.conversionSite,
+    stripeLink: withSuccessUrl(STRIPE.conversionSite, "conversion-site-sprint"),
   },
   {
     name: "Custom Brief",
     price: "$500",
     desc: "Private research sprint on a niche or opportunity — validation, competitors, keywords, monetization path.",
     cta: "Buy now — $500",
-    stripeLink: STRIPE.customBrief,
+    stripeLink: withSuccessUrl(STRIPE.customBrief, "custom-brief"),
   },
   {
     name: "Report Vault",
     price: "$99/mo",
     desc: "Ongoing market-gap intelligence — report access, new drops, alerts, and full archive search.",
     cta: "Subscribe — $99/mo",
-    stripeLink: STRIPE.reportVault,
+    stripeLink: withSuccessUrl(STRIPE.reportVault, "report-vault"),
   },
   {
     name: "AI Business Kit Starter",
     price: "$3,000",
     desc: "Launch-ready packaged business — brand, site, prompt set, automations, report logic, and sales flow.",
     cta: "Buy now — $3,000",
-    stripeLink: STRIPE.aiBusinessKit,
+    stripeLink: withSuccessUrl(STRIPE.aiBusinessKit, "starter"),
   },
 ];
 

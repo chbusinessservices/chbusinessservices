@@ -13,6 +13,7 @@ import {
   getStripeTier,
   type Product,
 } from "~/lib/marketplace-data";
+import { withSuccessUrl } from "~/lib/fulfillment";
 import { pageHead, productLd, breadcrumbLd, SITE_URL } from "~/lib/seo";
 
 /* ═══════════════════════════════════════════
@@ -327,8 +328,9 @@ function ProductDetailPage() {
     checkAdminAuth().then((res) => setIsAdmin(res.isAdmin)).catch(() => {});
   }, []);
 
-  const stripeUrl =
+  const _stripeBaseUrl =
     product?.stripeLink || STRIPE_LINKS[getStripeTier(product?.price ?? 0)];
+  const stripeUrl = withSuccessUrl(_stripeBaseUrl, getStripeTier(product?.price ?? 0));
 
   const handlePreview = () => {
     if (!product) return;
