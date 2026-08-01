@@ -1,0 +1,16 @@
+name: 📦 Dependency Check
+
+on:
+  push:
+    branches: [master, main]
+    paths: ['package.json']
+  schedule:
+    - cron: '0 0 * * 1'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: npm audit --audit-level=high || true
