@@ -216,7 +216,7 @@ function Marketplace() {
           <AnimatedSection delay={200}>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href={withSuccessUrl("https://buy.stripe.com/cNi4gz29zadq2d47Bi9Zm0f", "pro")}
+                href={withSuccessUrl("https://buy.stripe.com/3cIaEW30feyodkA8UQf3a05", "pro")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-lg bg-white px-8 py-4 text-base font-semibold text-indigo-600 shadow-lg transition-all duration-200 hover:scale-[1.02] hover:shadow-xl active:scale-[0.98]"
