@@ -1,0 +1,22 @@
+name: 🔐 IP Protection Check
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          FILES=("LICENSE" "SECURITY.md" "CONTRIBUTING.md" "LICENSING.md" ".github/CODEOWNERS" ".gitignore")
+          for f in "${FILES[@]}"; do
+            if [ ! -f "$f" ]; then
+              echo "❌ Missing: $f"
+              exit 1
+            fi
+          done
+          echo "✅ All IP protection files present"
