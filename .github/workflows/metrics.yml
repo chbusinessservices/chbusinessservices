@@ -1,0 +1,19 @@
+name: 📊 Repository Metrics
+
+on:
+  push:
+    branches: [master, main]
+  schedule:
+    - cron: '0 1 * * 0'
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - run: |
+          echo "📊 Repository Statistics"
+          echo "Commits: $(git rev-list --all --count)"
+          echo "Contributors: $(git shortlog -sn | wc -l)"
