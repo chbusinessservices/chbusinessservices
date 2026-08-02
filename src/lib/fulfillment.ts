@@ -20,6 +20,9 @@ export const SUPPORT_EMAIL =
 export const ONBOARDING_BOOKING_URL =
   "https://calendly.com/ch-business-services/onboarding";
 
+/** Base URL for post-checkout success pages */
+export const SUCCESS_BASE_URL = `${FULFILLMENT_SITE_URL}/success`;
+
 /* ─── Types ─── */
 
 export type DeliverableType =
@@ -53,6 +56,8 @@ export interface FulfillmentKit {
   estimatedDeliveryTime: string;
   /** whether this tier includes an onboarding call CTA */
   includesOnboardingCall: boolean;
+  /** post-checkout success URL for this product */
+  successUrl: string;
 }
 
 /* ─── Kit definitions ─── */
@@ -88,6 +93,7 @@ const liteKit: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — 30 days of email support included.`,
   estimatedDeliveryTime: "Instant",
   includesOnboardingCall: false,
+  successUrl: `${SUCCESS_BASE_URL}?product=lite`,
 };
 
 const starterKit: FulfillmentKit = {
@@ -107,6 +113,7 @@ const starterKit: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — 30 days of email support included.`,
   estimatedDeliveryTime: "Instant",
   includesOnboardingCall: false,
+  successUrl: `${SUCCESS_BASE_URL}?product=starter`,
 };
 
 const standardKit: FulfillmentKit = {
@@ -124,6 +131,7 @@ const standardKit: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — 60 days of priority email support included.`,
   estimatedDeliveryTime: "Instant",
   includesOnboardingCall: false,
+  successUrl: `${SUCCESS_BASE_URL}?product=standard`,
 };
 
 const premiumKit: FulfillmentKit = {
@@ -140,6 +148,7 @@ const premiumKit: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — 90 days of premium support + onboarding call.`,
   estimatedDeliveryTime: "Instant",
   includesOnboardingCall: true,
+  successUrl: `${SUCCESS_BASE_URL}?product=premium`,
 };
 
 const proKit: FulfillmentKit = {
@@ -158,6 +167,7 @@ const proKit: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — 120 days of premium support + onboarding call.`,
   estimatedDeliveryTime: "Instant",
   includesOnboardingCall: true,
+  successUrl: `${SUCCESS_BASE_URL}?product=pro`,
 };
 
 /* ─── Service products ─── */
@@ -186,6 +196,7 @@ const automationStarter: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — support included for active subscription.`,
   estimatedDeliveryTime: "Within 24 hours",
   includesOnboardingCall: true,
+  successUrl: `${SUCCESS_BASE_URL}?product=automation-starter`,
 };
 
 const automationPro: FulfillmentKit = {
@@ -204,6 +215,7 @@ const automationPro: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — dedicated specialist for active subscription.`,
   estimatedDeliveryTime: "Within 24 hours",
   includesOnboardingCall: true,
+  successUrl: `${SUCCESS_BASE_URL}?product=automation-pro`,
 };
 
 const conversionSiteSprint: FulfillmentKit = {
@@ -230,6 +242,7 @@ const conversionSiteSprint: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — 14 days post-launch support included.`,
   estimatedDeliveryTime: "Within 5 business days",
   includesOnboardingCall: false,
+  successUrl: `${SUCCESS_BASE_URL}?product=conversion-site-sprint`,
 };
 
 const customBrief: FulfillmentKit = {
@@ -254,6 +267,7 @@ const customBrief: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — one revision round included.`,
   estimatedDeliveryTime: "Within 3 business days",
   includesOnboardingCall: false,
+  successUrl: `${SUCCESS_BASE_URL}?product=custom-brief`,
 };
 
 const growthOsRetainer: FulfillmentKit = {
@@ -279,6 +293,7 @@ const growthOsRetainer: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — priority support for active retainer.`,
   estimatedDeliveryTime: "Within 24 hours",
   includesOnboardingCall: true,
+  successUrl: `${SUCCESS_BASE_URL}?product=growth-os-retainer`,
 };
 
 const reportVault: FulfillmentKit = {
@@ -304,9 +319,97 @@ const reportVault: FulfillmentKit = {
   supportContact: `Email ${SUPPORT_EMAIL} — support included for active subscription.`,
   estimatedDeliveryTime: "Instant",
   includesOnboardingCall: false,
+  successUrl: `${SUCCESS_BASE_URL}?product=report-vault`,
 };
 
-/* ─── Lookup ─── */
+/* ─── New digital product kits ─── */
+
+const growthCopyBundle: FulfillmentKit = {
+  tier: "growth-copy-bundle",
+  kitName: "Growth Copy Bundle",
+  deliverables: [
+    { title: "Conversion Copy Templates", description: "10 proven copy templates for landing pages, ads, and emails.", type: "download" },
+    { title: "Headline Bank", description: "100+ tested headlines across 5 industries.", type: "download" },
+    { title: "Email Sequence Library", description: "5 full email sequences (welcome, nurture, sales, re-engagement, onboarding).", type: "download" },
+    { title: "Copy Framework Guide", description: "Step-by-step framework for writing copy that converts.", type: "instruction" },
+  ],
+  downloadUrl: "/downloads/growth-copy-bundle.zip",
+  setupInstructions: [
+    "Download the Growth Copy Bundle (.zip) using the download button above.",
+    "Unzip and browse the template library organized by use case.",
+    "Open any template in your editor of choice and fill in the bracketed placeholders.",
+    "Use the Copy Framework Guide to adapt templates to your specific audience.",
+  ],
+  accessInstructions: [
+    "All templates are delivered as a single .zip download from this page.",
+    "Templates are in Markdown and plain text — compatible with any editor.",
+    `For customization help: ${SUPPORT_EMAIL}.`,
+  ],
+  supportContact: `Email ${SUPPORT_EMAIL} — 30 days of email support included.`,
+  estimatedDeliveryTime: "Instant",
+  includesOnboardingCall: false,
+  successUrl: `${SUCCESS_BASE_URL}?product=growth-copy-bundle`,
+};
+
+const brandIdentitySuite: FulfillmentKit = {
+  tier: "brand-identity-suite",
+  kitName: "Brand Identity Suite",
+  deliverables: [
+    { title: "Logo System", description: "Primary logo, variations, and favicon in SVG + PNG.", type: "download" },
+    { title: "Color Palette & Typography", description: "Brand color codes (HEX, RGB, HSL) + font pairing recommendations.", type: "download" },
+    { title: "Brand Guidelines PDF", description: "20-page brand book with usage rules and examples.", type: "download" },
+    { title: "Social Media Kit", description: "Profile + cover templates for LinkedIn, X, Instagram, Facebook.", type: "download" },
+    { title: "Brand Voice Guide", description: "Tone, messaging pillars, and sample copy in your brand voice.", type: "instruction" },
+  ],
+  downloadUrl: "/downloads/brand-identity-suite.zip",
+  setupInstructions: [
+    "Download the Brand Identity Suite (.zip) using the download button above.",
+    "Review the Brand Guidelines PDF first — it defines how to use every asset.",
+    "Install the recommended fonts (links included in the guidelines).",
+    "Apply your logo and color palette to your website, social profiles, and documents.",
+    "Use the Social Media Kit templates for consistent brand presence.",
+  ],
+  accessInstructions: [
+    "All brand assets are delivered as a single .zip download from this page.",
+    "Logo files include SVG (vector) and PNG (raster) in multiple sizes.",
+    `For custom variations or help: ${SUPPORT_EMAIL}.`,
+  ],
+  supportContact: `Email ${SUPPORT_EMAIL} — 30 days of email support included.`,
+  estimatedDeliveryTime: "Instant",
+  includesOnboardingCall: false,
+  successUrl: `${SUCCESS_BASE_URL}?product=brand-identity-suite`,
+};
+
+const starterWebsitePackage: FulfillmentKit = {
+  tier: "starter-website-package",
+  kitName: "Starter Website Package",
+  deliverables: [
+    { title: "5-Page Website Template", description: "Home, About, Services, Blog, Contact — fully responsive.", type: "download" },
+    { title: "Design System", description: "Tailwind CSS components, color tokens, and typography scale.", type: "download" },
+    { title: "Content Guide", description: "Page-by-page content prompts and example copy.", type: "instruction" },
+    { title: "SEO Starter Kit", description: "Meta tags, sitemap template, and robots.txt configured.", type: "download" },
+    { title: "Deployment Guide", description: "Step-by-step guide to deploy on Vercel, Netlify, or your own host.", type: "instruction" },
+  ],
+  downloadUrl: "/downloads/starter-website-package.zip",
+  setupInstructions: [
+    "Download the Starter Website Package (.zip) using the download button above.",
+    "Unzip and open the project in your code editor (VS Code recommended).",
+    "Follow the Content Guide to replace placeholder text with your own.",
+    "Update the design system colors and fonts in tailwind.config.js.",
+    "Configure the SEO Starter Kit with your domain and meta information.",
+    "Follow the Deployment Guide to publish your site.",
+  ],
+  accessInstructions: [
+    "The website template is delivered as a .zip download from this page.",
+    "Requires Node.js 18+ and a code editor to customize.",
+    "Deployment requires a free Vercel or Netlify account (instructions included).",
+    `For technical questions: ${SUPPORT_EMAIL}.`,
+  ],
+  supportContact: `Email ${SUPPORT_EMAIL} — 30 days of email support included.`,
+  estimatedDeliveryTime: "Instant",
+  includesOnboardingCall: false,
+  successUrl: `${SUCCESS_BASE_URL}?product=starter-website-package`,
+};
 
 export const FULFILLMENT_KITS: Record<string, FulfillmentKit> = {
   lite: liteKit,
@@ -320,6 +423,9 @@ export const FULFILLMENT_KITS: Record<string, FulfillmentKit> = {
   "custom-brief": customBrief,
   "growth-os-retainer": growthOsRetainer,
   "report-vault": reportVault,
+  "growth-copy-bundle": growthCopyBundle,
+  "brand-identity-suite": brandIdentitySuite,
+  "starter-website-package": starterWebsitePackage,
 };
 
 /** All tier keys (used for type-checking buy buttons). */
@@ -348,6 +454,7 @@ export function getFulfillmentKit(tier: string | null | undefined): FulfillmentK
     supportContact: `Email ${SUPPORT_EMAIL} — we'll get you sorted within one business day.`,
     estimatedDeliveryTime: "Within 24 hours",
     includesOnboardingCall: false,
+    successUrl: `${SUCCESS_BASE_URL}?product=${encodeURIComponent(tier ?? "unknown")}`,
   };
 }
 
