@@ -11,7 +11,7 @@ const STRIPE = {
   conversionSite: "https://buy.stripe.com/4M5kD01r4T6eZQg7O9Zm08",
   automation: "https://buy.stripe.com/14A5kD29z5XadVM3l29Zm09",
   growthOS: "https://buy.stripe.com/eVq8wP6pPbhubNEf3K9Zm0b",
-  aiBusinessKit: "https://buy.stripe.com/cNi4gz29zadq2d47Bi9Zm0f",
+  aiBusinessKit: "https://buy.stripe.com/3cIaEW30feyodkA8UQf3a05",
 };
 
 /* ─── Trial user helper ─── */

@@ -32,7 +32,7 @@ const STRIPE = {
   growthOS: "https://buy.stripe.com/eVq8wP6pPbhubNEf3K9Zm0b",
   reportVault: "https://buy.stripe.com/28E28r15v99m1909Jq9Zm0c",
   customBrief: "https://buy.stripe.com/8x2bJ101r99m2d48Fm9Zm0d",
-  aiBusinessKit: "https://buy.stripe.com/cNi4gz29zadq2d47Bi9Zm0f",
+  aiBusinessKit: "https://buy.stripe.com/3cIaEW30feyodkA8UQf3a05",
 };
 
 /* ─── Package comparison data ─── */

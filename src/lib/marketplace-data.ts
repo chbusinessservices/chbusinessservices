@@ -2,11 +2,11 @@
    STRIPE PAYMENT LINKS
    ═══════════════════════════════════════════ */
 export const STRIPE_LINKS: Record<string, string> = {
-  lite: "https://buy.stripe.com/eVqbJ13dD99m9Fw2gY9Zm0l",
-  starter: "https://buy.stripe.com/fZu4gzaG5fxK3h82gY9Zm0o",
-  standard: "https://buy.stripe.com/3cI14n15v0CQ04W7Bi9Zm0m",
-  premium: "https://buy.stripe.com/9B6dR96pPbhu2d4g7O9Zm0n",
-  pro: "https://buy.stripe.com/5kQ14ndShdpC2d4dZG9Zm0p",
+  lite: "https://buy.stripe.com/28E28qdET2PGbcs6MIf3a01",
+  starter: "https://buy.stripe.com/bJe5kCasH61Scgwgnif3a02",
+  standard: "https://buy.stripe.com/fZubJ07gvbmcgwM6MIf3a03",
+  premium: "https://buy.stripe.com/3cIeVc58n1LC5S8gnif3a04",
+  pro: "https://buy.stripe.com/3cIaEW30feyodkA8UQf3a05",
 };
 
 export function getStripeTier(price: number): string {
