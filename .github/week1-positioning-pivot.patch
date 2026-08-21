@@ -1,0 +1,1222 @@
+diff --git a/src/lib/seo.ts b/src/lib/seo.ts
+index ecc6758..b1dc9a0 100644
+--- a/src/lib/seo.ts
++++ b/src/lib/seo.ts
+@@ -42,7 +42,7 @@ export function organizationLd() {
+     "@type": "Organization",
+     name: SITE_NAME,
+     description:
+-      "CH Business Services builds conversion-focused websites, automation systems, AI business kits, and intelligence reports that turn visitors into customers.",
++      "CH Margin OS helps plumbing companies find operational profit leaks, prioritize the highest-return workflow, and recover opportunities already inside the business.",
+     url: SITE_URL,
+     logo: `${SITE_URL}/favicon.ico`,
+     sameAs: [
+diff --git a/src/routes/__root.tsx b/src/routes/__root.tsx
+index b005593..d064f2b 100644
+--- a/src/routes/__root.tsx
++++ b/src/routes/__root.tsx
+@@ -18,10 +18,7 @@ import { SITE_URL, SITE_NAME, organizationLd } from "~/lib/seo";
+ const navLinks = [
+   { to: "/", label: "Home" },
+   { to: "/services", label: "Services" },
+-  { to: "/blog", label: "Blog" },
+-  { to: "/marketplace", label: "Marketplace" },
+   { to: "/pricing", label: "Pricing" },
+-  { to: "/resources", label: "Resources" },
+   { to: "/about", label: "About" },
+   { to: "/contact", label: "Contact" },
+ ] as const;
+@@ -97,18 +94,18 @@ export const Route = createRootRoute({
+     meta: [
+       { charSet: "utf-8" },
+       { name: "viewport", content: "width=device-width, initial-scale=1" },
+-      { title: "AI Business Kits & Automation Systems | CH Business Services" },
++      { title: "CH Margin OS for Plumbing Businesses | CH Business Services" },
+       {
+         name: "description",
+         content:
+-          "CH Business Services builds conversion-focused websites, AI business kits, automation systems, and intelligence reports for service businesses and growing brands.",
++          "Find the operational leaks hurting your plumbing business. Start with a free Profit Leak Scan, then fix the highest-return workflow first.",
+       },
+       { property: "og:type", content: "website" },
+       { property: "og:site_name", content: SITE_NAME },
+       { property: "og:url", content: SITE_URL },
+       { name: "twitter:card", content: "summary_large_image" },
+-      { name: "twitter:title", content: "AI Business Kits & Automation Systems | CH Business Services" },
+-      { name: "twitter:description", content: "CH Business Services builds conversion-focused websites, AI business kits, automation systems, and intelligence reports for service businesses and growing brands." },
++      { name: "twitter:title", content: "CH Margin OS for Plumbing Businesses | CH Business Services" },
++      { name: "twitter:description", content: "Find the operational leaks hurting your plumbing business. Start with a free Profit Leak Scan, then fix the highest-return workflow first." },
+     ],
+     links: [
+       { rel: "canonical", href: SITE_URL },
+@@ -191,10 +188,10 @@ function RootComponent() {
+                   );
+                 })}
+                 <Link
+-                  to="/offers/gap-scan"
++                  to="/offers/profit-leak-scan"
+                   className="ml-3 inline-flex items-center rounded-xl bg-brand-accent px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-accent/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-accent-dark hover:shadow-xl hover:shadow-brand-accent/30 active:translate-y-0"
+                 >
+-                  Free Gap Scan
++                  Get Your Free Profit Leak Scan
+                 </Link>
+                 <SignInDropdown />
+               </nav>
+@@ -269,11 +266,11 @@ function RootComponent() {
+                   );
+                 })}
+                 <Link
+-                  to="/offers/gap-scan"
++                  to="/offers/profit-leak-scan"
+                   className="mt-2 block rounded-xl bg-brand-accent px-3 py-2.5 text-center text-base font-semibold text-white shadow-lg shadow-brand-accent/20 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl active:translate-y-0"
+                   onClick={() => setMobileOpen(false)}
+                 >
+-                  Free Gap Scan
++                  Get Your Free Profit Leak Scan
+                 </Link>
+                 <div className="mt-2 border-t border-brand-border-light pt-2">
+                   <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-widest text-brand-text-muted">
+@@ -308,7 +305,7 @@ function RootComponent() {
+         <footer className="relative bg-brand-dark">
+           <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-accent/30 to-transparent" />
+           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+-            <div className="grid grid-cols-2 gap-10 md:grid-cols-5">
++            <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
+               {/* Brand */}
+               <div className="col-span-2 md:col-span-1">
+                 <Link to="/" className="flex items-center gap-2">
+@@ -320,7 +317,7 @@ function RootComponent() {
+                   </span>
+                 </Link>
+                 <p className="mt-3 text-sm leading-relaxed text-brand-text-muted">
+-                  Premium websites &amp; business systems that turn visitors into customers.
++                  CH Margin OS finds the operational leaks costing plumbing companies money.
+                 </p>
+               </div>
+ 
+@@ -342,21 +339,20 @@ function RootComponent() {
+                   ))}
+                 </ul>
+               </div>
+-
+-              {/* More */}
++              {/* Explore */}
+               <div>
+                 <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-brand-accent-light">
+-                  More
++                  Explore
+                 </h3>
+                 <ul className="mt-4 space-y-2.5">
+                   <li>
+-                    <Link to="/case-studies" className="text-sm text-brand-text-muted transition-colors hover:text-white">
+-                      Case Studies
++                    <Link to="/blog" className="text-sm text-brand-text-muted transition-colors hover:text-white">
++                      Blog
+                     </Link>
+                   </li>
+                   <li>
+-                    <Link to="/intelligence" className="text-sm text-brand-text-muted transition-colors hover:text-white">
+-                      Intelligence
++                    <Link to="/case-studies" className="text-sm text-brand-text-muted transition-colors hover:text-white">
++                      Case Studies
+                     </Link>
+                   </li>
+                   <li>
+@@ -369,34 +365,41 @@ function RootComponent() {
+                       Free Trial
+                     </Link>
+                   </li>
++                  <li>
++                    <Link to="/intelligence" className="text-sm text-brand-text-muted transition-colors hover:text-white">
++                      Intelligence
++                    </Link>
++                  </li>
++                  <li>
++                    <Link to="/marketplace" className="text-sm text-brand-text-muted transition-colors hover:text-white">
++                      Marketplace
++                    </Link>
++                  </li>
+                   <li>
+                     <Link to="/jobos" className="text-sm text-brand-text-muted transition-colors hover:text-white">
+                       JobOS AI Workers
+                     </Link>
+                   </li>
++                  <li>
++                    <Link to="/vault" className="text-sm text-brand-text-muted transition-colors hover:text-white">
++                      Report Vault
++                    </Link>
++                  </li>
+                 </ul>
+               </div>
+ 
+-              {/* Offers */}
++              {/* Get Started */}
+               <div>
+                 <h3 className="font-mono text-xs font-semibold uppercase tracking-widest text-brand-accent-light">
+-                  Offers
++                  Get Started
+                 </h3>
+                 <ul className="mt-4 space-y-2.5">
+                   <li>
+                     <Link
+-                      to="/offers/gap-scan"
++                      to="/offers/profit-leak-scan"
+                       className="text-sm text-brand-text-muted transition-colors hover:text-white"
+                     >
+-                      Free Gap Scan
+-                    </Link>
+-                  </li>
+-                  <li>
+-                    <Link
+-                      to="/trial"
+-                      className="text-sm text-brand-text-muted transition-colors hover:text-white"
+-                    >
+-                      Free Trial
++                      Free Profit Leak Scan
+                     </Link>
+                   </li>
+                   <li>
+@@ -409,26 +412,18 @@ function RootComponent() {
+                   </li>
+                   <li>
+                     <Link
+-                      to="/marketplace"
+-                      className="text-sm text-brand-text-muted transition-colors hover:text-white"
+-                    >
+-                      Marketplace
+-                    </Link>
+-                  </li>
+-                  <li>
+-                    <Link
+-                      to="/intelligence"
++                      to="/pricing"
+                       className="text-sm text-brand-text-muted transition-colors hover:text-white"
+                     >
+-                      Intelligence
++                      Pricing
+                     </Link>
+                   </li>
+                   <li>
+                     <Link
+-                      to="/jobos"
++                      to="/contact"
+                       className="text-sm text-brand-text-muted transition-colors hover:text-white"
+                     >
+-                      AI Workforce Solutions
++                      Contact
+                     </Link>
+                   </li>
+                 </ul>
+diff --git a/src/routes/index.tsx b/src/routes/index.tsx
+index 8f3274e..006d552 100644
+--- a/src/routes/index.tsx
++++ b/src/routes/index.tsx
+@@ -4,11 +4,13 @@ import { useState } from "react";
+ import { SITE_URL, pageHead, organizationLd, faqLd } from "~/lib/seo";
+ 
+ export const Route = createFileRoute("/")({
+-  head: () => pageHead({
+-    title: "AI Business Kits & Automation Systems | CH Business Services",
+-    description: "CH Business Services builds conversion-focused websites, AI business kits, automation systems, and intelligence reports. Get a free Business Gap Scan today.",
+-    ogType: "website",
+-  }),
++  head: () =>
++    pageHead({
++      title: "CH Margin OS for Plumbing Businesses | CH Business Services",
++      description:
++        "Find the hidden leaks costing your business money. Get a free Profit Leak Scan - a ranked report of where the money disappears and what it's worth to fix. Built for plumbing companies.",
++      ogType: "website",
++    }),
+   component: Home,
+ });
+ 
+@@ -106,28 +108,28 @@ function Home() {
+ 
+   const faqs = [
+     {
+-      q: "How long until I see results?",
+-      a: "Most clients see measurable improvements within 60–90 days. Conversion site sprints launch in 2–3 weeks. Automation systems begin capturing and qualifying leads immediately upon deployment. Growth OS clients typically see compounding results starting month 2.",
++      q: "What is a Profit Leak Scan?",
++      a: "A free 7-day audit of your service business. We score five pillars — lead capture, sales conversion, pricing & margin, labor & operations, overhead & systems — using your own calls, booked jobs, labor hours, and ad spend, then put a recovery range on the top leaks.",
+     },
+     {
+-      q: "Do I need technical skills?",
+-      a: "None. We build, deploy, and manage the entire system. You get a simple dashboard and regular reports. If you can use email and a calendar, you can run what we build. We handle the complexity behind the scenes.",
++      q: "Is it really free?",
++      a: "Yes. The scan and the findings call are free, with no credit card and no commitment. You get a ranked report of your leaks and what they're worth. If you want us to fix them, that's a separate paid engagement - and you can take the plan anywhere.",
+     },
+     {
+-      q: "What's included in each package?",
+-      a: "Each package is tailored to your needs after a free Business Gap Scan. Conversion Site Sprint includes positioning, copy, design, and basic SEO. Automation systems layer on CRM, pipeline, booking, and follow-ups. Growth OS adds ongoing optimization and content. See our pricing page for full breakdowns.",
++      q: "What do I need to provide?",
++      a: "About 30 minutes for an intake call, plus a few simple exports: your call log (missed calls), booked jobs, recent invoices, and ad spend. Most owners can gather everything in an afternoon. We do the analysis.",
+     },
+     {
+-      q: "Can you work with my existing site?",
+-      a: "Absolutely. We can audit your current site, identify conversion gaps, and either enhance what you have or build a replacement that preserves your existing SEO equity. No wasted investment.",
++      q: "How do you calculate the dollar figures?",
++      a: "Every leak is measured against your own numbers, not industry averages. For example: if you miss 20 calls a week and your close rate and average ticket size are known, that's a straight monthly revenue number - not a guess.",
+     },
+     {
+-      q: "What if I'm not happy?",
+-      a: "Every engagement starts with a free Business Gap Scan so we both understand the opportunity before committing. For retainers, you can cancel anytime. For project work, we define clear deliverables and checkpoints so you're never in the dark.",
++      q: "Is this only for home-service businesses?",
++      a: "Our focus is plumbing companies doing $500K-$5M in revenue - that's where missed opportunities are biggest and easiest to measure. HVAC is the next vertical only after plumbing proof is earned.",
+     },
+     {
+-      q: "How do payments work?",
+-      a: "Project fees are split into milestones — typically 50% to start, 50% on delivery. Retainers are billed monthly. All payments are processed securely through Stripe. No long-term contracts unless you want one.",
++      q: "What happens after the report?",
++      a: "You get the report either way. Most owners then ask us to implement the top fixes - typically an AI receptionist, automated follow-up, or scheduling automation for $999-$2,500. Over time, margin intelligence from $199/mo keeps new leaks from forming.",
+     },
+   ];
+ 
+@@ -155,7 +157,7 @@ function Home() {
+       />
+ 
+       {/* ═══════════════════════════════════════════
+-          1. HERO — dark, bold, minimal
++          1. HERO — dark, bold, one promise
+           ═══════════════════════════════════════════ */}
+       <section className="relative overflow-hidden bg-dark-gradient">
+         {/* Subtle noise texture */}
+@@ -173,32 +175,32 @@ function Home() {
+                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-accent-light opacity-75" />
+                   <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-accent" />
+                 </span>
+-                <span className="text-xs font-medium text-brand-accent-light">Now accepting new clients</span>
++                <span className="text-xs font-medium text-brand-accent-light">Free 7-day scan · Built for plumbing companies</span>
+               </div>
+             </AnimatedSection>
+ 
+             <AnimatedSection delay={100}>
+               <h1 className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.08]">
+-                Your business deserves a website{" "}
+-                <span className="gradient-text">that actually converts</span>.
++                Find the hidden leaks{" "}
++                <span className="gradient-text">costing your business money</span>.
+               </h1>
+             </AnimatedSection>
+ 
+             <AnimatedSection delay={200}>
+               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-brand-text-muted sm:text-xl">
+-                We build conversion-focused websites, automation systems, and
+-                intelligence reports that turn visitors into customers — not just
+-                look pretty.
++                CH Margin OS starts with a free Profit Leak Scan for plumbing
++                companies. In 7 days you get a ranked report of exactly where the
++                money disappears — and what fixing each leak is worth per month.
+               </p>
+             </AnimatedSection>
+ 
+             <AnimatedSection delay={350}>
+               <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                 <Link
+-                  to="/offers/gap-scan"
++                  to="/offers/profit-leak-scan"
+                   className="btn-primary px-8 py-4 text-base"
+                 >
+-                  Start with a Free Gap Scan
++                  Get Your Free Profit Leak Scan
+                 </Link>
+                 <a
+                   href="#how-it-works"
+@@ -215,15 +217,15 @@ function Home() {
+               <div className="mt-16 flex flex-wrap items-center justify-center gap-8 text-brand-text-muted/60">
+                 <div className="flex items-center gap-2 text-sm">
+                   <svg className="h-4 w-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+-                  No upfront commitment
++                  No credit card
+                 </div>
+                 <div className="flex items-center gap-2 text-sm">
+                   <svg className="h-4 w-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+-                  Built in 2–3 weeks
++                  Results in 7 days
+                 </div>
+                 <div className="flex items-center gap-2 text-sm">
+                   <svg className="h-4 w-4 text-emerald-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+-                  Managed for you
++                  Ranked, not vague
+                 </div>
+               </div>
+             </AnimatedSection>
+@@ -235,30 +237,20 @@ function Home() {
+       </section>
+ 
+       {/* ═══════════════════════════════════════════
+-          TRUST BAR — social proof right after hero
++          LAUNCH FOCUS — no unverified social proof
+           ═══════════════════════════════════════════ */}
+       <section className="bg-brand-surface py-8 sm:py-10">
+         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+           <AnimatedSection>
+-            <p className="text-center text-sm font-medium uppercase tracking-wider text-brand-text-muted/70">
+-              Trusted by growing businesses
+-            </p>
+-          </AnimatedSection>
+-          <AnimatedSection delay={100}>
+-            <div className="mt-6 grid grid-cols-2 gap-6 sm:grid-cols-4">
++            <div className="grid grid-cols-1 gap-6 text-center sm:grid-cols-3">
+               {[
+-                { stat: "50+", label: "Projects delivered" },
+-                { stat: "98%", label: "Client satisfaction" },
+-                { stat: "14 days", label: "Avg. time to launch" },
+-                { stat: "40%", label: "Avg. conversion lift" },
++                { title: "One vertical", desc: "Plumbing companies first" },
++                { title: "One measurable leak", desc: "Open estimates without follow-up" },
++                { title: "One first fix", desc: "A human-safe recovery workflow" },
+               ].map((item) => (
+-                <div key={item.label} className="text-center">
+-                  <div className="font-mono text-3xl font-bold gradient-text sm:text-4xl">
+-                    {item.stat}
+-                  </div>
+-                  <div className="mt-1 text-sm text-brand-text-secondary">
+-                    {item.label}
+-                  </div>
++                <div key={item.title}>
++                  <div className="font-mono text-xs font-semibold uppercase tracking-widest text-brand-accent">{item.title}</div>
++                  <div className="mt-2 text-sm font-medium text-brand-text-secondary">{item.desc}</div>
+                 </div>
+               ))}
+             </div>
+@@ -275,8 +267,8 @@ function Home() {
+             <div className="mx-auto max-w-2xl text-center">
+               <div className="badge badge-accent mb-4">The Problem</div>
+               <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
+-                Most business websites look nice — but{" "}
+-                <span className="gradient-text">don&apos;t actually work</span>.
++                Plumbing businesses lose money in the{" "}
++                <span className="gradient-text">same three places</span>.
+               </h2>
+             </div>
+           </AnimatedSection>
+@@ -285,18 +277,18 @@ function Home() {
+             {[
+               {
+                 icon: <XCircleIcon className="h-5 w-5" />,
+-                title: "No leads from your site",
+-                desc: "Visitors come and go. Your site isn't capturing contact info, booking calls, or moving anyone toward a purchase.",
++                title: "Missed calls &amp; leads",
++                desc: "Every unanswered call, abandoned form, or unquoted estimate is a job someone else booked. Most owners can't even say how many they lose.",
+               },
+               {
+-                icon: <MailIcon className="h-5 w-5" />,
+-                title: "Manual follow-up eating your time",
+-                desc: "You're sending individual emails, chasing invoices, and reminding clients manually — hours you could spend growing.",
++                icon: <CogIcon className="h-5 w-5" />,
++                title: "Labor &amp; scheduling waste",
++                desc: "Techs doing admin, double-booked dispatch, hours spent chasing parts and paperwork. That's expensive labor doing non-billable work.",
+               },
+               {
+                 icon: <ChartIcon className="h-5 w-5" />,
+-                title: "Can't prove ROI on your marketing",
+-                desc: "You're spending on ads, content, and SEO but have no system to track what's actually producing revenue.",
++                title: "Weak follow-up &amp; retention",
++                desc: "Quotes that go quiet, no-shows that return, customers who never get asked for reviews or repeat business. All of it is money in motion you stop tracking.",
+               },
+             ].map((item, i) => (
+               <AnimatedSection key={item.title} delay={i * 100}>
+@@ -316,17 +308,17 @@ function Home() {
+       </section>
+ 
+       {/* ═══════════════════════════════════════════
+-          3. HOW WE FIX IT — alt background with grid
++          3. HOW THE SCAN WORKS — alt background with grid
+           ═══════════════════════════════════════════ */}
+       <section id="how-it-works" className="section-pad relative bg-brand-surface-alt">
+         <div className="absolute inset-0 hero-dots-light opacity-50" />
+         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+           <AnimatedSection>
+             <div className="mx-auto max-w-2xl text-center">
+-              <div className="badge badge-accent mb-4">How We Fix It</div>
++              <div className="badge badge-accent mb-4">How It Works</div>
+               <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
+-                We build websites that{" "}
+-                <span className="gradient-text">grow your business</span>
++                From scan to recovered profit in{" "}
++                <span className="gradient-text">three steps</span>
+               </h2>
+             </div>
+           </AnimatedSection>
+@@ -335,18 +327,18 @@ function Home() {
+             {[
+               {
+                 num: "1",
+-                title: "Find your highest-value gap",
+-                desc: "Every project starts with a free Business Gap Scan. We analyze your market, competitors, and current systems to identify the one change that will produce the biggest return — before you spend a dollar.",
++                title: "We scan your operation",
++                desc: "Free, 7 days, no credit card. One 30-minute intake call plus simple exports from you — call logs, booked jobs, invoices, ad spend. We analyze everything against five leak categories.",
+               },
+               {
+                 num: "2",
+-                title: "Build the system that fills it",
+-                desc: "Whether it's a conversion-optimized website, an automated follow-up engine, or an intelligence pipeline — we design, build, and deploy the exact system your gap requires.",
++                title: "You get the Profit Report",
++                desc: "A margin score out of 100, your top leaks ranked by impact and effort, and a dollar figure for what fixing each one is worth per month. Your numbers, not industry averages.",
+               },
+               {
+                 num: "3",
+-                title: "Run on autopilot",
+-                desc: "Leads are captured, qualified, and followed up automatically. Content is repurposed. Reports arrive on schedule. You focus on what you do best — we handle the rest.",
++                title: "Fix what pays first",
++                desc: "We implement the highest-ROI fixes — starting with the first Fix Pack: Estimate Follow-Up Recovery ($1,250), then missed-call recovery and review recovery as the data warrants. Or take the plan and run it yourself. Either way, the findings are yours.",
+               },
+             ].map((step, i) => (
+               <AnimatedSection key={step.num} delay={i * 150}>
+@@ -364,83 +356,66 @@ function Home() {
+       </section>
+ 
+       {/* ═══════════════════════════════════════════
+-          4. TRUST / TESTIMONIALS — moved up for social proof
++          4. SAMPLE REPORT TEASER — what the deliverable looks like
+           ═══════════════════════════════════════════ */}
+-      <section className="section-pad bg-brand-surface-alt">
++      <section className="section-pad bg-brand-surface">
+         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+           <AnimatedSection>
+             <div className="mx-auto max-w-2xl text-center">
+-              <div className="badge badge-accent mb-4">Testimonials</div>
++              <div className="badge badge-accent mb-4">Your Deliverable</div>
+               <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
+-                Real <span className="gradient-text">results</span> from real businesses
++                A scorecard that names the money,{" "}
++                <span className="gradient-text">not vague advice</span>
+               </h2>
+             </div>
+           </AnimatedSection>
+ 
+-          <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+-            {[
+-              {
+-                metric: "40%",
+-                label: "more booked jobs",
+-                quote: "I didn't realize how much business I was losing until the system showed me. Now I wake up to booked jobs instead of missed calls.",
+-                author: "Mike R.",
+-                role: "Owner, Denver Plumbing Co.",
+-              },
+-              {
+-                metric: "15 hrs",
+-                label: "saved per week",
+-                quote: "We were drowning in manual work. Now our pipeline runs itself — and our conversion rate proves it.",
+-                author: "Sarah Chen",
+-                role: "CEO, DataPulse Analytics",
+-              },
+-              {
+-                metric: "$24K/mo",
+-                label: "from content alone",
+-                quote: "I was already creating great content — I just had no system to turn it into clients. Now my podcast is my best salesperson.",
+-                author: "James Oluwole",
+-                role: "Founder, Amplify Coaching",
+-              },
+-            ].map((t, i) => (
+-              <AnimatedSection key={t.author} delay={i * 120}>
+-                <div className="card-glass-light flex h-full flex-col p-8">
+-                  <div className="font-mono text-4xl font-bold gradient-text">
+-                    {t.metric}
+-                  </div>
+-                  <div className="mt-1 text-sm font-semibold text-brand-text">{t.label}</div>
+-                  <blockquote className="mt-4 flex-1 leading-relaxed text-brand-text-secondary italic">
+-                    &ldquo;{t.quote}&rdquo;
+-                  </blockquote>
+-                  <div className="mt-6 flex items-center gap-3 border-t border-brand-border-light pt-4">
+-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent font-serif text-sm font-bold text-white shadow-sm shadow-brand-accent/20">
+-                      {t.author.charAt(0)}
+-                    </div>
+-                    <div>
+-                      <div className="text-sm font-semibold text-brand-text">{t.author}</div>
+-                      <div className="text-xs text-brand-text-secondary">{t.role}</div>
++          <AnimatedSection delay={150}>
++            <div className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-2xl border border-brand-border bg-white shadow-xl shadow-black/5">
++              <div className="flex items-center justify-between border-b border-brand-border-light px-6 py-4">
++                <div>
++                  <div className="text-sm font-semibold text-brand-text">Business Profit Report</div>
++                  <div className="text-xs text-brand-text-secondary">Sample — plumbing company</div>
++                </div>
++                <div className="text-right">
++                  <div className="font-mono text-sm text-brand-text-muted">Margin score</div>
++                  <div className="font-mono text-3xl font-bold gradient-text">61<span className="text-base">/100</span></div>
++                </div>
++              </div>
++              <div className="space-y-4 px-6 py-6">
++                <div className="rounded-xl border border-brand-accent/25 bg-brand-accent/5 px-5 py-4">
++                  <div className="text-xs font-semibold uppercase tracking-widest text-brand-accent">Highest-priority leak</div>
++                  <div className="mt-1 text-base font-semibold text-brand-text">Estimate follow-up gaps</div>
++                  <p className="mt-1 text-sm text-brand-text-secondary">Open estimates get no consistent follow-up. Fix: a three-touch email, SMS, and call sequence within 24 hours of every estimate.</p>
++                </div>
++                {[
++                  { title: "Missed calls & after-hours coverage", note: "Lead capture" },
++                  { title: "Discounting & pricing discipline", note: "Pricing & margin" },
++                ].map((row) => (
++                  <div key={row.title} className="flex items-center gap-4 rounded-xl border border-brand-border-light bg-brand-surface-alt/60 px-4 py-3">
++                    <div className="flex h-2 w-2 flex-shrink-0 rounded-full bg-brand-accent/40" />
++                    <div className="flex-1">
++                      <div className="text-sm font-semibold text-brand-text">{row.title}</div>
++                      <div className="text-xs text-brand-text-secondary">{row.note}</div>
+                     </div>
+                   </div>
++                ))}
++                <div className="flex items-center justify-between rounded-xl bg-gradient-to-r from-brand-accent/10 to-transparent px-4 py-3">
++                  <span className="text-sm font-medium text-brand-text">Estimated monthly recovery opportunity</span>
++                  <span className="font-mono text-lg font-bold gradient-text">$3,200–$7,800</span>
+                 </div>
+-              </AnimatedSection>
+-            ))}
+-          </div>
+-
+-          <AnimatedSection delay={400}>
+-            <div className="mt-10 text-center">
+-              <Link to="/case-studies" className="btn-secondary px-8 py-4 text-base">
+-                Read full case studies
+-              </Link>
++                <p className="text-xs text-brand-text-muted">Assumptions shown in full report · Not a guarantee</p>
++              </div>
+             </div>
+           </AnimatedSection>
+ 
+-          {/* Inline CTA — third gap scan offer on homepage */}
+-          <AnimatedSection delay={500}>
++          <AnimatedSection delay={300}>
+             <div className="mt-8 text-center">
+-              <p className="text-sm text-brand-text-secondary mb-3">Ready to get similar results?</p>
+               <Link
+-                to="/offers/gap-scan"
++                to="/offers/profit-leak-scan"
+                 className="btn-primary px-8 py-4 text-base"
+               >
+-                Start your free Gap Scan
++                Get yours — free
+               </Link>
+             </div>
+           </AnimatedSection>
+@@ -448,16 +423,16 @@ function Home() {
+       </section>
+ 
+       {/* ═══════════════════════════════════════════
+-          5. SERVICES PREVIEW — white bg, 4 cards
++          5. THE FIX PATH — from scan to system
+           ═══════════════════════════════════════════ */}
+-      <section className="section-pad bg-brand-surface">
++      <section className="section-pad bg-brand-surface-alt">
+         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+           <AnimatedSection>
+             <div className="mx-auto max-w-2xl text-center">
+-              <div className="badge badge-accent mb-4">What We Do</div>
++              <div className="badge badge-accent mb-4">The Fix Path</div>
+               <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
+-                Services built to make your business look{" "}
+-                <span className="gradient-text">premium and convert better</span>
++                One journey.{" "}
++                <span className="gradient-text">Every product has a place in it.</span>
+               </h2>
+             </div>
+           </AnimatedSection>
+@@ -465,29 +440,29 @@ function Home() {
+           <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+             {[
+               {
+-                icon: <GlobeIcon className="h-6 w-6" />,
+-                title: "Websites That Convert",
+-                desc: "SEO-smart, mobile-first sites built to capture leads and book calls.",
+-                link: "/services",
++                icon: <SearchIcon className="h-6 w-6" />,
++                title: "Profit Leak Scan",
++                desc: "The free front door. We find where the money is going.",
++                link: "/offers/profit-leak-scan",
++              },
++              {
++                icon: <ChartIcon className="h-6 w-6" />,
++                title: "CH Margin OS",
++                desc: "From $79/mo. Weekly margin score, top leak, next action.",
++                link: "/pricing",
+               },
+               {
+                 icon: <CogIcon className="h-6 w-6" />,
+-                title: "Automation Systems",
+-                desc: "Lead handling, follow-ups, booking, and review requests on autopilot.",
++                title: "Fix Packs",
++                desc: "From $500. First pack: Estimate Follow-Up Recovery.",
+                 link: "/services",
+               },
+               {
+-                icon: <ChartIcon className="h-6 w-6" />,
+-                title: "Intelligence Reports",
+-                desc: "Niche opportunity briefs, market gap analysis, and weekly alerts.",
++                icon: <GlobeIcon className="h-6 w-6" />,
++                title: "AI Ops & Briefs",
++                desc: "From $99/mo. We run workflows + market intelligence.",
+                 link: "/intelligence",
+               },
+-              {
+-                icon: <PackageIcon className="h-6 w-6" />,
+-                title: "AI Business Kits",
+-                desc: "Ready-to-launch packaged businesses with brand, site, and automations.",
+-                link: "/marketplace",
+-              },
+             ].map((svc, i) => (
+               <AnimatedSection key={svc.title} delay={i * 80} className="h-full">
+                 <Link to={svc.link} className="card-premium group flex h-full flex-col p-8">
+@@ -509,16 +484,47 @@ function Home() {
+       </section>
+ 
+       {/* ═══════════════════════════════════════════
+-          5. PACKAGES SNAPSHOT — alt bg
++          6. VALIDATION — proof is earned, not claimed
++          ═══════════════════════════════════════════ */}
++      <section className="section-pad bg-brand-surface">
++        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
++          <AnimatedSection>
++            <div className="mx-auto max-w-2xl text-center">
++              <div className="badge badge-accent mb-4">Validation First</div>
++              <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
++                No assumptions. <span className="gradient-text">Measure the fix before expanding.</span>
++              </h2>
++            </div>
++          </AnimatedSection>
++
++          <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
++            {[
++              { title: "Baseline first", desc: "Before a workflow goes live, we record open estimates, close rate, average ticket, and current follow-up completion." },
++              { title: "Human-safe delivery", desc: "Every message is approved, replies route to a person, and sensitive requests never receive an automated decision." },
++              { title: "Verified proof", desc: "We publish a case study only after measured results and written customer permission — not before." },
++            ].map((item, i) => (
++              <AnimatedSection key={item.title} delay={i * 100}>
++                <div className="card-glass-light h-full p-8">
++                  <div className="font-serif text-lg font-semibold text-brand-text">{item.title}</div>
++                  <p className="mt-3 leading-relaxed text-brand-text-secondary">{item.desc}</p>
++                </div>
++              </AnimatedSection>
++            ))}
++          </div>
++        </div>
++      </section>
++
++      {/* ═══════════════════════════════════════════
++          7. OFFER LADDER — white bg, 3 cards + note
+           ═══════════════════════════════════════════ */}
+       <section className="section-pad bg-brand-surface-alt">
+         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+           <AnimatedSection>
+             <div className="mx-auto max-w-2xl text-center">
+-              <div className="badge badge-accent mb-4">Pricing</div>
++              <div className="badge badge-accent mb-4">How It&apos;s Priced</div>
+               <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
+-                Simple packages.{" "}
+-                <span className="gradient-text">Serious value.</span>
++                Start free. Pay only when{" "}
++                <span className="gradient-text">the report pays off</span>.
+               </h2>
+             </div>
+           </AnimatedSection>
+@@ -526,27 +532,27 @@ function Home() {
+           <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
+             {[
+               {
+-                name: "Starter",
+-                price: "$1,500–$3,500",
+-                desc: "A conversion-optimized website built to turn visitors into leads.",
+-                features: ["5-page custom site", "SEO foundation", "Mobile-first design", "Contact & booking forms", "2-week delivery"],
+-                link: "/offers/conversion-site-sprint",
++                name: "The Scan",
++                price: "Free",
++                desc: "A 7-day audit of your calls, labor, and follow-up. No credit card.",
++                features: ["30-minute intake call", "5 leak categories analyzed", "Margin score out of 100", "Top leaks ranked by ROI"],
++                link: "/offers/profit-leak-scan",
+                 featured: false,
+               },
+               {
+-                name: "Growth",
+-                price: "$297–$997/mo",
+-                desc: "Ongoing optimization, content, and automation management.",
+-                features: ["Everything in Starter", "Monthly SEO & content", "Automation management", "Analytics dashboard", "Priority support"],
+-                link: "/offers/growth-os",
++                name: "CH Margin OS",
++                price: "$79–$249/mo",
++                desc: "The core product. Weekly clarity on margin risk and the next action worth taking.",
++                features: ["Profit Health Score, weekly", "Margin Leak Map, ranked", "Recommended action each week", "Weekly Profit Brief"],
++                link: "/pricing",
+                 featured: true,
+               },
+               {
+-                name: "Premium",
+-                price: "$3,000–$15,000",
+-                desc: "Complete business system: brand, site, automations, and AI kit.",
+-                features: ["Everything in Growth", "Full automation suite", "AI-powered systems", "Marketplace listing", "Dedicated strategist"],
+-                link: "/offers/ai-business-kit",
++                name: "Fix Packs",
++                price: "From $500",
++                desc: "One-time deployment of a specific recovery workflow.",
++                features: ["First: Estimate Follow-Up Recovery", "7-step workflow with guardrails", "Human review of all replies", "Weekly delivery reporting"],
++                link: "/services",
+                 featured: false,
+               },
+             ].map((pkg, i) => (
+@@ -561,7 +567,7 @@ function Home() {
+                   {pkg.featured && (
+                     <div className="absolute -top-3 left-6">
+                       <span className="badge bg-brand-accent text-white shadow-lg shadow-brand-accent/20">
+-                        Most Popular
++                        Core Product
+                       </span>
+                     </div>
+                   )}
+@@ -591,7 +597,7 @@ function Home() {
+                         : "border border-brand-border bg-white text-brand-text hover:border-brand-accent/30 hover:text-brand-accent"
+                     }`}
+                   >
+-                    View package
++                    Start here
+                   </Link>
+                 </div>
+               </AnimatedSection>
+@@ -600,96 +606,28 @@ function Home() {
+ 
+           <AnimatedSection delay={300}>
+             <div className="mt-10 text-center">
+-              <Link to="/pricing" className="btn-secondary px-8 py-4 text-base">
+-                See all pricing options
+-              </Link>
++              <p className="text-sm text-brand-text-secondary">
++                Later: CH AI Ops from <span className="font-mono font-semibold text-brand-text">$750/mo</span> · Opportunity Briefs <span className="font-mono font-semibold text-brand-text">$99/mo</span> · Systems Marketplace{" "}
++                <span className="font-mono font-semibold text-brand-text">$49+</span> — everything starts with the free scan.
++              </p>
+             </div>
+           </AnimatedSection>
+         </div>
+       </section>
+ 
+       {/* ═══════════════════════════════════════════
+-          6. INTERACTIVE DEMO TEASER — dark
+-          ═══════════════════════════════════════════ */}
+-      <section className="section-pad relative bg-dark-gradient-alt">
+-        <div className="absolute inset-0 opacity-[0.02]" style={{
+-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")`,
+-        }} />
+-        <div className="absolute -right-32 top-0 h-96 w-96 rounded-full bg-brand-accent/5 blur-3xl" />
+-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+-          <div className="mx-auto max-w-3xl text-center">
+-            <AnimatedSection>
+-              <div className="badge bg-brand-accent/15 text-brand-accent-light mb-4">Interactive Demo</div>
+-              <h2 className="font-serif text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+-                Watch how it runs, before you commit
+-              </h2>
+-            </AnimatedSection>
+-            <AnimatedSection delay={150}>
+-              <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-brand-text-muted">
+-                See a live automation dashboard in action — lead capture, follow-up
+-                sequences, and real-time reporting.
+-              </p>
+-            </AnimatedSection>
+-
+-            <AnimatedSection delay={300}>
+-              {/* Mock dashboard preview card */}
+-              <div className="mx-auto mt-10 max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-2xl shadow-black/20">
+-                {/* Mock toolbar */}
+-                <div className="flex items-center gap-2 border-b border-white/[0.06] px-5 py-3">
+-                  <div className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
+-                  <div className="h-2.5 w-2.5 rounded-full bg-yellow-400/70" />
+-                  <div className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
+-                  <span className="ml-3 font-mono text-xs text-brand-text-muted">Automation Dashboard</span>
+-                </div>
+-                {/* Mock content */}
+-                <div className="grid grid-cols-3 gap-4 p-6">
+-                  <div className="rounded-xl bg-white/5 p-5 transition-colors hover:bg-white/8">
+-                    <div className="font-mono text-3xl font-bold gradient-text">247</div>
+-                    <div className="mt-1 text-xs text-brand-text-muted">Leads captured</div>
+-                  </div>
+-                  <div className="rounded-xl bg-white/5 p-5 transition-colors hover:bg-white/8">
+-                    <div className="font-mono text-3xl font-bold gradient-text">98%</div>
+-                    <div className="mt-1 text-xs text-brand-text-muted">Response rate</div>
+-                  </div>
+-                  <div className="rounded-xl bg-white/5 p-5 transition-colors hover:bg-white/8">
+-                    <div className="font-mono text-3xl font-bold gradient-text">14m</div>
+-                    <div className="mt-1 text-xs text-brand-text-muted">Avg. response time</div>
+-                  </div>
+-                </div>
+-                {/* Progress bar */}
+-                <div className="mx-6 mb-6 overflow-hidden rounded-full bg-white/8">
+-                  <div className="h-1.5 w-3/4 rounded-full bg-gradient-to-r from-brand-accent to-brand-accent-light" />
+-                </div>
+-              </div>
+-            </AnimatedSection>
+-
+-            <AnimatedSection delay={400}>
+-              <div className="mt-8">
+-                <Link
+-                  to="/demo"
+-                  className="btn-primary px-8 py-4 text-base"
+-                >
+-                  Try the interactive demo
+-                </Link>
+-              </div>
+-            </AnimatedSection>
+-          </div>
+-        </div>
+-      </section>
+-
+-      {/* ═══════════════════════════════════════════
+-          7. PROCESS TIMELINE — white bg
++          8. PROCESS TIMELINE — white bg
+           ═══════════════════════════════════════════ */}
+       <section className="section-pad bg-brand-surface">
+         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+           <AnimatedSection>
+             <div className="mx-auto max-w-2xl text-center">
+-              <div className="badge badge-accent mb-4">Process</div>
++              <div className="badge badge-accent mb-4">Timeline</div>
+               <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
+-                A clear, predictable process
++                Your first 30 days
+               </h2>
+               <p className="mt-4 text-brand-text-secondary">
+-                From first conversation to launch and beyond — here&apos;s what to expect.
++                From scan request to recovered profit — here&apos;s what to expect.
+               </p>
+             </div>
+           </AnimatedSection>
+@@ -697,10 +635,10 @@ function Home() {
+           <div className="timeline-line relative mt-16">
+             <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+               {[
+-                { day: "Day 1", title: "Discovery Call", desc: "We learn about your business, goals, and current challenges. 30 minutes, no commitment." },
+-                { day: "Day 3", title: "Gap Analysis", desc: "We deliver a detailed report identifying your highest-value opportunity with clear next steps." },
+-                { day: "Day 10", title: "Build & Deploy", desc: "Your system is designed, built, tested, and launched. You approve every step." },
+-                { day: "Day 30+", title: "Optimize & Grow", desc: "We monitor performance, refine the system, and identify new opportunities for growth." },
++                { day: "Day 1", title: "Scan Request", desc: "30 minutes on a call. You share your call log, booked jobs, invoices, and ad spend — we take it from there." },
++                { day: "Day 3–7", title: "Score & Findings", desc: "Your Profit Health Score, ranked leak map, and recovery range land in your inbox, with a findings call to walk through it." },
++                { day: "Day 10–30", title: "Fix & Deploy", desc: "The top-ROI fixes go live — usually an AI receptionist and automated follow-up. You approve every step." },
++                { day: "Month 2+", title: "CH Margin OS", desc: "Weekly margin briefs keep every leak closed and report recovered profit every month." },
+               ].map((step, i) => (
+                 <AnimatedSection key={step.day} delay={i * 120}>
+                   <div className="relative z-10 text-center">
+@@ -720,7 +658,7 @@ function Home() {
+       </section>
+ 
+       {/* ═══════════════════════════════════════════
+-          8. FAQ — white bg
++          9. FAQ — white bg
+           ═══════════════════════════════════════════ */}
+       <section className="section-pad bg-brand-surface">
+         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+@@ -778,22 +716,22 @@ function Home() {
+         <div className="relative mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+           <AnimatedSection>
+             <h2 className="font-serif text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+-              Ready to stop leaving money on the table?
++              Stop leaving money on the table.
+             </h2>
+           </AnimatedSection>
+           <AnimatedSection delay={150}>
+             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-brand-text-muted">
+-              Every project starts with a free Business Gap Scan. We&apos;ll identify the
+-              highest-value opportunity in your business — before you spend a dollar.
++              In 7 days you&apos;ll know exactly what your business is leaking —
++              and what fixing it is worth. That knowledge is free either way.
+             </p>
+           </AnimatedSection>
+           <AnimatedSection delay={300}>
+             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+               <Link
+-                to="/offers/gap-scan"
++                to="/offers/profit-leak-scan"
+                 className="btn-primary px-8 py-4 text-base"
+               >
+-                Start your free Gap Scan
++                Get Your Free Profit Leak Scan
+               </Link>
+               <Link
+                 to="/contact"
+@@ -807,4 +745,4 @@ function Home() {
+       </section>
+     </>
+   );
+-}
++}
+\ No newline at end of file
+diff --git a/src/routes/offers/profit-leak-scan.tsx b/src/routes/offers/profit-leak-scan.tsx
+new file mode 100644
+index 0000000..918d073
+--- /dev/null
++++ b/src/routes/offers/profit-leak-scan.tsx
+@@ -0,0 +1,281 @@
++import { useState } from "react";
++import { Link, createFileRoute } from "@tanstack/react-router";
++import { createServerFn } from "@tanstack/react-start";
++import { AnimatedSection } from "~/components/AnimatedSection";
++import { useToast } from "~/components/Toast";
++import { sql } from "~/db";
++import { pageHead } from "~/lib/seo";
++
++export const Route = createFileRoute("/offers/profit-leak-scan")({
++  head: () =>
++    pageHead({
++      title: "Free Profit Leak Scan | CH Business Services",
++      description:
++        "Find the hidden leaks costing your business money. Free 7-day Profit Leak Scan for plumbing companies — Profit Health Score, ranked leak map, and the next action worth taking.",
++      path: "/offers/profit-leak-scan",
++    }),
++  component: ProfitLeakScan,
++});
++
++/* ─── Server function for scan submissions ─── */
++
++const submitProfitLeakScan = createServerFn().handler(
++  async (payload: {
++    businessName: string;
++    email: string;
++    phone: string;
++    serviceType: string;
++    revenueRange: string;
++  }) => {
++    const { businessName, email, phone, serviceType, revenueRange } = payload;
++
++    if (!businessName || !email || !serviceType) {
++      throw new Error("Business name, email, and service type are required.");
++    }
++
++    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
++    if (!emailRegex.test(email)) {
++      throw new Error("Please enter a valid email address.");
++    }
++
++    const client = sql();
++    await client`
++      CREATE TABLE IF NOT EXISTS profit_leak_scans (
++        id SERIAL PRIMARY KEY,
++        business_name TEXT NOT NULL,
++        email TEXT NOT NULL,
++        phone TEXT,
++        service_type TEXT NOT NULL,
++        revenue_range TEXT,
++        status TEXT NOT NULL DEFAULT 'new',
++        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
++      )
++    `;
++    await client`
++      INSERT INTO profit_leak_scans (business_name, email, phone, service_type, revenue_range)
++      VALUES (${businessName}, ${email}, ${phone || null}, ${serviceType}, ${revenueRange || null})
++    `;
++
++    return { success: true };
++  },
++);
++
++function CheckItem({ text }: { text: string }) {
++  return (
++    <li className="flex items-start gap-3">
++      <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
++        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
++      </svg>
++      <span className="text-gray-700">{text}</span>
++    </li>
++  );
++}
++
++function ScanForm() {
++  const [submitted, setSubmitted] = useState(false);
++  const [submitting, setSubmitting] = useState(false);
++  const { addToast } = useToast();
++
++  if (submitted) {
++    return (
++      <div className="card-premium p-8 text-center">
++        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-green-100 to-emerald-100">
++          <svg className="h-8 w-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
++            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
++          </svg>
++        </div>
++        <h3 className="mt-4 text-xl font-semibold tracking-tight text-gray-900">Scan requested!</h3>
++        <p className="mt-2 text-gray-600">We'll send the assessment and schedule your 30-minute intake call. Your Profit Health Score and findings arrive within 7 days.</p>
++      </div>
++    );
++  }
++
++  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
++    e.preventDefault();
++    setSubmitting(true);
++
++    const form = e.currentTarget;
++    const formData = new FormData(form);
++    const payload = {
++      businessName: String(formData.get("businessName") ?? ""),
++      email: String(formData.get("email") ?? ""),
++      phone: String(formData.get("phone") ?? ""),
++      serviceType: String(formData.get("serviceType") ?? ""),
++      revenueRange: String(formData.get("revenueRange") ?? ""),
++    };
++
++    try {
++      await submitProfitLeakScan(payload);
++      setSubmitted(true);
++      form.reset();
++      addToast("Profit Leak Scan requested!", "success");
++    } catch (err) {
++      addToast(
++        err instanceof Error ? err.message : "Something went wrong. Please try again.",
++        "error"
++      );
++    } finally {
++      setSubmitting(false);
++    }
++  };
++
++  return (
++    <form onSubmit={handleSubmit} className="space-y-5">
++      <div>
++        <label htmlFor="businessName" className="block text-sm font-medium text-gray-700">Business name</label>
++        <input type="text" id="businessName" name="businessName" required className="input-premium mt-1" placeholder="Your business name" />
++      </div>
++      <div>
++        <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
++        <input type="email" id="email" name="email" required className="input-premium mt-1" placeholder="you@example.com" />
++      </div>
++      <div>
++        <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone <span className="text-gray-400">(optional)</span></label>
++        <input type="tel" id="phone" name="phone" className="input-premium mt-1" placeholder="(555) 000-0000" />
++      </div>
++      <div>
++        <label htmlFor="serviceType" className="block text-sm font-medium text-gray-700">Service type</label>
++        <select id="serviceType" name="serviceType" required className="input-premium mt-1">
++          <option value="">Select your trade…</option>
++          <option value="Plumbing">Plumbing</option>
++          <option value="HVAC waitlist">HVAC / Heating &amp; Cooling (waitlist)</option>
++        </select>
++      </div>
++      <div>
++        <label htmlFor="revenueRange" className="block text-sm font-medium text-gray-700">Annual revenue <span className="text-gray-400">(optional)</span></label>
++        <select id="revenueRange" name="revenueRange" className="input-premium mt-1">
++          <option value="">Select a range…</option>
++          <option value="Under $500K">Under $500K</option>
++          <option value="$500K–$1M">$500K–$1M</option>
++          <option value="$1M–$2.5M">$1M–$2.5M</option>
++          <option value="$2.5M–$5M">$2.5M–$5M</option>
++          <option value="Over $5M">Over $5M</option>
++        </select>
++      </div>
++      <button type="submit" disabled={submitting} className="btn-primary w-full text-base disabled:opacity-60">
++        {submitting ? <><svg className="mr-2 h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" /><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" /></svg>Submitting...</> : "Request your free scan"}
++      </button>
++    </form>
++  );
++}
++
++function ProfitLeakScan() {
++  return (
++    <>
++      <section className="relative overflow-hidden bg-gradient-to-b from-white to-indigo-50/50">
++        <div className="absolute inset-0 hero-dots opacity-30" />
++        <div className="relative mx-auto max-w-7xl px-4 py-24 text-center sm:px-6 lg:px-8 sm:py-28">
++          <AnimatedSection>
++            <span className="inline-flex items-center rounded-full bg-gradient-to-r from-indigo-100 to-purple-100 px-4 py-1 text-sm font-semibold text-indigo-700">Free · 7 days</span>
++            <h1 className="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
++              <span className="gradient-text">Profit Leak Scan</span>
++            </h1>
++          </AnimatedSection>
++          <AnimatedSection delay={150}>
++            <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-gray-600">
++              Request a concise, human-reviewed diagnosis of the operational leaks hurting your plumbing margin — starting with missed calls and open estimates that receive no follow-up.
++            </p>
++          </AnimatedSection>
++        </div>
++      </section>
++
++      <section className="bg-white py-24 lg:py-32">
++        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
++          <AnimatedSection>
++            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
++              <div>
++                <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">What you get</h2>
++                <ul className="mt-8 space-y-4">
++                  <CheckItem text="Profit Health Score out of 100, based on your own numbers" />
++                  <CheckItem text="Margin Leak Map — issues ranked by impact vs. effort" />
++                  <CheckItem text="Monthly recovery range with every assumption shown" />
++                  <CheckItem text="One recommended next action — no dashboard paralysis" />
++                </ul>
++                <div className="mt-8 rounded-2xl border border-brand-border-light bg-brand-surface-alt/60 p-6">
++                  <div className="font-mono text-sm font-semibold uppercase tracking-widest text-brand-text-muted">
++                    What we look at
++                  </div>
++                  <div className="mt-3 flex flex-wrap gap-2">
++                    {["Lead capture", "Sales conversion", "Pricing &amp; margin", "Labor &amp; operations", "Overhead &amp; systems"].map((tag) => (
++                      <span key={tag} className="rounded-full border border-brand-border bg-white px-3 py-1 text-xs font-medium text-brand-text-secondary">
++                        {tag}
++                      </span>
++                    ))}
++                  </div>
++                </div>
++                <p className="mt-8 text-sm text-gray-500">No commitment. No credit card. This request takes under a minute; we send the assessment and book the 30-minute intake call next. Built for plumbing companies doing $500K–$5M.</p>
++              </div>
++              <div>
++                <ScanForm />
++              </div>
++            </div>
++          </AnimatedSection>
++        </div>
++      </section>
++
++      <section className="section-pad bg-brand-surface">
++        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
++          <AnimatedSection>
++            <div className="mx-auto max-w-2xl text-center">
++              <div className="badge badge-accent mb-4">Sample Output</div>
++              <h2 className="font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl">
++                Your scorecard looks like this — <span className="gradient-text">real numbers, not vagueness</span>
++              </h2>
++            </div>
++          </AnimatedSection>
++
++          <AnimatedSection delay={150}>
++            <div className="mx-auto mt-12 max-w-2xl overflow-hidden rounded-2xl border border-brand-border bg-white shadow-xl shadow-black/5">
++              <div className="flex items-center justify-between border-b border-brand-border-light px-6 py-4">
++                <div>
++                  <div className="text-sm font-semibold text-brand-text">Business Profit Report</div>
++                  <div className="text-xs text-brand-text-secondary">Sample — plumbing company</div>
++                </div>
++                <div className="text-right">
++                  <div className="font-mono text-sm text-brand-text-muted">Margin score</div>
++                  <div className="font-mono text-3xl font-bold gradient-text">61<span className="text-base">/100</span></div>
++                </div>
++              </div>
++              <div className="space-y-4 px-6 py-6">
++                <div className="rounded-xl border border-brand-accent/25 bg-brand-accent/5 px-5 py-4">
++                  <div className="text-xs font-semibold uppercase tracking-widest text-brand-accent">Highest-priority leak</div>
++                  <div className="mt-1 text-base font-semibold text-brand-text">Estimate follow-up gaps</div>
++                  <p className="mt-1 text-sm text-brand-text-secondary">Open estimates get no consistent follow-up. Fix: a three-touch email, SMS, and call sequence within 24 hours of every estimate.</p>
++                </div>
++                {[
++                  { title: "Missed calls & after-hours coverage", note: "Lead capture" },
++                  { title: "Discounting & pricing discipline", note: "Pricing & margin" },
++                ].map((row) => (
++                  <div key={row.title} className="flex items-center gap-4 rounded-xl border border-brand-border-light bg-brand-surface-alt/60 px-4 py-3">
++                    <div className="flex h-2 w-2 flex-shrink-0 rounded-full bg-brand-accent/40" />
++                    <div className="flex-1">
++                      <div className="text-sm font-semibold text-brand-text">{row.title}</div>
++                      <div className="text-xs text-brand-text-secondary">{row.note}</div>
++                    </div>
++                  </div>
++                ))}
++                <div className="flex items-center justify-between rounded-xl bg-gradient-to-r from-brand-accent/10 to-transparent px-4 py-3">
++                  <span className="text-sm font-medium text-brand-text">Estimated monthly recovery opportunity</span>
++                  <span className="font-mono text-lg font-bold gradient-text">$3,200–$7,800</span>
++                </div>
++                <p className="text-xs text-brand-text-muted">Assumptions shown in full report · Not a guarantee</p>
++              </div>
++            </div>
++          </AnimatedSection>
++
++          <AnimatedSection delay={300}>
++            <div className="mt-10 text-center">
++              <p className="text-sm text-brand-text-secondary">
++                Go deeper with <span className="font-mono font-semibold text-brand-text">CH Margin OS</span> from $79/mo, or deploy the first Fix Pack:{" "}
++                <span className="font-mono font-semibold text-brand-text">Estimate Follow-Up Recovery, $1,250</span>.
++              </p>
++              <p className="mt-2 text-sm text-brand-text-secondary">
++                Not sure yet? <Link to="/contact" className="font-medium text-brand-accent hover:underline">Talk to us first</Link> — no pitch, just answers.
++              </p>
++            </div>
++          </AnimatedSection>
++        </div>
++      </section>
++    </>
++  );
++}
+\ No newline at end of file
