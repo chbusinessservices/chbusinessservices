@@ -18,8 +18,8 @@ jobs:
       - uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
+          base: ${{ github.event.before || github.event.repository.default_branch }}
+          head: ${{ github.event.after || github.sha }}
       - run: |
           echo "🔍 Scanning for hardcoded secrets..."
           if grep -r "STRIPE_SECRET_KEY\|GROQ_API_KEY\|DATABASE_URL" \
