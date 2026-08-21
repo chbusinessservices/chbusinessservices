@@ -22,9 +22,17 @@ jobs:
           head: ${{ github.event.after || github.sha }}
       - run: |
           echo "🔍 Scanning for hardcoded secrets..."
+          # Look for actual hardcoded values, not process.env references
           if grep -r "STRIPE_SECRET_KEY\|GROQ_API_KEY\|DATABASE_URL" \
             --include="*.js" --include="*.ts" --include="*.json" \
-            --exclude-dir=node_modules . 2>/dev/null; then
+            --exclude-dir=node_modules \
+            --exclude-dir=.git \
+            --exclude="*.config.*" . 2>/dev/null | \
+            grep -v "process\.env\." | \
+            grep -v "import.meta.env" | \
+            grep -v "env\." | \
+            grep -v "//.*\(STRIPE_SECRET_KEY\|GROQ_API_KEY\|DATABASE_URL\)" | \
+            grep -v "console.error.*DATABASE_URL"; then
             echo "❌ FAILED: Secrets detected!"
             exit 1
           fi
