@@ -24,6 +24,7 @@ const navLinks = [
   { to: "/resources", label: "Resources" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
+  { to: "/lrd", label: "Life Admin Desk" },
 ] as const;
 
 /* ─── Sign In Dropdown ─── */

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./lrd.css";
 
 /* ─── Brand Theme (Tailwind v4) ─── */
 @theme {
