@@ -1,0 +1,38 @@
+/* ─── Life-Ready / Life Admin Desk clone theme (scoped) ───
+   Exact tokens lifted from the original site's CSS.
+   Utilities (bg-primary, text-muted-foreground, …) resolve to these vars;
+   existing pages never use them, so the two sites don't interfere. */
+@theme {
+  --color-background: hsl(60 14% 98%);
+  --color-foreground: hsl(217 47% 11%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(217 47% 11%);
+  --color-primary: hsl(191 91% 36%);
+  --color-primary-foreground: hsl(60 14% 98%);
+  --color-secondary: hsl(214 32% 95%);
+  --color-secondary-foreground: hsl(217 47% 11%);
+  --color-muted: hsl(214 32% 95%);
+  --color-muted-foreground: hsl(215 25% 42%);
+  --color-accent: hsl(38 92% 50%);
+  --color-accent-foreground: hsl(217 47% 11%);
+  --color-destructive: hsl(0 84% 60%);
+  --color-border: hsl(214 32% 88%);
+  --color-input: hsl(214 32% 88%);
+  --color-ring: hsl(38 92% 50%);
+  --font-heading: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+}
+
+.lrd {
+  font-family: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+.lrd h1,
+.lrd h2,
+.lrd h3,
+.lrd h4 {
+  font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  text-wrap: balance;
+}
