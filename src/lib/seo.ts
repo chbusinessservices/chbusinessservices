@@ -42,7 +42,7 @@ export function organizationLd() {
     "@type": "Organization",
     name: SITE_NAME,
     description:
-      "CH Business Services builds conversion-focused websites, automation systems, AI business kits, and intelligence reports that turn visitors into customers.",
+      "CH Business Services helps individuals, families, and small businesses turn scattered tasks into organized action—life admin support, business operations, websites, and responsible AI-assisted workflows.",
     url: SITE_URL,
     logo: `${SITE_URL}/favicon.ico`,
     sameAs: [

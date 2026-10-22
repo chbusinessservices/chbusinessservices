@@ -2,20 +2,21 @@
 @import "./lrd.css";
 
 /* ─── Brand Theme (Tailwind v4) ─── */
+/* Palette: deep navy #142D40, muted teal #246F73 */
 @theme {
   /* Background colors */
-  --color-brand-dark: #0a0f1e;
-  --color-brand-dark-lighter: #111827;
-  --color-brand-slate: #1e293b;
-  --color-brand-slate-light: #334155;
+  --color-brand-dark: #142d40;
+  --color-brand-dark-lighter: #1b3a52;
+  --color-brand-slate: #234a63;
+  --color-brand-slate-light: #35617f;
   --color-brand-surface: #f8fafc;
   --color-brand-surface-alt: #f1f5f9;
 
   /* Accent colors */
-  --color-brand-accent: #6366f1;
-  --color-brand-accent-light: #818cf8;
-  --color-brand-accent-dark: #4f46e5;
-  --color-brand-accent-glow: rgba(99, 102, 241, 0.3);
+  --color-brand-accent: #246f73;
+  --color-brand-accent-light: #3e8b8f;
+  --color-brand-accent-dark: #1a5255;
+  --color-brand-accent-glow: rgba(36, 111, 115, 0.3);
 
   /* Text colors */
   --color-brand-text: #0f172a;
@@ -30,7 +31,7 @@
   --color-brand-border-inverse-light: rgba(255, 255, 255, 0.06);
 
   /* Fonts */
-  --font-serif: "Fraunces", Georgia, serif;
+  --font-serif: "Inter", Georgia, serif;
   --font-mono: "IBM Plex Mono", "Fira Code", monospace;
 
   /* Easing */
@@ -47,7 +48,7 @@
 
   h1, h2, h3 {
     text-wrap: balance;
-    font-family: "Fraunces", Georgia, serif;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
     font-weight: 600;
   }
 
@@ -57,8 +58,8 @@
 
   /* Selection */
   ::selection {
-    background: rgba(99, 102, 241, 0.2);
-    color: #1e1b4b;
+    background: rgba(36, 111, 115, 0.2);
+    color: #142d40;
   }
 }
 
@@ -199,7 +200,7 @@
 }
 .input-premium:focus {
   @apply border-brand-accent outline-none;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 0 3px rgba(36, 111, 115, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* ─── Nav underline animation ─── */
@@ -214,7 +215,7 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(135deg, #6366f1, #818cf8);
+  background: linear-gradient(135deg, #246f73, #3e8b8f);
   transition: all 0.35s var(--ease-brand);
   transform: translateX(-50%);
   border-radius: 2px;
@@ -227,7 +228,7 @@
 /* ─── Gradient text ─── */
 
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1 0%, #818cf8 50%, #a78bfa 100%);
+  background: linear-gradient(135deg, #246f73 0%, #3e8b8f 50%, #56a0a4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -248,7 +249,7 @@
 }
 
 .gradient-text-accent {
-  background: linear-gradient(135deg, #6366f1 0%, #a78bfa 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #246f73 0%, #56a0a4 50%, #3e8b8f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -257,19 +258,19 @@
 /* ─── Hero decorative elements ─── */
 
 .hero-dots {
-  background-image: radial-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(36, 111, 115, 0.08) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
 .hero-dots-light {
-  background-image: radial-gradient(rgba(99, 102, 241, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(36, 111, 115, 0.06) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 .hero-grid-pattern {
   background-image:
-    linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(36, 111, 115, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 111, 115, 0.04) 1px, transparent 1px);
   background-size: 64px 64px;
 }
 
@@ -289,7 +290,7 @@
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.3));
+  background: linear-gradient(135deg, rgba(36, 111, 115, 0.5), rgba(62, 139, 143, 0.3));
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s var(--ease-brand);
@@ -330,7 +331,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #6366f1 0%, rgba(99, 102, 241, 0.15) 100%);
+  background: linear-gradient(90deg, #246f73 0%, rgba(36, 111, 115, 0.15) 100%);
   z-index: 0;
 }
 
@@ -364,11 +365,11 @@
 /* ─── Dark section gradient backgrounds ─── */
 
 .bg-dark-gradient {
-  background: linear-gradient(135deg, #0a0f1e 0%, #111827 50%, #0f172a 100%);
+  background: linear-gradient(135deg, #142d40 0%, #1b3a52 50%, #0e2333 100%);
 }
 
 .bg-dark-gradient-alt {
-  background: linear-gradient(135deg, #111827 0%, #1e293b 50%, #0f172a 100%);
+  background: linear-gradient(135deg, #1b3a52 0%, #234a63 50%, #0e2333 100%);
 }
 
 /* ─── Section heading utility ─── */
@@ -378,7 +379,7 @@
 }
 
 .section-heading {
-  @apply mt-3 font-serif text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl;
+  @apply mt-3 text-3xl font-semibold tracking-tight text-brand-text sm:text-4xl;
 }
 
 .section-subtitle {
